@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Canyoning Pacet Mojokerto | Open Trip & Private Canyoneering Padusan</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SEO -->
+<meta name="description" content="Canyoning Pacet Mojokerto – Open trip & private trip canyoneering di Padusan Pacet. Basecamp resmi di Wahana Pemandian Air Panas Padusan. Aman, profesional, cocok pemula.">
+<meta name="keywords" content="canyoning pacet mojokerto, canyoneering pacet, open trip canyoning pacet, wisata pacet mojokerto, canyoning padusan">
+<meta name="author" content="Canyoning Pacet">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- FAVICON -->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image"
+      href="https://via.placeholder.com/1600x800"
+      fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preload"
+      href="https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin>
+
+
+<style>
+:root{
+  --brand-red:#B3261E;
+  --brand-green:#4F8F63;
+  --brand-green-dark:#2F5D4A;
+  --brand-black:#1A1A1A;
+  --brand-white:#F5F5F5;
+  --brand-accent:#FACC15;
+}
+
+body{
+  padding-top: 72px; /* tinggi navbar */
+}
+
+
+@media (max-width:768px){
+  body{
+    padding-top: 64px;
+  }
+}
+
+
+
+.navbar-brand{color:var(--brand-red)!important;}
+.nav-link{font-weight:500;}
+.nav-link:hover{color:var(--brand-red)!important;}
+
+.hero{
+  background:
+    linear-gradient(rgba(47,93,74,.85), rgba(47,33,74,.5)),
+    url('canyoning.jpg') center/cover;
+}
+
+.section-padding{padding:80px 0;}
+
+.btn-primary{
+  background:var(--brand-red);
+  border:none;
+}
+.btn-primary:hover{background:#8f1f18;}
+
+.btn-accent{
+  background:var(--brand-accent);
+  border:none;
+  color:#111;
+}
+.btn-accent:hover{background:#eab308;}
+
+.card{border:none;border-radius:14px;}
+
+.footer-adv {
+            background: var(--brand-green-dark);
+            color: #f5f5f5;
+            padding: 40px 0 20px;
+            position: relative;
+        }
+
+        .footer-overlay {
+            position: absolute;
+            inset: 0;
+            background: url('assets/texture/grunge-texture.png') repeat; /* Pastikan path benar atau kosongkan jika tidak ada */
+            opacity: .12;
+            pointer-events: none;
+        }
+
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 12px;
+            position: relative;
+            font-family: 'Oswald', sans-serif;
+            color: #fff;
+        }
+
+        .footer-title::after {
+            content: "";
+            display: block;
+            width: 36px;
+            height: 3px;
+            background: var(--brand-accent);
+            margin-top: 4px;
+        }
+
+        .footer-menu { padding-left: 0; list-style: none; }
+        .footer-menu li { margin-bottom: 6px; font-size: 0.9rem; opacity: .85; }
+        .footer-menu a { color: #d1d5db; text-decoration: none; transition: 0.2s; }
+        .footer-menu a:hover { color: var(--brand-accent); text-decoration: underline; }
+
+        .footer-link { color: #e5e7eb; text-decoration: none; }
+        .footer-link:hover { color: var(--brand-accent); }
+
+        .footer-social {
+            display: inline-block;
+            padding: 6px 12px;
+            border: 1px solid rgba(255,255,255,.25);
+            border-radius: 20px;
+            font-size: .8rem;
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer-social:hover {
+            background: var(--brand-accent);
+            color: #111;
+            border-color: var(--brand-accent);
+        }
+
+        .footer-line { border-color: rgba(255,255,255,.15); }
+        .footer-col { flex: 0 0 auto; min-width: 180px; }
+
+        /* Scroll Horizontal Footer di Mobile (Fitur Khas Kode 1) */
+        @media (max-width: 768px) {
+            .footer-adv .container > .d-flex {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 20px;
+                overflow-x: auto;
+                padding-bottom: 15px; /* Space scrollbar */
+            }
+            .footer-col {
+                min-width: 200px; /* Sedikit lebih lebar di mobile agar rapi */
+                text-align: left;
+            }
+        }
+.navbar-logo{
+  height:42px;
+  width:auto;
+}
+
+@media (max-width:768px){
+  .navbar-logo{
+    height:34px;
+  }
+}
+
+.about-img-wrapper{
+  max-width: 520px;      /* batasi lebar */
+  margin-left: auto;    /* sejajar kanan */
+}
+
+.about-img{
+  width: 100%;
+  height: 340px;        /* tinggi ideal */
+  object-fit: cover;    /* potong rapi, tidak gepeng */
+  border-radius: 16px;
+}
+
+/* Mobile */
+@media (max-width:768px){
+  .about-img-wrapper{
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .about-img{
+    height: 260px;
+  }
+}
+/* === ABOUT IMAGE FIX === */
+.about-img-wrapper{
+  max-width: 520px;      /* batasi lebar desktop */
+  margin-left: auto;    /* sejajar kanan */
+}
+
+.about-img{
+  width: 100%;
+  height: 360px;        /* tinggi ideal desktop */
+  object-fit: cover;    /* potong rapi tanpa gepeng */
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+}
+
+/* Tablet */
+@media (max-width: 992px){
+  .about-img{
+    height: 300px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .about-img-wrapper{
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .about-img{
+    height: 240px;
+  }
+}
+
+/* === CTA SECTION === */
+.cta-section{
+  background:
+    linear-gradient(rgba(47,93,74,.92), rgba(47,93,74,.92)),
+    url('cta-bg.jpg') center/cover;
+}
+
+.cta-section h2{
+  line-height:1.2;
+}
+
+.cta-section .btn{
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.25);
+}
+
+.cta-section .btn-success{
+  background:#22c55e;
+  border:none;
+}
+
+.cta-section .btn-success:hover{
+  background:#16a34a;
+}
+/* === FOOTER ADVENTURE === */
+/* ========================
+   FOOTER REDESIGN V2 (Topographic & Contact Card)
+   ======================== */
+
+footer {
+  /* Warna dasar hijau tua brand */
+  background-color: var(--brand-green-dark);
+  color: #e0e0e0;
+  padding-top: 90px;
+  padding-bottom: 40px;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pattern Topografi Halus sebagai Background Overlay */
+footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Pola garis topografi SVG yang sangat halus */
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.footer-content-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+/*=== KOLOM BRAND & NAVIGASI ===*/
+.footer-brand h5 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.footer-brand p {
+  line-height: 1.7;
+  opacity: 0.85;
+  margin-bottom: 2rem;
+}
+
+.footer-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 14px;
+}
+
+.footer-links a, 
+.footer-links li {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Icon panah kecil di menu */
+.footer-links a::before {
+  content: '›';
+  color: var(--brand-accent);
+  font-weight: bold;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--brand-accent);
+  padding-left: 5px;
+}
+.footer-links a:hover::before {
+  opacity: 1;
+  margin-right: 3px;
+}
+
+/*=== KARTU KONTAK (Highlight Area) ===*/
+.contact-card {
+  background: rgba(255, 255, 255, 0.06); /* Latar belakang semi-transparan */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 35px;
+  height: 100%; /* Agar tingginya sama dengan kolom lain */
+}
+
+.contact-card .footer-heading {
+  color: var(--brand-accent); /* Judul kontak jadi kuning */
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.contact-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  color: var(--brand-accent);
+  padding-top: 3px;
+}
+
+.contact-details span.label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+.contact-details span.value,
+.contact-details a.value {
+  display: block;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.4;
+}
+.contact-details a.value:hover {
+  color: var(--brand-accent);
+  text-decoration: underline;
+}
+
+/*
+
+
+/* =========================
+   MOBILE RESPONSIVE FIX
+   ========================= */
+@media (max-width: 768px){
+
+  /* === GLOBAL === */
+  body{
+    font-size: 15px;
+  }
+
+  .section-padding{
+    padding: 48px 0;
+  }
+
+  h1, .display-5{
+    font-size: 1.9rem;
+    line-height: 1.25;
+  }
+
+  h2{
+    font-size: 1.6rem;
+  }
+
+  p.fs-5{
+    font-size: 1rem !important;
+  }
+`
+  /* === NAVBAR === */
+  .navbar{
+    padding: 10px 0;
+  }
+
+  .navbar-nav{
+    gap: 8px !important;
+    padding-top: 12px;
+  }
+
+  .navbar-nav .nav-link{
+    padding: 8px 0;
+  }
+
+  /* === HERO === */
+  .hero .container{
+    padding-top: 48px;
+    padding-bottom: 56px;
+  }
+
+  .hero h1{
+    text-align: left;
+  }
+
+  .hero p{
+    font-size: 0.95rem;
+  }
+
+  .hero .btn{
+    width: 100%;
+    justify-content: center;
+
+  }
+
+  /* Statistik hero */
+  .hero .row.text-center h3{
+    font-size: 1.3rem;
+  }
+
+  .hero .row.text-center p{
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+
+  /* === ABOUT === */
+  #tentang .badge{
+    font-size: 0.7rem;
+  }
+
+  #tentang ul li{
+    font-size: 0.85rem;
+  }
+
+  #tentang .btn{
+    width: 100%;
+  }
+
+  /* === PAKET === */
+  #paket h2{
+    font-size: 1.6rem;
+  }
+
+  #paket .card{
+    border-radius: 18px;
+  }
+
+  #paket ul li{
+    font-size: 0.85rem;
+  }
+
+  #paket .badge.fs-5{
+    font-size: 1rem !important;
+  }
+
+  /* === MAP === */
+  #lokasi .ratio{
+    border-radius: 16px;
+  }
+
+  /* === CTA === */
+  .cta-section{
+    text-align: center;
+  }
+
+  .cta-section h2{
+    font-size: 1.6rem;
+  }
+
+  .cta-section .btn{
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  /* === FOOTER === */
+  footer{
+    text-align: center;
+  }
+
+  .footer-social{
+    margin-bottom: 8px;
+  }
+
+  .footer-title::after{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width:768px){
+
+  .hero{
+    background-position: center top;
+  }
+
+  .hero .container{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .hero h1{
+    font-size: 1.8rem;
+  }
+
+  .hero p{
+    font-size: .95rem;
+  }
+
+  /* tombol stack */
+  .hero .d-flex{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero .btn{
+    width: 100%;
+    text-align: center;
+  }
+
+  /* statistik */
+  .hero .row.text-center{
+    margin-top: 32px;
+  }
+
+  .hero .row h3{
+    font-size: 1.2rem;
+  }
+
+  .hero .row p{
+    font-size: .75rem;
+  }
+}
+@media (max-width:768px){
+
+  #paket .card-body{
+    padding: 20px;
+  }
+
+  #paket h4{
+    font-size: 1.1rem;
+  }
+
+  #paket ul li{
+    font-size: .8rem;
+    line-height: 1.4;
+  }
+
+  #paket .badge.fs-5{
+    font-size: .9rem !important;
+    padding: 6px 14px;
+  }
+}
+@media (max-width:768px){
+
+  .cta-section{
+    padding: 48px 0;
+  }
+
+  .cta-section h2{
+    font-size: 1.5rem;
+  }
+
+  .cta-section .btn{
+    font-size: .95rem;
+    padding: 12px;
+  }
+}
+@media (max-width:768px){
+  .about-img{
+    height: 220px;
+  }
+}
+
+/* =========================
+   MOBILE LAYOUT FIX
+   ========================= */
+@media (max-width: 768px) {
+
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+    font-size: 15px;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background-position: center top;
+  }
+  .hero .container {
+    padding: 70px 26px;
+  }
+  .hero h1 {
+    font-size: 1.9rem;
+    text-align: text-center;
+    word-wrap: break-word;
+  }
+  .hero p {
+    font-size: 0.85rem;
+  }
+  .hero .d-flex {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  .hero .row.text-center {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 32px;
+  }
+  .hero .row h3 {
+    font-size: 1.2rem;
+  }
+  .hero .row p {
+    font-size: 0.75rem;
+  }
+
+  /* ===== ABOUT SECTION ===== */
+  #tentang .row {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+  .about-img-wrapper {
+    max-width: 100%;
+    margin-left: 0;
+    padding: 0;
+  }
+  .about-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* ===== PAKET SECTION ===== */
+  #paket .row {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+  #paket .col-md-6, #paket .col-lg-4 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  #paket .card-body {
+    padding: 20px;
+  }
+  #paket h4 {
+    font-size: 1.1rem;
+  }
+  #paket ul li {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  #paket .badge.fs-5 {
+    font-size: 0.9rem !important;
+    padding: 6px 14px;
+  }
+
+  /* ===== CTA SECTION ===== */
+  .cta-section .container {
+    padding: 48px 16px;
+    text-align: center;
+  }
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
+  .cta-section .btn {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  /* ===== MAP ===== */
+  #lokasi .ratio {
+    width: 100% !important;
+    max-width: 100%;
+  }
+  iframe {
+    max-width: 100%;
+  }
+
+  /* ===== FOOTER ===== */
+  footer .container {
+    padding: 24px 16px;
+    text-align: center;
+  }
+  .footer-social {
+    margin-bottom: 8px;
+  }
+  .footer-title::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/* ========================
+   HERO FIXED: SILENT LUXURY
+   ======================== */
+
+/* ========================
+   HERO: TACTICAL EXPEDITION (HUD STYLE)
+   ======================== */
+
+/* Import Fonts: Oswald (Tegas) & Space Mono (Teknis) */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --tac-red: #B3261E;       /* Brand Red */
+  --tac-white: #ffffff;
+  --tac-grid: rgba(255, 255, 255, 0.15);
+  --tac-black: #0f0f0f;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  margin-top: -72px; 
+  padding-top: 72px;
+  background-color: var(--tac-black);
+  overflow: hidden;
+  color: var(--tac-white);
+}
+
+/* 1. BACKGROUND */
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('canyoning.jpg') center center/cover no-repeat,
+              url('https://images.unsplash.com/photo-1544983808-118df283f32c?q=80&w=1920&auto=format&fit=crop') center center/cover no-repeat;
+  z-index: 0;
+  filter: saturate(0.8) contrast(1.1); /* Sedikit desaturated biar kesan dokumenter */
+  transform: scale(1);
+  transition: transform 20s;
+}
+.hero-section:hover .hero-bg { transform: scale(1.05); }
+
+/* Overlay Gelap Datar */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 15, 15, 0.5);
+  /* Pattern Grid Halus */
+  background-image: 
+    linear-gradient(var(--tac-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--tac-grid) 1px, transparent 1px);
+  background-size: 100px 100px; /* Ukuran kotak grid */
+  z-index: 1;
+}
+
+/* 2. HUD ELEMENTS (Dekorasi Teknis) */
+.hud-corner {
+  position: absolute;
+  width: 40px; height: 40px;
+  border: 2px solid rgba(255,255,255,0.5);
+  z-index: 5;
+  pointer-events: none;
+}
+.tl { top: 30px; left: 30px; border-right: none; border-bottom: none; }
+.tr { top: 30px; right: 30px; border-left: none; border-bottom: none; }
+.bl { bottom: 30px; left: 30px; border-right: none; border-top: none; }
+.br { bottom: 30px; right: 30px; border-left: none; border-top: none; }
+
+.hud-coordinates {
+  position: absolute;
+  bottom: 40px; right: 80px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  z-index: 5;
+  display: flex;
+  gap: 20px;
+}
+.hud-coordinates span { display: block; }
+
+/* 3. MAIN CONTENT (Left Aligned) */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding-left: 8vw; /* Layout Kiri */
+  padding-right: 5vw;
+  max-width: 1000px;
+}
+
+.tac-badge {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  background: var(--tac-red);
+  color: #fff;
+  padding: 4px 12px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 0.95;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+/* Outline Text Effect */
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  display: block;
+}
+
+.hero-desc {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 40px;
+  color: rgba(255,255,255,0.85);
+  border-left: 1px solid var(--tac-red);
+  padding-left: 20px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.4), transparent);
+}
+
+/* BUTTONS */
+.tac-btn-group {
+  display: flex;
+  gap: 0; /* Menempel */
+}
+
+.btn-tac {
+  position: relative;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  padding: 18px 40px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  backdrop-filter: blur(5px);
+}
+
+.btn-tac:hover {
+  background: #fff;
+  color: #000;
+}
+
+.btn-tac.primary {
+  background: var(--tac-red);
+  border-color: var(--tac-red);
+}
+.btn-tac.primary:hover {
+  background: #d9342b;
+  color: #fff;
+}
+
+/* ANIMATIONS */
+.hero-title, .hero-desc, .tac-btn-group {
+  opacity: 0;
+  animation: slideInLeft 0.8s ease forwards;
+}
+.hero-title { animation-delay: 0.2s; }
+.hero-desc { animation-delay: 0.4s; }
+.tac-btn-group { animation-delay: 0.6s; }
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-section {
+    align-items: flex-end; /* Konten di bawah */
+    padding-bottom: 80px;
+  }
+  .hero-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .hud-coordinates { display: none; }
+  .tac-btn-group {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+  .btn-tac { width: 100%; text-align: center; border-radius: 4px; }
+  .hero-overlay { background-size: 50px 50px; } /* Grid lebih kecil di HP */
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Canyoning Pacet Mojokerto",
+  "description": "Operator resmi canyoning Pacet Mojokerto di kawasan Padusan. Open Trip dan Private Trip canyoneering dengan standar keselamatan tinggi.",
+  "image": "https://domainkamu.com/assets/logo/logo-canyoning-pacet.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Pacet",
+    "addressRegion": "Jawa Timur",
+    "addressCountry": "ID"
+  },
+  "telephone": "+62895400520827",
+  "url": "https://domainkamu.com",
+  "sameAs": [
+    "https://www.google.com/maps/place/Wahana+Pemandian+Air+Panas+Padusan"
+  ]
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
+  <img
+    src="assets/logo/logo-canyoning-pacet.png"
+    alt="Canyoning Pacet Mojokerto"
+    class="navbar-logo"
+  >
+  <span>Canyoning Pacet</span>
+</a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="nav" class="collapse navbar-collapse justify-content-end">
+      <ul class="navbar-nav gap-3">
+        <li><a class="nav-link" href="#tentang">Tentang</a></li>
+        <li><a class="nav-link" href="#paket">Paket</a></li>
+        <li><a class="nav-link" href="schedule.html">Jadwal</a></li>
+        <li><a class="nav-link" href="#lokasi">Lokasi</a></li>
+        <li><a class="nav-link" href="#kontak">Kontak</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero-section">
+  
+  <div class="hero-bg"></div>
+  
+  <div class="hero-overlay"></div>
+
+  <div class="hud-corner tl"></div>
+  <div class="hud-corner tr"></div>
+  <div class="hud-corner bl"></div>
+  <div class="hud-corner br"></div>
+
+  <div class="hud-coordinates">
+    <span>LAT: 7.6713° S</span>
+    <span>LON: 112.5358° E</span>
+    <span>ALT: 800M</span>
+  </div>
+
+  <div class="hero-content">
+    
+    <div class="tac-badge">FEEL THE FRESH WATER & ENJOY THE FLOW</div>
+
+    <h1 class="hero-title">
+      CANYONING <span style="color:var(--tac-red)">PACET</span> <br>
+      <span class="outline-text">MOJOKERTO</span>
+    </h1>
+
+    <div class="hero-desc">
+      OPEN TRIP & PRIVATE TRIP<br>
+      Di Pacet Mojokerto Jelajah turun air terjun, dan petualangan alam seru bersama guide profesional.
+    </div>
+
+    <div class="tac-btn-group">
+      <a href="https://wa.me/62895400520827" target="_blank" class="btn-tac primary">
+        START MISSION
+      </a>
+      <a href="schedule.html" class="btn-tac">
+        VIEW SCHEDULE
+      </a>
+    </div>
+
+  </div>
+</section>
+</section>
+
+
+<!-- TENTANG -->
+<section id="tentang" class="section-padding">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+
+      <!-- TEKS -->
+      <div class="col-md-6">
+        <span class="badge mb-3" style="background:var(--brand-accent);color:#111">
+          Canyoning Resmi Padusan
+        </span>
+
+        <h2 class="fw-bold mb-3">
+          Pengalaman <span style="color:var(--brand-red)">Canyoning Pacet Mojokerto</span>
+          yang Aman & Berkesan
+        </h2>
+
+        <p class="fs-5">
+          <strong>Canyoning Pacet Mojokerto</strong> adalah operator wisata
+          petualangan resmi yang menghadirkan pengalaman
+          <em>canyoneering</em> terbaik di kawasan alam Padusan – Pacet.
+        </p>
+
+        <p>
+          Kami mengajak Anda menaklukkan air terjun, meluncur di aliran sungai,
+          dan melakukan rappelling dengan standar keselamatan tinggi,
+          dipandu oleh <strong>guide profesional & bersertifikat</strong>.
+        </p>
+
+        <ul class="list-unstyled mt-3 small">
+          <li>✅ Lokasi eksklusif Padusan Pacet</li>
+          <li>✅ Peralatan safety berstandar internasional</li>
+          <li>✅ Cocok untuk pemula hingga berpengalaman</li>
+          <li>✅ Open Trip & Private Trip tersedia</li>
+        </ul>
+
+        <div class="d-flex gap-3 mt-4 flex-wrap">
+          <a href="#paket" class="btn btn-accent fw-bold">
+            Lihat Paket
+          </a>
+
+          <a href="https://wa.me/62895400520827"
+             target="_blank"
+             class="btn btn-outline-dark fw-bold">
+            Chat WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- GAMBAR -->
+     <div class="col-md-6">
+  <div class="about-img-wrapper">
+    <img
+  src="canyoning.jpg"
+  alt="Canyoning Pacet Mojokerto di Padusan"
+  class="about-img"
+  loading="lazy"
+  width="800"
+  height="600"
+>
+
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PAKET -->
+<section id="paket" class="section-padding bg-light">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-2">Paket Canyoneering Pacet Mojokerto</h2>
+    <p class="text-center mb-5 fs-5">
+      Paket resmi <strong>Canyoning Pacet</strong> di kawasan Padusan – Mojokerto
+    </p>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- PAKET 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-lg h-100">
+          <div class="card-body p-4">
+            <h4 class="fw-bold text-center mb-2">Paket Explorer</h4>
+            <p class="text-center small mb-3">
+              Canyoneering Coban Cowang<br>
+              <em>"Feel The Fresh Water & Enjoy The Flow"</em>
+            </p>
+
+            <ul class="small mb-3">
+              <li>✅ Free tiket masuk wana wisata</li>
+              <li>✅ Unlimited foto & video</li>
+              <li>✅ Guide profesional</li>
+              <li>✅ Snack & makan siang 1x</li>
+              <li>✅ Melewati 2 air terjun</li>
+              <li>✅ Safety equipment (rappelling)</li>
+            </ul>
+
+            <div class="text-center my-3">
+              <span class="badge fs-5 px-3 py-2" style="background:var(--brand-red)">
+                Rp 300.000 / Pax
+              </span>
+            </div>
+
+            <p class="small">
+              <strong>Exclude:</strong><br>
+              Original video Drone Rp 50.000<br>
+              Cinematic edit Rp 100.000
+            </p>
+
+            <div class="text-center mt-3">
+              <a href="schedule.html" class="btn btn-accent fw-bold w-100">
+                Pilih Paket
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAKET 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-lg h-100 border-2"
+             style="border:2px solid var(--brand-accent)">
+          <div class="card-body p-4">
+            <span class="badge mb-2" style="background:var(--brand-accent);color:#111">
+              Paling Favorit
+            </span>
+
+            <h4 class="fw-bold text-center mb-2">Paket Adventure</h4>
+            <p class="text-center small mb-3">
+              Canyoneering Coban Cowang<br>
+              <em>"Feel The Fresh Water & Enjoy The Flow"</em>
+            </p>
+
+            <ul class="small mb-3">
+              <li>✅ Free tiket masuk wana wisata</li>
+              <li>✅ Unlimited foto & video</li>
+              <li>✅ Guide profesional</li>
+              <li>✅ Snack & makan siang 1x</li>
+              <li>✅ Melewati 2 air terjun</li>
+              <li>✅ Safety equipment (rappelling)</li>
+            </ul>
+
+            <div class="text-center my-3">
+              <span class="badge fs-5 px-3 py-2" style="background:var(--brand-red)">
+                Rp 300.000 / Pax
+              </span>
+            </div>
+
+            <p class="small">
+              <strong>Exclude:</strong><br>
+              Original video Drone Rp 50.000<br>
+              Cinematic edit Rp 100.000
+            </p>
+
+            <div class="text-center mt-3">
+              <a href="schedule.html" class="btn btn-accent fw-bold w-100">
+                Pilih Paket
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAKET 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-lg h-100">
+          <div class="card-body p-4">
+            <h4 class="fw-bold text-center mb-2">Paket Ultimate</h4>
+            <p class="text-center small mb-3">
+              Canyoneering Coban Cowang<br>
+              <em>"Feel The Fresh Water & Enjoy The Flow"</em>
+            </p>
+
+            <ul class="small mb-3">
+              <li>✅ Free tiket masuk wana wisata</li>
+              <li>✅ Unlimited foto & video</li>
+              <li>✅ Guide profesional</li>
+              <li>✅ Snack & makan siang 1x</li>
+              <li>✅ Melewati 2 air terjun</li>
+              <li>✅ Safety equipment (rappelling)</li>
+            </ul>
+
+            <div class="text-center my-3">
+              <span class="badge fs-5 px-3 py-2" style="background:var(--brand-red)">
+                Rp 300.000 / Pax
+              </span>
+            </div>
+
+            <p class="small">
+              <strong>Exclude:</strong><br>
+              Original video Drone Rp 50.000<br>
+              Cinematic edit Rp 100.000
+            </p>
+
+            <div class="text-center mt-3">
+              <a href="schedule.html" class="btn btn-accent fw-bold w-100">
+                Pilih Paket
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- LOKASI -->
+<section id="lokasi" class="section-padding">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-md-6">
+        <h2 class="fw-bold">Lokasi Basecamp</h2>
+        <p class="fs-5">
+          Basecamp Canyoning Pacet berada di
+          <strong>Wahana Pemandian Air Panas Padusan, Pacet Mojokerto</strong>.
+        </p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Wahana+Pemandian+Air+Panas+Padusan+Pacet"
+           target="_blank" class="btn btn-primary fw-bold">
+          Buka Google Maps
+        </a>
+      </div>
+      <div class="col-md-6">
+        <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow">
+          <iframe src="https://www.google.com/maps?q=Wahana%20Pemandian%20Air%20Panas%20Padusan%20Pacet&output=embed"
+            loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section position-relative text-white">
+  <div class="container py-5">
+    <div class="row align-items-center g-4">
+
+      <!-- TEKS -->
+      <div class="col-md-8">
+        <h2 class="fw-bold mb-3">
+          Siap Rasakan <span style="color:var(--brand-accent)">Petualangan Canyoning</span>
+          Terbaik di Pacet?
+        </h2>
+
+        <p class="fs-5 mb-4">
+          Jelajahi air terjun, rappelling, dan aliran sungai alami
+          bersama <strong>guide profesional</strong> dengan standar
+          keselamatan tinggi di kawasan <strong>Padusan Pacet Mojokerto</strong>.
+        </p>
+
+        <ul class="list-unstyled small mb-0">
+          <li>✅ Cocok untuk pemula & non-perenang</li>
+          <li>✅ Open Trip & Private Trip tersedia</li>
+          <li>✅ Basecamp resmi Padusan</li>
+        </ul>
+      </div>
+
+      <!-- BUTTON -->
+      <div class="col-md-4 text-md-end text-center">
+        <div class="d-flex flex-column gap-3">
+          <a href="schedule.html"
+             class="btn btn-accent fw-bold px-4 py-3 fs-5">
+            Lihat Jadwal Open Trip
+          </a>
+
+          <a href="https://wa.me/62895400520827?text=Halo%20saya%20ingin%20booking%20canyoning%20Pacet"
+             target="_blank"
+             class="btn btn-success fw-bold px-4 py-3 fs-5">
+            WhatsApp Booking
+          </a>
+
+          <span class="small opacity-75">
+            Respon cepat • Konsultasi gratis
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<!-- FOOTER -->
+<footer id="kontak" class="footer-adv position-relative">
+        <div class="footer-overlay"></div>
+
+        <div class="container position-relative">
+            <div class="d-flex justify-content-between align-items-start">
+
+                <div class="footer-col" style="flex:1 1 220px; min-width:220px;">
+                    <h5 class="fw-bold mb-2">Canyoning Pacet</h5>
+                    <p class="small opacity-75">
+                        Operator <strong>canyoning Pacet Mojokerto</strong> resmi
+                        di kawasan Padusan. Fokus pada keselamatan, pengalaman,
+                        dan petualangan alam terbaik.
+                    </p>
+                    <div class="d-flex gap-2 flex-wrap mt-2">
+                        <a href="https://wa.me/62895400520827" target="_blank" class="footer-social">
+                            WhatsApp
+                        </a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Wahana+Pemandian+Air+Panas+Padusan+Pacet" target="_blank" class="footer-social">
+                            Google Maps
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <div class="footer-col" style="flex:1 1 180px; min-width:180px;">
+                    <h6 class="footer-title">Kontak Resmi</h6>
+                    <p class="small mb-1">📍 Padusan, Pacet – Mojokerto</p>
+                    <p class="small mb-1">📞 WhatsApp<br>
+                        <a href="https://wa.me/62895400520827" target="_blank" class="footer-link fw-semibold">
+                            0895-4005-20827
+                        </a>
+                    </p>
+                    <p class="small mb-0">✉️ canyoningpacet@gmail.com</p>
+                </div>
+                
+                <div class="footer-col" style="flex:1 1 150px; min-width:150px;">
+                    <h6 class="footer-title">Navigasi</h6>
+                    <ul class="footer-menu">
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#paket">Paket Canyoning</a></li>
+                        <li><a href="schedule.html">Jadwal Open Trip</a></li>
+                        <li><a href="#lokasi">Lokasi Basecamp</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col" style="flex:1 1 150px; min-width:150px;">
+                    <h6 class="footer-title">Layanan</h6>
+                    <ul class="footer-menu">
+                        <li>Open Trip</li>
+                        <li>Private Trip</li>
+                        <li>Pemula & Non-Perenang</li>
+                        <li>Guide Profesional</li>
+                    </ul>
+                </div>
+
+                
+
+            </div>
+
+            <hr class="footer-line my-4">
+
+            <div class="d-flex flex-wrap justify-content-between small opacity-75">
+                <div>© 2025 <strong>Canyoning Pacet Mojokerto</strong>. All rights reserved.</div>
+                <div>Open Trip • Private Trip • Canyoning Pacet</div>
+            </div>
+        </div>
+    </footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
