@@ -4,375 +4,247 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jadwal Open Trip | Canyoning Pacet Mojokerto</title>
-
-    <meta name="description" content="Cek jadwal Open Trip Canyoning Pacet terbaru. Booking mudah via WhatsApp.">
-    <meta name="author" content="Canyoning Pacet">
-
+    <meta name="description" content="Cek ketersediaan slot Open Trip Canyoning Pacet secara Real-time. Booking mudah via WhatsApp.">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;700&family=Playfair+Display:wght@600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* =========================================
-           1. CORE VARIABLES & GLOBAL
-           ========================================= */
         :root {
-            /* Brand Identity */
+            /* === BRAND COLORS === */
             --brand-red: #B3261E;
             --brand-green: #4F8F63;
-            --brand-green-dark: #2F5D4A;
+            --brand-green-dark: #1b332b; 
             --brand-black: #1A1A1A;
             --brand-white: #F5F5F5;
             --brand-accent: #FACC15;
 
-            /* Functional Colors */
+            /* Functional */
             --wa-green: #25D366;
             --wa-dark: #075e54;
-            --body-bg: #f8f9fa;
-            --card-bg: #ffffff;
-            --border-color: #e5e7eb;
+            --body-bg: #fafafa;
+            
+            /* Typography */
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --font-tech: 'Space Mono', monospace;
         }
 
         body {
             padding-top: 72px;
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-body);
             background-color: var(--body-bg);
             color: var(--brand-black);
         }
 
-        @media (max-width: 768px) {
-            body { padding-top: 64px; }
+        /* TYPOGRAPHY OVERRIDES */
+        h1, h2, h3, h4, h5, .navbar-brand {
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        h1, h2, h3, h4, h5 { font-family: 'Oswald', sans-serif; font-weight: 700; }
-        .section-padding { padding: 60px 0; }
-
-        /* =========================================
-           2. NAVBAR (Dari Kode 1)
-           ========================================= */
-        .navbar-brand { color: var(--brand-red) !important; font-family: 'Oswald', sans-serif; letter-spacing: 0.5px; }
+        /* === NAVBAR === */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .navbar-brand { 
+            color: var(--brand-red) !important; 
+            font-weight: 700;
+            font-size: 1.35rem;
+        }
         .navbar-logo { height: 42px; width: auto; }
-        .nav-link { font-weight: 500; color: #374151; transition: 0.3s; }
+        .nav-link { 
+            font-weight: 600; 
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            color: var(--brand-black);
+        }
         .nav-link:hover, .nav-link.active { color: var(--brand-red) !important; }
-        @media (max-width:768px){ .navbar-logo{ height:34px; } }
 
-        /* =========================================
-           3. SCHEDULE UI (Tampilan Jadwal)
-           ========================================= */
+        @media (max-width: 768px) {
+            body { padding-top: 64px; }
+            .navbar-logo { height: 34px; }
+        }
+
+        /* === SCHEDULE SECTION === */
+        .section-padding { padding: 60px 0; }
+        
         .schedule-card {
-            background: var(--card-bg);
+            background: #fff;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             padding: 30px;
-            border: 1px solid rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
-        /* Dropdown */
-        .controls label { font-size: 0.85rem; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+        /* Dropdown Style */
+        .controls label { 
+            font-family: var(--font-heading);
+            font-size: 1rem; 
+            color: var(--brand-green-dark); 
+            letter-spacing: 1px;
+        }
         select#monthSelect {
-            width: 100%; max-width: 300px;
+            width: 100%; max-width: 320px;
             padding: 12px 16px;
             border: 2px solid var(--brand-green);
-            border-radius: 10px;
+            border-radius: 8px;
+            font-family: var(--font-body);
             font-weight: 600;
             color: var(--brand-green-dark);
-            background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232F5D4A'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 12px center;
-            background-size: 20px;
-            appearance: none; -webkit-appearance: none;
             cursor: pointer;
         }
-        select#monthSelect:focus { outline: none; box-shadow: 0 0 0 4px rgba(79, 143, 99, 0.2); }
+        select#monthSelect:focus { outline: none; box-shadow: 0 0 0 4px rgba(79, 143, 99, 0.1); }
 
-        /* Table */
-        .table-custom { width: 100%; border-collapse: separate; border-spacing: 0; }
+        /* Table Styling */
+        .table-custom { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 20px; }
         .table-custom thead th {
             background: var(--brand-green-dark);
             color: #fff;
-            padding: 16px;
-            font-family: 'Montserrat', sans-serif;
+            padding: 18px;
+            font-family: var(--font-heading);
+            font-weight: 500;
             text-transform: uppercase;
-            font-size: 0.85rem;
             letter-spacing: 1px;
+            font-size: 1rem;
         }
-        .table-custom th:first-child { border-top-left-radius: 10px; }
-        .table-custom th:last-child { border-top-right-radius: 10px; }
-        .table-custom td { padding: 16px; border-bottom: 1px solid var(--border-color); vertical-align: middle; font-weight: 500; }
+        .table-custom th:first-child { border-top-left-radius: 12px; }
+        .table-custom th:last-child { border-top-right-radius: 12px; }
         
-        /* Pills & Buttons */
-        .badge-slot { display: inline-block; padding: 6px 12px; border-radius: 50px; font-weight: 700; font-size: 0.8rem; color: #fff; min-width: 80px; text-align: center; }
+        .table-custom td { 
+            padding: 18px; 
+            border-bottom: 1px solid #eee; 
+            vertical-align: middle; 
+            font-weight: 500;
+            color: #444;
+        }
+        .table-custom tr:last-child td { border-bottom: none; }
+
+        /* Badge Slot (Tech Look) */
+        .badge-slot { 
+            display: inline-block; 
+            padding: 6px 14px; 
+            border-radius: 4px;
+            font-family: var(--font-tech); 
+            font-weight: 700; 
+            font-size: 0.8rem; 
+            color: #fff; 
+            min-width: 90px; 
+            text-align: center; 
+        }
         .bg-available { background-color: var(--brand-green); }
         .bg-full { background-color: var(--brand-red); }
 
+        /* Buttons */
         .btn-daftar {
-            background: linear-gradient(135deg, var(--wa-green), var(--wa-dark));
-            color: white; border: none; padding: 8px 20px; border-radius: 50px;
-            font-weight: 600; font-size: 0.9rem; transition: transform 0.2s;
+            background: var(--brand-green-dark);
+            color: white; border: none; padding: 10px 24px; border-radius: 50px;
+            font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 1px;
+            font-size: 0.9rem; transition: all 0.2s;
             display: inline-flex; align-items: center; gap: 8px;
         }
-        .btn-daftar:hover { transform: translateY(-2px); color: #fff; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); }
+        .btn-daftar:hover { 
+            background: var(--brand-accent); 
+            color: var(--brand-black); 
+            transform: translateY(-2px); 
+        }
 
         .btn-export {
-            background-color: var(--brand-accent); color: var(--brand-black);
-            font-weight: 700; border: none; border-radius: 50px;
-            padding: 12px 30px; margin-top: 20px; transition: 0.3s;
+            background-color: var(--brand-red); 
+            color: white;
+            font-family: var(--font-heading);
+            font-weight: 500; letter-spacing: 1px; text-transform: uppercase;
+            border: none; border-radius: 8px;
+            padding: 14px 30px; margin-top: 25px; transition: 0.3s;
         }
-        .btn-export:hover { background-color: #eab308; }
+        .btn-export:hover { background-color: #d32f2f; transform: translateY(-2px); }
 
-        /* =========================================
-           4. MODAL UI
-           ========================================= */
+        /* === MODAL === */
         .backdrop {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+            position: fixed; inset: 0; background: rgba(0,0,0,0.7);
             display: none; justify-content: center; align-items: center; z-index: 9999;
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(5px);
         }
         .backdrop.show { display: flex; animation: fadeIn 0.3s; }
         .modal-box {
-            background: #fff; width: 90%; max-width: 450px;
-            padding: 25px; border-radius: 16px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            background: #fff; width: 90%; max-width: 480px;
+            padding: 30px; border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             animation: slideUp 0.3s;
         }
+        .modal-box h3 { color: var(--brand-red); margin-bottom: 20px; }
         .modal-box input, .modal-box textarea {
-            width: 100%; padding: 10px; border: 1px solid #ccc;
-            border-radius: 8px; margin-top: 5px; font-family: 'Inter', sans-serif;
+            width: 100%; padding: 12px; border: 1px solid #ddd;
+            border-radius: 8px; margin-top: 5px; font-family: var(--font-body);
         }
+        .modal-box input:focus, .modal-box textarea:focus {
+            outline: none; border-color: var(--brand-green);
+        }
+
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes slideUp { from { transform: translateY(20px); } to { transform: translateY(0); } }
 
-        /* =========================================
-           5. FOOTER (PERSIS KODE 1)
-           ========================================= */
-        .footer-adv {
-            background: var(--brand-green-dark);
-            color: #f5f5f5;
-            padding: 40px 0 20px;
-            position: relative;
-        }
-
-        .footer-overlay {
-            position: absolute;
-            inset: 0;
-            background: url('assets/texture/grunge-texture.png') repeat; /* Pastikan path benar atau kosongkan jika tidak ada */
-            opacity: .12;
-            pointer-events: none;
-        }
-
-        .footer-title {
-            font-weight: 700;
-            margin-bottom: 12px;
-            position: relative;
-            font-family: 'Oswald', sans-serif;
-            color: #fff;
-        }
-
-        .footer-title::after {
-            content: "";
-            display: block;
-            width: 36px;
-            height: 3px;
-            background: var(--brand-accent);
-            margin-top: 4px;
-        }
-
-        .footer-menu { padding-left: 0; list-style: none; }
-        .footer-menu li { margin-bottom: 6px; font-size: 0.9rem; opacity: .85; }
-        .footer-menu a { color: #d1d5db; text-decoration: none; transition: 0.2s; }
-        .footer-menu a:hover { color: var(--brand-accent); text-decoration: underline; }
-
-        .footer-link { color: #e5e7eb; text-decoration: none; }
-        .footer-link:hover { color: var(--brand-accent); }
-
-        .footer-social {
-            display: inline-block;
-            padding: 6px 12px;
-            border: 1px solid rgba(255,255,255,.25);
-            border-radius: 20px;
-            font-size: .8rem;
-            color: #fff;
-            text-decoration: none;
-        }
-        .footer-social:hover {
-            background: var(--brand-accent);
-            color: #111;
-            border-color: var(--brand-accent);
-        }
-
-        .footer-line { border-color: rgba(255,255,255,.15); }
-        .footer-col { flex: 0 0 auto; min-width: 180px; }
-
-        /* Scroll Horizontal Footer di Mobile (Fitur Khas Kode 1) */
-        @media (max-width: 768px) {
-            .footer-adv .container > .d-flex {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                justify-content: flex-start;
-                align-items: flex-start;
-                gap: 20px;
-                overflow-x: auto;
-                padding-bottom: 15px; /* Space scrollbar */
-            }
-            .footer-col {
-                min-width: 200px; /* Sedikit lebih lebar di mobile agar rapi */
-                text-align: left;
-            }
+        /* === FOOTER === */
+        footer {
+            background-color: var(--brand-green-dark);
+            color: #e0e0e0; padding-top: 80px; padding-bottom: 30px;
+            font-family: var(--font-body); position: relative; overflow: hidden;
+            margin-top: 80px;
         }
         footer::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  /* Pola garis topografi SVG yang sangat halus */
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-  pointer-events: none;
-}
+            content: ''; position: absolute; inset: 0; opacity: 0.05; pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415-.828-.828-.828.828-1.415-1.415.828-.828-.828-.828 1.415-1.415.828.828.828-.828 1.415 1.415-.828.828zM22.485 0l.83.828-1.415 1.415-.828-.828-.828.828-1.415-1.415.828-.828-.828-.828 1.415-1.415.828.828.828-.828 1.415 1.415-.828.828zM0 22.485l.828.83-1.415 1.415-.828-.828-.828.828L-3.658 22.485l.828-.828-.828-.828 1.415-1.415.828.828.828-.828 1.415 1.415-.828.828zM0 54.627l.828.83-1.415 1.415-.828-.828-.828.828L-3.658 54.627l.828-.828-.828-.828 1.415-1.415.828.828.828-.828 1.415 1.415-.828.828zM54.627 60l.83-.828-1.415-1.415-.828.828-.828-.828-1.415 1.415.828.828-.828.828 1.415 1.415.828-.828.828.828 1.415-1.415-.828-.828zM22.485 60l.83-.828-1.415-1.415-.828.828-.828-.828-1.415 1.415.828.828-.828.828 1.415 1.415.828-.828.828.828 1.415-1.415-.828-.828z' fill='%23ffffff' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        .footer-title {
+            color: #fff; font-size: 1.2rem; margin-bottom: 1.2rem;
+            border-bottom: 2px solid var(--brand-accent); display: inline-block; padding-bottom: 5px;
+        }
+        .footer-menu { list-style: none; padding: 0; }
+        .footer-menu li { margin-bottom: 10px; }
+        .footer-menu a { color: #ccc; text-decoration: none; transition: 0.2s; }
+        .footer-menu a:hover { color: var(--brand-accent); padding-left: 5px; }
+        .footer-social {
+            display: inline-block; padding: 8px 16px; border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50px; color: #fff; text-decoration: none; margin-right: 5px; margin-bottom: 10px;
+        }
+        .footer-social:hover { background: var(--brand-accent); color: #000; border-color: var(--brand-accent); }
+        .footer-col { min-width: 180px; margin-bottom: 30px; }
 
-.footer-content-wrapper {
-  position: relative;
-  z-index: 2;
-}
+        @media (max-width: 768px) {
+            .footer-scroll-wrapper {
+                display: flex; gap: 30px; overflow-x: auto; padding-bottom: 20px;
+            }
+            .footer-col { min-width: 200px; margin-bottom: 0; }
+        }
 
-/*=== KOLOM BRAND & NAVIGASI ===*/
-.footer-brand h5 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 1.2rem;
-  color: #fff;
-  letter-spacing: 0.5px;
-}
-
-.footer-brand p {
-  line-height: 1.7;
-  opacity: 0.85;
-  margin-bottom: 2rem;
-}
-
-.footer-heading {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li {
-  margin-bottom: 14px;
-}
-
-.footer-links a, 
-.footer-links li {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* Icon panah kecil di menu */
-.footer-links a::before {
-  content: '›';
-  color: var(--brand-accent);
-  font-weight: bold;
-  opacity: 0.7;
-  transition: all 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: var(--brand-accent);
-  padding-left: 5px;
-}
-.footer-links a:hover::before {
-  opacity: 1;
-  margin-right: 3px;
-}
-
-/*=== KARTU KONTAK (Highlight Area) ===*/
-.contact-card {
-  background: rgba(255, 255, 255, 0.06); /* Latar belakang semi-transparan */
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  padding: 35px;
-  height: 100%; /* Agar tingginya sama dengan kolom lain */
-}
-
-.contact-card .footer-heading {
-  color: var(--brand-accent); /* Judul kontak jadi kuning */
-}
-
-.contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-.contact-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.contact-icon {
-  font-size: 1.2rem;
-  color: var(--brand-accent);
-  padding-top: 3px;
-}
-
-.contact-details span.label {
-  display: block;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  opacity: 0.6;
-  margin-bottom: 5px;
-  letter-spacing: 1px;
-}
-.contact-details span.value,
-.contact-details a.value {
-  display: block;
-  color: #fff;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  line-height: 1.4;
-}
-.contact-details a.value:hover {
-  color: var(--brand-accent);
-  text-decoration: underline;
-}
-
-
-        /* =========================================
-           6. POSTER EXPORT
-           ========================================= */
+        /* === POSTER EXPORT CSS === */
         #exportPoster { display: none; }
         body.exporting #exportPoster { display: block; }
         .export-area { width: 1080px; max-width: 1080px; margin: 0 auto; overflow: hidden; }
         
-        .poster * { font-family: 'Montserrat', sans-serif !important; }
         .poster {
             width: 1080px; height: 1920px; padding: 80px; box-sizing: border-box;
-            background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('assets/images/canyoning.jpg');
+            background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('canyoning.jpg');
             background-size: cover; background-position: center; color: white; position: relative;
+            font-family: var(--font-body) !important;
         }
+        /* Fonts di Poster disesuaikan dengan tema baru */
+        .poster h2, .poster h3 { font-family: var(--font-heading) !important; }
+        
         .poster-title h2 { font-size: 80px; color: var(--brand-accent); margin: 0; text-align: center; }
-        .poster-title h3 { font-size: 50px; text-align: center; margin-bottom: 40px; }
+        .poster-title h3 { font-size: 50px; text-align: center; margin-bottom: 40px; color: #fff; }
         .poster-grid { display: grid; grid-template-columns: 1fr 4px 1fr; gap: 40px; margin-top: 40px; }
         .poster-divider { background: rgba(255,255,255,0.3); height: 100%; border-radius: 4px; }
         .row-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.15); }
-        .row-date { font-size: 26px; font-weight: 700; }
-        .row-pill { padding: 8px 24px; border-radius: 50px; font-weight: 800; font-size: 20px; background: var(--brand-green); color: white; }
+        .row-date { font-size: 26px; font-weight: 700; font-family: var(--font-tech) !important; }
+        .row-pill { padding: 8px 24px; border-radius: 8px; font-weight: 800; font-size: 20px; background: var(--brand-green); color: white; font-family: var(--font-heading) !important; letter-spacing: 1px; }
         .row-pill.full { background: var(--brand-red); }
 
         .hide-on-export { }
@@ -382,25 +254,27 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <img src="assets/logo/logo-canyoning-pacet.png" alt="Logo" class="navbar-logo">
-                <span>Canyoning Pacet</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="nav" class="collapse navbar-collapse justify-content-end">
-                <ul class="navbar-nav gap-3">
-                    <li class="nav-item"><a class="nav-link" href="index.html#tentang">Tentang</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#paket">Paket</a></li>
-                    <li class="nav-item"><a class="nav-link active fw-bold" href="#">Jadwal</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#lokasi">Lokasi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="assets/logo/logo-canyoning-pacet.png" alt="Logo Canyoning Pacet" class="navbar-logo">
+          <span>CANYONING PACET</span>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="nav" class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav gap-lg-4 pt-3 pt-lg-0">
+            <li><a class="nav-link" href="index.html#tentang">Tentang</a></li>
+            <li><a class="nav-link" href="index.html#paket">Paket Trip</a></li>
+            <li><a class="nav-link active" style="color:var(--brand-red)!important" href="#">Jadwal</a></li>
+            <li><a class="nav-link" href="index.html#lokasi">Lokasi</a></li>
+            <li><a class="nav-link" href="#kontak">Kontak</a></li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <section class="section-padding">
@@ -409,28 +283,28 @@
                 <div class="col-lg-10">
                     
                     <div class="text-center mb-5">
-                        <h1 class="display-5 mb-2">JADWAL OPEN TRIP</h1>
-                        <p class="text-muted fs-5">Cek ketersediaan slot canyoning secara real-time.</p>
+                        <h1 class="display-4 mb-2 fw-bold">JADWAL OPEN TRIP</h1>
+                        <p class="text-muted fs-5">Informasi ketersediaan slot trip Canyoning Pacet.</p>
                     </div>
 
                     <div class="schedule-card">
                         <div class="controls text-center mb-4">
-                            <label for="monthSelect" class="d-block mb-2">PILIH BULAN KEBERANGKATAN</label>
+                            <label for="monthSelect" class="d-block mb-2">PILIH BULAN</label>
                             <select id="monthSelect"></select>
                         </div>
 
-                        <div id="loading" class="text-center py-4">
-                            <div class="spinner-border text-success" role="status"></div>
-                            <p class="mt-2 fw-semibold text-muted">Mengambil data dari server...</p>
+                        <div id="loading" class="text-center py-5">
+                            <div class="spinner-border text-danger" role="status"></div>
+                            <p class="mt-3 fw-bold text-muted" style="font-family:var(--font-tech)">LOADING DATA...</p>
                         </div>
 
                         <div id="jadwal-wrapper" class="table-responsive" style="display:none;">
                             <table class="table-custom" id="tripTable">
                                 <thead>
                                     <tr>
-                                        <th width="40%">Tanggal</th>
+                                        <th width="40%">Tanggal Trip</th>
                                         <th width="30%" class="text-center">Sisa Slot</th>
-                                        <th width="30%" class="text-center hide-on-export">Aksi</th>
+                                        <th width="30%" class="text-center hide-on-export">Booking</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tableBody"></tbody>
@@ -439,7 +313,7 @@
 
                         <div class="text-center">
                             <button id="btnExport" class="btn-export d-none">
-                                📸 Download Poster Jadwal
+                                📸 Download Poster
                             </button>
                         </div>
                     </div>
@@ -450,100 +324,85 @@
 
     <div id="modalBackdrop" class="backdrop">
         <div class="modal-box">
-            <h3 class="mb-3" style="color:var(--brand-green-dark)">Form Pendaftaran</h3>
-            <div id="selectedDateText" class="text-muted small mb-3 pb-2 border-bottom"></div>
+            <h3 class="fw-bold">FORMULIR BOOKING</h3>
+            <div id="selectedDateText" class="text-muted small mb-3 pb-2 border-bottom" style="font-family: var(--font-tech);"></div>
             
             <label class="small fw-bold text-muted">Nama Lengkap</label>
             <input type="text" id="inputName" placeholder="Masukkan nama pemesan">
 
             <div class="row g-2 mt-2">
                 <div class="col-6">
-                    <label class="small fw-bold text-muted">Jumlah Peserta</label>
+                    <label class="small fw-bold text-muted">Jumlah Pax</label>
                     <input type="number" id="inputQty" min="1" value="1">
                 </div>
                 <div class="col-6">
-                    <label class="small fw-bold text-muted">No. WhatsApp</label>
+                    <label class="small fw-bold text-muted">WhatsApp</label>
                     <input type="text" id="inputPhone" placeholder="08xx...">
                 </div>
             </div>
 
             <label class="small fw-bold text-muted mt-2">Catatan (Opsional)</label>
-            <textarea id="inputNote" rows="2" placeholder="Contoh: Request sepatu size 42"></textarea>
+            <textarea id="inputNote" rows="2" placeholder="Contoh: Request sepatu size 42..."></textarea>
 
             <div class="d-flex justify-content-end gap-2 mt-4">
                 <button id="btnCancel" class="btn btn-light rounded-pill px-4 fw-bold">Batal</button>
-                <button id="btnSend" class="btn btn-success rounded-pill px-4 fw-bold" style="background:var(--brand-green-dark)">Kirim Booking</button>
+                <button id="btnSend" class="btn btn-danger rounded-pill px-4 fw-bold" style="background:var(--brand-red); color:#fff;">Kirim Booking</button>
             </div>
         </div>
     </div>
 
     <div id="exportPoster"></div>
 
-    <footer id="kontak" class="footer-adv position-relative">
-        <div class="footer-overlay"></div>
-
-        <div class="container position-relative">
-            <div class="d-flex justify-content-between align-items-start">
-
-                <div class="footer-col" style="flex:1 1 220px; min-width:220px;">
-                    <h5 class="fw-bold mb-2">Canyoning Pacet</h5>
-                    <p class="small opacity-75">
-                        Operator <strong>canyoning Pacet Mojokerto</strong> resmi
-                        di kawasan Padusan. Fokus pada keselamatan, pengalaman,
-                        dan petualangan alam terbaik.
+    <footer id="kontak">
+        <div class="container">
+            <div class="row g-4 footer-scroll-wrapper">
+                
+                <div class="col-lg-4 col-md-6 footer-col">
+                    <h5 class="fw-bold text-white mb-3" style="font-family: var(--font-heading); font-size: 1.5rem;">
+                        CANYONING PACET
+                    </h5>
+                    <p class="small opacity-75 mb-4">
+                        Penyedia layanan wisata minat khusus (adventure) terbaik di Mojokerto. Menghadirkan pengalaman canyoning yang aman, seru, dan tak terlupakan.
                     </p>
-                    <div class="d-flex gap-2 flex-wrap mt-2">
-                        <a href="https://wa.me/62895400520827" target="_blank" class="footer-social">
-                            WhatsApp
-                        </a>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Wahana+Pemandian+Air+Panas+Padusan+Pacet" target="_blank" class="footer-social">
-                            Google Maps
-                        </a>
+                    <div>
+                        <a href="#" class="footer-social">Instagram</a>
+                        <a href="#" class="footer-social">TikTok</a>
                     </div>
                 </div>
 
-
-
-                <div class="footer-col" style="flex:1 1 180px; min-width:180px;">
-                    <h6 class="footer-title">Kontak Resmi</h6>
-                    <p class="small mb-1">📍 Padusan, Pacet – Mojokerto</p>
-                    <p class="small mb-1">📞 WhatsApp<br>
-                        <a href="https://wa.me/62895400520827" target="_blank" class="footer-link fw-semibold">
-                            0895-4005-20827
-                        </a>
-                    </p>
-                    <p class="small mb-0">✉️ canyoningpacet@gmail.com</p>
-                </div>
-
-                <div class="footer-col" style="flex:1 1 150px; min-width:150px;">
-                    <h6 class="footer-title">Navigasi</h6>
-                    <ul class="footer-menu">
-                        <li><a href="#tentang">Tentang Kami</a></li>
-                        <li><a href="#paket">Paket Canyoning</a></li>
-                        <li><a href="schedule.html">Jadwal Open Trip</a></li>
-                        <li><a href="#lokasi">Lokasi Basecamp</a></li>
+                <div class="col-lg-3 col-md-6 footer-col">
+                    <h6 class="footer-title">Kontak Kami</h6>
+                    <ul class="list-unstyled small opacity-90">
+                        <li class="mb-2">📞 <strong class="text-white">0895-4005-20827</strong> (WhatsApp)</li>
+                        <li class="mb-2">📧 canyoningpacet@gmail.com</li>
+                        <li>📍 Padusan, Pacet, Mojokerto,<br>Jawa Timur, Indonesia</li>
                     </ul>
                 </div>
 
-                <div class="footer-col" style="flex:1 1 150px; min-width:150px;">
-                    <h6 class="footer-title">Layanan</h6>
-                    <ul class="footer-menu">
-                        <li>Open Trip</li>
-                        <li>Private Trip</li>
-                        <li>Pemula & Non-Perenang</li>
-                        <li>Guide Profesional</li>
+                <div class="col-lg-2 col-md-6 footer-col">
+                    <h6 class="footer-title">Menu</h6>
+                    <ul class="footer-menu small">
+                        <li><a href="index.html#tentang">Tentang Kami</a></li>
+                        <li><a href="index.html#paket">Pilihan Paket</a></li>
+                        <li><a href="#">Jadwal Trip</a></li>
                     </ul>
                 </div>
 
-                
+                <div class="col-lg-3 col-md-6 footer-col">
+                    <h6 class="footer-title">Info</h6>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-secondary fw-normal">#CanyoningPacet</span>
+                        <span class="badge bg-secondary fw-normal">#WisataMojokerto</span>
+                        <span class="badge bg-secondary fw-normal">#Rappelling</span>
+                    </div>
+                </div>
 
             </div>
 
-            <hr class="footer-line my-4">
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 40px 0;">
 
-            <div class="d-flex flex-wrap justify-content-between small opacity-75">
-                <div>© 2025 <strong>Canyoning Pacet Mojokerto</strong>. All rights reserved.</div>
-                <div>Open Trip • Private Trip • Canyoning Pacet</div>
+            <div class="text-center small opacity-50">
+                © 2025 Canyoning Pacet Mojokerto. All Rights Reserved.
             </div>
         </div>
     </footer>
@@ -551,7 +410,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        /* CONFIGURATION */
+        /* LOGIC TIDAK DIUBAH, HANYA STYLE DALAM POSTER */
         const CONFIG = {
             apiURL: "https://script.google.com/macros/s/AKfycbwoQKn-H3UjntAj1onCpgsOFN1PPM3b71xAB1iS9ROfDmwKyL9gVg89MX8S8uTj_N3x/exec",
             saveURL: "https://script.google.com/macros/s/AKfycbywQBG9xMDjRshEg07HFuGDuHwyTIKHRJEmXSbxEqj8OU1PJIYnWUi63v72h14TaxzL/exec",
@@ -559,7 +418,6 @@
             waNumber: "62895400520827"
         };
 
-        /* STATE & ELEMENTS */
         let sheetsData = [];
         let currentSelectedDateISO = null;
         
@@ -654,11 +512,11 @@
                     if(sisa > 0) {
                         const btn = document.createElement("button");
                         btn.className = "btn-daftar";
-                        btn.innerHTML = `<span>DAFTAR</span> <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/></svg>`;
+                        btn.innerHTML = `<span>BOOKING</span> <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/></svg>`;
                         btn.onclick = () => openModal(row[0], dateStr);
                         tdAction.appendChild(btn);
                     } else {
-                        tdAction.innerHTML = "<span class='text-muted'>-</span>";
+                        tdAction.innerHTML = "<span class='text-muted small'> - </span>";
                     }
                     tr.appendChild(tdAction);
                     
@@ -689,7 +547,7 @@
 
             const d = new Date(currentSelectedDateISO);
             const dateShort = d.toLocaleDateString("id-ID", { day:"numeric", month:"long", year:"numeric" });
-            let msg = `Halo Admin TOS Adventure, saya ingin booking Open Trip.\n\n📅 Tanggal: ${dateShort}\n👤 Nama: ${name}\n👥 Jumlah: ${qty} Pax\n`;
+            let msg = `Halo Admin Canyoning Pacet, saya ingin booking Open Trip.\n\n📅 Tanggal: ${dateShort}\n👤 Nama: ${name}\n👥 Jumlah: ${qty} Pax\n`;
             if(phone) msg += `📞 No HP: ${phone}\n`;
             if(note) msg += `📝 Catatan: ${note}\n`;
             
@@ -706,7 +564,7 @@
         els.btnSend.onclick = sendBooking;
         els.modal.onclick = (e) => { if(e.target === els.modal) closeModal(); };
 
-        /* 4. POSTER GENERATOR */
+        /* 4. POSTER GENERATOR (UPDATED FONT STYLES) */
         function createPosterHTML(sheetName) {
             const sheet = sheetsData.find(s => s.sheetName === sheetName);
             if(!sheet) return "";
@@ -725,22 +583,22 @@
             const renderRow = (item) => {
                 const dateStr = item.d.toLocaleDateString("id-ID", { day:"2-digit", month:"short" }).toUpperCase();
                 const sisa = Math.max(0, CONFIG.maxSlot - item.sold);
-                const cssClass = sisa > 0 ? "bg-available" : "bg-full";
                 const text = sisa === 0 ? "FULL" : `${sisa} PAX`;
                 return `<div class="row-item"><div class="row-date">${dateStr}</div><div class="row-slot"><span class="row-pill ${sisa > 0 ? '' : 'full'}">${text}</span></div></div>`;
             };
 
+            // Poster styles updated to use Oswald & Jakarta Sans
             return `
             <div class="poster">
                 <div class="text-center mb-4"><img src="assets/logo/logo-canyoning-pacet.png" style="width:250px;"></div>
                 <div class="poster-title"><h2>JADWAL OPEN TRIP</h2><h3>${sheetName.toUpperCase()}</h3></div>
                 <div class="poster-grid"><div>${left.map(renderRow).join("")}</div><div class="poster-divider"></div><div>${right.map(renderRow).join("")}</div></div>
                 <div style="margin-top:60px; text-align:center; background:rgba(255,255,255,0.15); padding:30px; border-radius:20px; border:2px solid rgba(255,255,255,0.3);">
-                    <h3 style="color:var(--brand-accent); font-weight:800;">INFO PEMESANAN</h3>
-                    <ul style="list-style:none; padding:0; font-size:24px; font-weight:500;"><li>✅ Minimal 1 Orang Bisa Join</li><li>📅 Reschedule Maksimal H-3</li><li>❌ Pembatalan Hari H = DP Hangus</li></ul>
-                    <div style="font-size:28px; font-weight:700; margin-top:20px;">DP: BCA 6140846421 (M Fatichul Ichsan)</div>
+                    <h3 style="color:#FACC15; font-weight:800;">INFO PEMESANAN</h3>
+                    <ul style="list-style:none; padding:0; font-size:24px; font-weight:500;"><li>✅ Minimal 5 Orang , Kurang dari 5 Bisa join Open Trip</li><li>📅 Reschedule Maksimal H-2</li><li>❌ Pembatalan Hari H = DP Hangus</li></ul>
+                    <div style="font-size:28px; font-weight:700; margin-top:20px;">DP: BCA 6140846421 (Muhammad Fatichul Ichsan)</div>
                 </div>
-                <div style="position:absolute; bottom:50px; width:100%; left:0; text-align:center; font-size:24px; font-weight:600;">📷 @tosraftingadventure | 🌐 wisataraftingpacet.com</div>
+                <div style="position:absolute; bottom:50px; width:100%; left:0; text-align:center; font-size:24px; font-weight:600;">📷 @canyoningpacet | 🌐 canyoningpacet.com</div>
             </div>`;
         }
 
@@ -769,7 +627,7 @@
             finally {
                 document.body.classList.remove("exporting");
                 els.exportContainer.innerHTML = "";
-                els.btnExport.textContent = "📸 Download Poster Jadwal";
+                els.btnExport.textContent = "📸 Download Poster Poster";
             }
         }
         els.btnExport.onclick = doExport;
