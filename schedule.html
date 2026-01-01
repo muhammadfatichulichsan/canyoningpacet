@@ -302,8 +302,8 @@
                             <table class="table-custom" id="tripTable">
                                 <thead>
                                     <tr>
-                                        <th width="40%">Tanggal Trip</th>
-                                        <th width="30%" class="text-center">Sisa Slot</th>
+                                        <th width="30%">Tanggal Trip</th>
+                                        <th width="20%" class="text-center">Sisa Slot</th>
                                         <th width="30%" class="text-center hide-on-export">Booking</th>
                                     </tr>
                                 </thead>
@@ -336,8 +336,8 @@
                     <input type="number" id="inputQty" min="1" value="1">
                 </div>
                 <div class="col-6">
-                    <label class="small fw-bold text-muted">WhatsApp</label>
-                    <input type="text" id="inputPhone" placeholder="08xx...">
+                    <label class="small fw-bold text-muted">No.WhatsApp</label>
+                    <input type="text" id="inputPhone"  placeholder="08xx...">
                 </div>
             </div>
 
@@ -547,10 +547,11 @@
 
             const d = new Date(currentSelectedDateISO);
             const dateShort = d.toLocaleDateString("id-ID", { day:"numeric", month:"long", year:"numeric" });
-            let msg = `Halo Admin Canyoning Pacet, saya ingin daftar Open Trip Canyoneering tanggal: ${dateShort}\n👤 Nama: ${name}\n👥 Jumlah: ${qty} Pax\n`;
-            if(phone) msg += `📞 No HP: ${phone}\n`;
-            if(note) msg += `📝 Catatan: ${note}\n`;
-            
+            let msg = `Halo Admin Canyoning Pacet, saya ingin booking Open Trip.\n\n Nama: ${name}\n Tanggal: ${dateShort}\n Jumlah: ${qty} Pax\n`;
+            if(phone) msg += ` No HP: ${phone}\n`;
+            if(note) msg += ` Catatan: ${note}\n`;
+            msg += `\nMohon konfirmasi ya. Terima kasih.`;
+
             window.open(`https://wa.me/${CONFIG.waNumber}?text=${encodeURIComponent(msg)}`, "_blank");
             
             fetch(CONFIG.saveURL, {
@@ -590,15 +591,28 @@
             // Poster styles updated to use Oswald & Jakarta Sans
             return `
             <div class="poster">
-                <div class="text-center mb-4"><img src="assets/logo/logo-canyoning-pacet.png" style="width:250px;"></div>
-                <div class="poster-title"><h2>JADWAL OPEN TRIP</h2><h3>${sheetName.toUpperCase()}</h3></div>
-                <div class="poster-grid"><div>${left.map(renderRow).join("")}</div><div class="poster-divider"></div><div>${right.map(renderRow).join("")}</div></div>
-                <div style="margin-top:60px; text-align:center; background:rgba(255,255,255,0.15); padding:30px; border-radius:20px; border:2px solid rgba(255,255,255,0.3);">
-                    <h3 style="color:#FACC15; font-weight:800;">INFO PEMESANAN</h3>
-                    <ul style="list-style:none; padding:0; font-size:24px; font-weight:500;"><li>✅ Minimal 5 Orang , Kurang dari 5 Bisa join Open Trip</li><li>📅 Reschedule Maksimal H-2</li><li>❌ Pembatalan Hari H = DP Hangus</li></ul>
-                    <div style="font-size:28px; font-weight:700; margin-top:20px;">DP: BCA 6140846421 (Muhammad Fatichul Ichsan)</div>
+                <div class="text-center mb-4">
+                <img src="assets/logo/logo-canyoning-pacet.png" style="width:250px;"></div>
+                <div class="poster-title"><h2>JADWAL OPEN TRIP</h2>
+                <h3>${sheetName.toUpperCase()}</h3></div>
+                <div class="poster-grid">
+                <div>${left.map(renderRow).join("")}</div>
+                <div class="poster-divider"></div><div>${right.map(renderRow).join("")}</div></div>
+                <div style="margin-top:60px; ; background:rgba(255,255,255,0.15); padding:30px; border-radius:20px; border:2px solid rgba(255,255,255,0.3);">
+                    <h3 style="color:#FACC15; font-weight:800; text-align:center;">INFO PEMESANAN</h3>
+                    <ul style="list-style:none; padding:0; font-size:24px; font-weight:500;">
+                        <li>Minimal keberangkatan <b>5 peserta</b>.</li>
+                        <li>Bisa join open trip jika kurang dari 5 orang.</li>
+                        <li>Konfirmasi peserta / reschedule maksimal <b>H-1</b>.</li>
+                        <li>Pembatalan hari-H → <b>DP hangus</b>.</li>
+                    </ul>
+                    <h4>Pembayaran DP</h4>
+                      <p>
+                        BCA – <b>6140846421</b><br>
+                        A.n. <b>Muhammad Fatichul Ichsan</b>
+                      </p>
                 </div>
-                <div style="position:absolute; bottom:50px; width:100%; left:0; text-align:center; font-size:24px; font-weight:600;">📷 @canyoningpacet | 🌐 canyoningpacet.com</div>
+                <div style="position:absolute; bottom:50px; width:100%; left:0; text-align:center; font-size:24px; font-weight:600;">canyoningpacet.com</div>
             </div>`;
         }
 
