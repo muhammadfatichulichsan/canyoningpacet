@@ -6,6 +6,11 @@
     <title>Jadwal Open Trip | Canyoning Pacet Mojokerto</title>
     <meta name="description" content="Cek ketersediaan slot Open Trip Canyoning Pacet secara Real-time. Booking mudah via WhatsApp.">
     
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jadwal Open Trip | Canyoning Pacet">
+    <meta property="og:description" content="Cek slot tersedia dan booking sekarang! Pengalaman seru di Mojokerto.">
+    <meta property="og:image" content="assets/logo/logo-canyoning-pacet.webp">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/logo-canyoning-pacet.webp">
@@ -74,7 +79,7 @@
         }
 
         /* === SCHEDULE SECTION === */
-        .section-padding { padding: 60px 0; }
+        .section-padding { padding: 80px 0; }
         
         .schedule-card {
             background: #fff;
@@ -141,6 +146,7 @@
         }
         .bg-available { background-color: var(--brand-green); }
         .bg-full { background-color: var(--brand-red); }
+        .bg-warning-custom { background-color: var(--brand-accent); color: var(--brand-black) !important; }
 
         /* Buttons */
         .btn-daftar {
@@ -166,6 +172,69 @@
         }
         .btn-export:hover { background-color: #d32f2f; transform: translateY(-2px); }
 
+        /* === ITINERARY TIMELINE STYLE === */
+        .timeline-box {
+            position: relative;
+            border-left: 3px solid #e9ecef;
+            margin-left: 10px;
+            padding-left: 35px;
+            padding-bottom: 10px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-dot {
+            position: absolute;
+            left: -44px; /* Adjust posisi dot */
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--brand-red);
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 3px rgba(179, 38, 30, 0.15);
+        }
+        .timeline-time {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--brand-green-dark);
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .timeline-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--brand-black);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        /* Style khusus list itinerary */
+        .itinerary-list { list-style: none; padding: 0; margin: 0; }
+        .itinerary-list li { 
+            position: relative; padding-left: 20px; margin-bottom: 6px; 
+            font-size: 0.95rem; color: #444;
+        }
+        .itinerary-list li::before {
+            content: "✓"; position: absolute; left: 0; top: 0;
+            color: var(--brand-green); font-weight: bold;
+        }
+
+        /* === FAQ SECTION STYLES === */
+        .accordion-item { border: none; margin-bottom: 10px; border-radius: 8px !important; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.03); }
+        .accordion-button { font-weight: 600; color: var(--brand-green-dark); background-color: #fff; font-family: var(--font-heading); letter-spacing: 0.5px; }
+        .accordion-button:not(.collapsed) { background-color: #e7f5ea; color: var(--brand-green-dark); box-shadow: none; }
+        .accordion-button:focus { box-shadow: none; border-color: rgba(79, 143, 99, 0.2); }
+        .accordion-body { font-size: 0.95rem; color: #555; line-height: 1.6; }
+
         /* === MODAL === */
         .backdrop {
             position: fixed; inset: 0; background: rgba(0,0,0,0.7);
@@ -188,8 +257,10 @@
         .modal-box input:focus, .modal-box textarea:focus {
             outline: none; border-color: var(--brand-green);
         }
+        .modal-box input.is-invalid { border-color: var(--brand-red); background-color: #fff8f8; }
+        .invalid-feedback { color: var(--brand-red); font-size: 0.8rem; margin-top: 4px; display: none; }
+        .is-invalid + .invalid-feedback { display: block; }
 
-        /* Style Tambahan untuk Summary Pembayaran */
         .payment-summary {
             background-color: #f8f9fa;
             border: 1px solid #e9ecef;
@@ -200,8 +271,6 @@
         .summary-row {
             display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.95rem;
         }
-        
-        /* Style Khusus DP Row */
         .summary-dp-row {
             border-top: 1px dashed #ccc;
             margin-top: 10px; padding-top: 10px;
@@ -215,7 +284,6 @@
         .text-full-price {
             font-size: 0.9rem; color: #666; text-decoration: none;
         }
-
         .bank-info {
             background: #e7f5ea; border-left: 4px solid var(--brand-green);
             padding: 10px; font-size: 0.9rem; margin-top: 15px; border-radius: 4px;
@@ -257,31 +325,113 @@
             .footer-col { min-width: 200px; margin-bottom: 0; }
         }
 
-        /* === POSTER EXPORT CSS === */
+        /* === POSTER EXPORT CSS (PREMIUM DARK & FIXED) === */
         #exportPoster { display: none; }
         body.exporting #exportPoster { display: block; }
         .export-area { width: 1080px; max-width: 1080px; margin: 0 auto; overflow: hidden; }
-        
         .poster {
-            width: 1080px; height: 1920px; padding: 80px; box-sizing: border-box;
-            background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('canyoning.jpg');
-            background-size: cover; background-position: center; color: white; position: relative;
-            font-family: var(--font-body) !important;
+            width: 1080px; height: auto; min-height: 1920px;
+            background: linear-gradient(180deg, #0f1210 0%, #1b2621 100%);
+            color: white; font-family: var(--font-body) !important;
+            display: flex; flex-direction: column; position: relative; box-sizing: border-box;
         }
-        /* Fonts di Poster disesuaikan dengan tema baru */
-        .poster h2, .poster h3 { font-family: var(--font-heading) !important; }
-        
-        .poster-title h2 { font-size: 80px; color: var(--brand-accent); margin: 0; text-align: center; }
-        .poster-title h3 { font-size: 50px; text-align: center; margin-bottom: 40px; color: #fff; }
-        .poster-grid { display: grid; grid-template-columns: 1fr 4px 1fr; gap: 40px; margin-top: 40px; }
-        .poster-divider { background: rgba(255,255,255,0.3); height: 100%; border-radius: 4px; }
-        .row-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.15); }
-        .row-date { font-size: 26px; font-weight: 700; font-family: var(--font-tech) !important; }
-        .row-pill { padding: 8px 24px; border-radius: 8px; font-weight: 800; font-size: 20px; background: var(--brand-green); color: white; font-family: var(--font-heading) !important; letter-spacing: 1px; }
-        .row-pill.full { background: var(--brand-red); }
-
+        .poster::before {
+            content: ""; position: absolute; inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 40px 40px; pointer-events: none; opacity: 0.5; height: 100%;
+        }
+        .poster-header {
+            padding: 70px 70px 40px 70px; display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 2px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); flex-shrink: 0;
+        }
+        .header-left h1 { font-size: 72px; line-height: 1; margin: 0; color: #fff; letter-spacing: 2px; }
+        .header-left h2 { font-size: 32px; color: var(--brand-accent); margin: 0; font-weight: 500; letter-spacing: 4px; }
+        .header-right { text-align: right; }
+        .month-badge { 
+            background: var(--brand-red); color: white; padding: 10px 40px; 
+            font-size: 42px; font-weight: 700; border-radius: 12px; font-family: var(--font-heading);
+            box-shadow: 0 10px 30px rgba(179, 38, 30, 0.4);
+        }
+        .poster-body { padding: 50px 70px; flex-grow: 1; }
+        .poster-grid { column-count: 2; column-gap: 40px; width: 100%; }
+        .poster-card {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center;
+            break-inside: avoid; margin-bottom: 30px; width: 100%;
+        }
+        .card-date { display: flex; align-items: center; gap: 20px; }
+        .date-num { font-size: 56px; font-weight: 800; color: #fff; font-family: var(--font-heading); line-height: 1; }
+        .date-day { font-size: 24px; color: #aaa; text-transform: uppercase; font-weight: 600; line-height: 1.2; }
+        .card-status {
+            font-family: var(--font-tech); font-weight: 700; font-size: 22px;
+            padding: 8px 20px; border-radius: 8px;
+            background: rgba(79, 143, 99, 0.2); color: #6fcf97; border: 1px solid #4F8F63;
+        }
+        .card-status.full { background: rgba(179, 38, 30, 0.2); color: #ff8a80; border: 1px solid #B3261E; }
+        .poster-footer {
+            margin: 20px 50px 60px 50px; background: #fff; color: var(--brand-black);
+            border-radius: 30px; padding: 40px 50px; display: flex; justify-content: space-between; align-items: center;
+            flex-shrink: 0; box-shadow: 0 -20px 40px rgba(0,0,0,0.3);
+        }
+        .pf-left h3 { font-size: 36px; color: var(--brand-red); margin-bottom: 10px; font-weight: 800; }
+        .pf-left p { font-size: 24px; margin: 0; font-weight: 600; color: #444; }
+        .pf-right { text-align: right; }
+        .pf-wa { font-size: 48px; font-weight: 800; color: var(--brand-black); font-family: var(--font-heading); }
+        .pf-web { font-size: 26px; color: #666; letter-spacing: 2px; margin-top: 5px; font-weight: 600; }
         .hide-on-export { }
         body.exporting .hide-on-export { display: none !important; }
+
+        /* === URGENCY NOTIFICATION TOAST === */
+        .urgency-toast {
+            position: fixed;
+            bottom: 20px; /* Start position hidden */
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #fff;
+            border-left: 5px solid var(--brand-red);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            padding: 12px 24px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            z-index: 1040; /* Above nav, below modal */
+            min-width: 320px;
+            max-width: 90%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        .urgency-toast.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            bottom: 30px;
+        }
+        .urgency-icon { 
+            font-size: 1.4rem; 
+            animation: pulse-icon 1.5s infinite; 
+            line-height: 1;
+        }
+        .urgency-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .urgency-text { 
+            font-size: 0.9rem; 
+            font-weight: 700; 
+            color: #333; 
+            font-family: var(--font-body); 
+        }
+        .urgency-sub {
+            font-size: 0.75rem;
+            color: #777;
+        }
+        @keyframes pulse-icon { 
+            0% { transform: scale(1); } 
+            50% { transform: scale(1.25); } 
+            100% { transform: scale(1); } 
+        }
     </style>
 </head>
 
@@ -355,6 +505,137 @@
         </div>
     </section>
 
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                        <h2 class="display-6 fw-bold text-uppercase" style="color: var(--brand-green-dark);">RUNDOWN CANYONING PACET</h2>
+                        <p class="text-muted">Itinerary kegiatan dari awal hingga selesai.</p>
+                    </div>
+
+                    <div class="timeline-box">
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-time">08.30 WIB</span>
+                            <div class="timeline-title">DATANG DI BASECAMP</div>
+                            <ul class="itinerary-list">
+                                <li>Pelunasan pembayaran canyoning di receptionist basecamp.</li>
+                                <li>Ganti baju dan penitipan barang yang tidak dibawa untuk kegiatan.</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-time">09.00 WIB</span>
+                            <div class="timeline-title">PERSIAPAN DAN SAFETY TALK</div>
+                            <ul class="itinerary-list">
+                                <li>Pemakaian perlengkapan canyoning (Helm, Harness, Pelindung Siku & Lutut).</li>
+                                <li>Pengarahan dan pengenalan equipment yang akan digunakan saat canyoning.</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-time">09.30 WIB</span>
+                            <div class="timeline-title">PERJALANAN KE AIR TERJUN</div>
+                            <ul class="itinerary-list">
+                                <li>Perjalanan menggunakan Shuttle (Transportasi Lokal).</li>
+                                <li>Kegiatan Canyoneering (Melewati 2 Air Terjun).</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-time">14.30 WIB</span>
+                            <div class="timeline-title">FINISH</div>
+                            <ul class="itinerary-list">
+                                <li>Setelah melewati 2 air terjun disediakan snack (Pop Mie) & teh hangat.</li>
+                                <li>Kembali ke basecamp dengan Shuttle.</li>
+                                <li>Mandi, makan, dan sayonara.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-white border-top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                        <h2 class="display-6 fw-bold text-uppercase" style="color: var(--brand-green-dark);">Pertanyaan Umum (FAQ)</h2>
+                        <p class="text-muted">Yang sering ditanyakan oleh peserta trip.</p>
+                    </div>
+
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    🤔 Apakah pemula boleh ikut?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <strong>Sangat boleh!</strong> Canyoning trip ini dirancang ramah untuk pemula (beginner friendly). Anda tidak perlu pengalaman memanjat sebelumnya. Tim guide profesional kami akan mengajari teknik dasar rappelling sebelum aktivitas dimulai.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    🌧️ Bagaimana jika hujan turun?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Canyoning adalah aktivitas basah-basahan, jadi hujan ringan tidak masalah. Namun, jika terjadi <strong>cuaca ekstrem atau debit air naik melebihi batas aman</strong>, trip akan ditunda atau dibatalkan demi keselamatan. Kami memiliki protokol safety yang ketat. Jika batal karena cuaca dari pihak kami, DP akan dikembalikan 100% atau reschedule.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    🎒 Apa saja yang perlu dibawa?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li>Pakaian olahraga sintetis (dry-fit) yang nyaman.</li>
+                                        <li>Baju ganti kering & peralatan mandi.</li>
+                                        <li>Sepatu kets/gunung yang siap basah (bisa sewa di lokasi jika tidak punya).</li>
+                                        <li>Obat-obatan pribadi.</li>
+                                        <li>Flashdisk/HP untuk copy file dokumentasi.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    📍 Meeting Point dimana?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Meeting point di <strong>Basecamp TOS Adventure Pacet</strong> (Area Wisata Padusan). Lokasi parkir luas dan aman untuk mobil maupun motor. Titik Google Maps akan dikirimkan oleh admin setelah konfirmasi booking.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div id="modalBackdrop" class="backdrop">
         <div class="modal-box">
             
@@ -363,16 +644,19 @@
                 <div id="selectedDateText" class="text-muted small mb-3 pb-2 border-bottom" style="font-family: var(--font-tech);"></div>
                 
                 <label class="small fw-bold text-muted">Nama Lengkap</label>
-                <input type="text" id="inputName" placeholder="Masukkan nama pemesan">
+                <input type="text" id="inputName" placeholder="Masukkan nama pemesan" required>
+                <div class="invalid-feedback">Nama wajib diisi!</div>
 
                 <div class="row g-2 mt-2">
                     <div class="col-6">
                         <label class="small fw-bold text-muted">Jumlah Pax</label>
                         <input type="number" id="inputQty" min="1" value="1">
+                        <div class="invalid-feedback">Minimal 1 orang.</div>
                     </div>
                     <div class="col-6">
                         <label class="small fw-bold text-muted">No.WhatsApp</label>
-                        <input type="text" id="inputPhone"  placeholder="08xx...">
+                        <input type="text" id="inputPhone"  placeholder="08xx..." required>
+                        <div class="invalid-feedback">Nomor WA wajib diisi!</div>
                     </div>
                 </div>
 
@@ -448,6 +732,14 @@
         </div>
     </div>
 
+    <div id="urgencyToast" class="urgency-toast">
+        <div id="toastIcon" class="urgency-icon">🔥</div>
+        <div class="urgency-content">
+            <span id="toastText" class="urgency-text">3 Orang sedang melihat jadwal ini!</span>
+            <span class="urgency-sub">Segera amankan slotmu</span>
+        </div>
+    </div>
+
     <div id="exportPoster"></div>
 
     <footer id="kontak">
@@ -462,8 +754,8 @@
                         Penyedia layanan wisata minat khusus (adventure) terbaik di Mojokerto. Menghadirkan pengalaman canyoning yang aman, seru, dan tak terlupakan.
                     </p>
                     <div>
-                        <a href="#" class="footer-social">Instagram</a>
-                        <a href="#" class="footer-social">TikTok</a>
+                        <a href="https://www.instagram.com/canyoningpacet/" class="footer-social">Instagram</a>
+                        <a href="https://www.tiktok.com/@canyoningpacet" class="footer-social">TikTok</a>
                     </div>
                 </div>
 
@@ -572,7 +864,11 @@
                 localStorage.setItem("tripDataCache", JSON.stringify({ ts: Date.now(), data: json }));
                 renderMonths();
             } catch (err) {
-                els.loading.innerHTML = `<span class="text-danger">Gagal memuat data. Silakan refresh halaman.</span>`;
+                // Fallback error UI
+                els.loading.innerHTML = `
+                    <div class="text-danger mb-3">Gagal memuat jadwal.</div>
+                    <button class="btn btn-outline-danger btn-sm" onclick="location.reload()">🔄 Coba Lagi</button>
+                `;
                 console.error(err);
             }
         }
@@ -619,7 +915,20 @@
                     
                     const tdSlot = document.createElement("td");
                     tdSlot.className = "text-center";
-                    tdSlot.innerHTML = `<span class="badge-slot ${sisa > 0 ? 'bg-available' : 'bg-full'}">${sisa === 0 ? 'FULL' : sisa + ' SLOT'}</span>`;
+                    
+                    // Logic Badge Urgency
+                    let badgeClass = 'bg-available';
+                    let slotText = sisa + ' SLOT';
+                    
+                    if (sisa === 0) {
+                        badgeClass = 'bg-full';
+                        slotText = 'FULL';
+                    } else if (sisa <= 5) {
+                        badgeClass = 'bg-warning-custom'; // Kuning (Urgency)
+                        slotText = `SISA ${sisa}!`;
+                    }
+
+                    tdSlot.innerHTML = `<span class="badge-slot ${badgeClass}">${slotText}</span>`;
                     tr.appendChild(tdSlot);
 
                     const tdAction = document.createElement("td");
@@ -657,6 +966,11 @@
             els.inputPhone.value = ""; 
             els.inputNote.value = "";
             els.inputShoeQty.value = 0; 
+            
+            // Reset Validasi
+            els.inputName.classList.remove('is-invalid');
+            els.inputPhone.classList.remove('is-invalid');
+            els.inputQty.classList.remove('is-invalid');
 
             // Reset View to Step 1
             els.stepForm.style.display = "block";
@@ -668,32 +982,45 @@
         function closeModal() { els.modal.classList.remove("show"); }
 
         function showPaymentSummary() {
-            // Validasi Input
             const name = els.inputName.value.trim();
             const qty = parseInt(els.inputQty.value) || 0;
             const phone = els.inputPhone.value.trim();
             const shoeQty = parseInt(els.inputShoeQty.value) || 0;
 
-            if(!name) { alert("Nama wajib diisi!"); return; }
-            if(qty < 1) { alert("Jumlah pax minimal 1"); return; }
-            if(!phone) { alert("Nomor WhatsApp wajib diisi!"); return; }
+            // --- VALIDASI BARU (UX Lebih Baik) ---
+            let isValid = true;
+            
+            // Reset state
+            els.inputName.classList.remove('is-invalid');
+            els.inputPhone.classList.remove('is-invalid');
+            els.inputQty.classList.remove('is-invalid');
 
-            // Hitung Total Paket & Total DP
-            // Total Full = (Harga Trip * Qty) + (Harga Sepatu * QtySepatu)
+            if(!name) { 
+                els.inputName.classList.add('is-invalid');
+                isValid = false; 
+            }
+            if(!phone) { 
+                els.inputPhone.classList.add('is-invalid');
+                isValid = false; 
+            }
+            if(qty < 1) { 
+                els.inputQty.classList.add('is-invalid');
+                isValid = false; 
+            }
+
+            if(!isValid) return; // Stop jika tidak valid
+            // ------------------------------------
+
             const tripTotal = qty * CONFIG.pricePerPax;
             const shoeTotal = shoeQty * CONFIG.shoePrice;
             const totalFull = tripTotal + shoeTotal;
-            
-            // DP tetap dihitung dari jumlah Pax (tidak termasuk sepatu)
             const totalDP = qty * CONFIG.dpPerPax;
 
             const formatRupiah = (num) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
 
-            // Update UI Summary
             els.summaryDate.textContent = currentSelectedDateText;
             els.summaryPax.textContent = qty + " Orang";
             
-            // Update Tampilan Sepatu
             if(shoeQty > 0) {
                 els.summaryShoeRow.style.display = "flex";
                 els.summaryShoeValue.textContent = `${shoeQty} x Rp 15.000`;
@@ -704,7 +1031,6 @@
             els.summaryTotalFull.textContent = formatRupiah(totalFull);
             els.summaryTotalDP.textContent = formatRupiah(totalDP);
 
-            // Switch View
             els.stepForm.style.display = "none";
             els.stepPayment.style.display = "block";
         }
@@ -714,25 +1040,23 @@
             els.stepForm.style.display = "block";
         }
 
-        function confirmAndSendWA() {
+        async function confirmAndSendWA() {
             const name = els.inputName.value.trim();
             const qty = parseInt(els.inputQty.value) || 1;
             const phone = els.inputPhone.value.trim();
             const note = els.inputNote.value.trim();
             const shoeQty = parseInt(els.inputShoeQty.value) || 0;
             
-            // Hitung Ulang untuk Link WA
+            // Hitung Ulang
             const tripTotal = qty * CONFIG.pricePerPax;
             const shoeTotal = shoeQty * CONFIG.shoePrice;
             const totalFull = tripTotal + shoeTotal;
             const totalDP = qty * CONFIG.dpPerPax;
-
             const formatRupiah = (num) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
-
             const d = new Date(currentSelectedDateISO);
             const dateShort = d.toLocaleDateString("id-ID", { day:"numeric", month:"long", year:"numeric" });
 
-            // Format Pesan WhatsApp dengan Info DP dan Sepatu
+            // Format Pesan WhatsApp
             let msg = `Halo Admin Canyoning Pacet, saya ingin konfirmasi booking .\n\n`;
             msg += ` Nama: ${name}\n`;
             msg += ` Tanggal: ${dateShort}\n`;
@@ -746,30 +1070,38 @@
 
             msg += ` *Total Paket: ${formatRupiah(totalFull)}*\n`;
             msg += ` *DP Transfer: ${formatRupiah(totalDP)}*\n\n`;
+            msg += ` *Rekening Transfer:*\nBCA 6140846421\na.n Muhammad Fatichul Ichsan\n\nMohon dicek, saya akan kirim bukti transfer sebentar lagi. Terima kasih.`;
 
-            msg += ` *Rekening Transfer:*\n`;
-            msg += `BCA 6140846421\n`;
-            msg += `a.n Muhammad Fatichul Ichsan\n`;
-            
-            
-            msg += `\nMohon dicek, saya akan kirim bukti transfer sebentar lagi. Terima kasih.`;
-
-            // Gabung info sepatu ke catatan agar tersimpan di Google Sheet
             let finalNote = note;
-            if(shoeQty > 0) {
-                finalNote += ` [Sewa Sepatu: ${shoeQty} psg]`;
+            if(shoeQty > 0) finalNote += ` [Sewa Sepatu: ${shoeQty} psg]`;
+
+            // --- LOADING STATE BUTTON ---
+            const btn = els.btnConfirmWA;
+            const originalText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = `<span class="spinner-border spinner-border-sm"></span> Menyimpan Data...`;
+            // ----------------------------
+
+            try {
+                // Simpan ke Google Sheet (await agar tidak double klik)
+                await fetch(CONFIG.saveURL, {
+                    method: "POST",
+                    body: JSON.stringify({ nama: name, nohp: phone, jumlah: qty, tanggal: dateShort, catatan: finalNote, total_bayar: totalFull })
+                });
+
+                // Buka WA (MENGGUNAKAN LOCATION.HREF AGAR TIDAK DIBLOKIR)
+                window.location.href = `https://wa.me/${CONFIG.waNumber}?text=${encodeURIComponent(msg)}`;
+                // closeModal() tidak diperlukan karena halaman sudah pindah
+
+            } catch (e) {
+                console.error("Gagal simpan", e);
+                alert("Ada gangguan koneksi, tapi akan tetap diarahkan ke WhatsApp.");
+                window.location.href = `https://wa.me/${CONFIG.waNumber}?text=${encodeURIComponent(msg)}`;
+            } finally {
+                // Kembalikan tombol jika user kembali ke tab ini
+                btn.disabled = false;
+                btn.innerHTML = originalText;
             }
-
-            // Kirim Data ke Google Sheets
-            fetch(CONFIG.saveURL, {
-                method: "POST",
-                body: JSON.stringify({ nama: name, nohp: phone, jumlah: qty, tanggal: dateShort, catatan: finalNote, total_bayar: totalFull })
-            }).catch(e => console.log(e));
-
-            // Redirect ke WhatsApp
-            window.open(`https://wa.me/${CONFIG.waNumber}?text=${encodeURIComponent(msg)}`, "_blank");
-            
-            closeModal();
         }
 
         // Event Listeners for Buttons
@@ -780,7 +1112,7 @@
         
         els.modal.onclick = (e) => { if(e.target === els.modal) closeModal(); };
 
-        /* 4. POSTER GENERATOR */
+        /* === POSTER GENERATOR (UPDATED FIX FONT) === */
         function createPosterHTML(sheetName) {
             const sheet = sheetsData.find(s => s.sheetName === sheetName);
             if(!sheet) return "";
@@ -792,41 +1124,52 @@
                 .filter(item => item.d >= today && item.d.getDay() !== 5)
                 .sort((a,b) => a.d - b.d);
             
-            const half = Math.ceil(rows.length / 2);
-            const left = rows.slice(0, half);
-            const right = rows.slice(half);
-
-            const renderRow = (item) => {
-                const dateStr = item.d.toLocaleDateString("id-ID", { day:"2-digit", month:"short" }).toUpperCase();
+            const renderCard = (item) => {
+                const dateNum = item.d.getDate();
+                const dayName = item.d.toLocaleDateString("id-ID", { weekday: "long" });
                 const sisa = Math.max(0, CONFIG.maxSlot - item.sold);
-                const text = sisa === 0 ? "FULL" : `${sisa} PAX`;
-                return `<div class="row-item"><div class="row-date">${dateStr}</div><div class="row-slot"><span class="row-pill ${sisa > 0 ? '' : 'full'}">${text}</span></div></div>`;
+                const statusClass = sisa > 0 ? '' : 'full';
+                const statusText = sisa > 0 ? `${sisa} SLOT` : 'FULL';
+                
+                return `
+                <div class="poster-card">
+                    <div class="card-date">
+                        <div class="date-num">${dateNum}</div>
+                        <div class="date-day">${dayName}</div>
+                    </div>
+                    <div class="card-status ${statusClass}">${statusText}</div>
+                </div>`;
             };
 
             return `
             <div class="poster">
-                <div class="text-center mb-4">
-                <img src="assets/logo/logo-canyoning-pacet.webp" style="width:250px;"></div>
-                <div class="poster-title"><h2>JADWAL OPEN TRIP</h2>
-                <h3>${sheetName.toUpperCase()}</h3></div>
-                <div class="poster-grid">
-                <div>${left.map(renderRow).join("")}</div>
-                <div class="poster-divider"></div><div>${right.map(renderRow).join("")}</div></div>
-                <div style="margin-top:60px; ; background:rgba(255,255,255,0.15); padding:30px; border-radius:20px; border:2px solid rgba(255,255,255,0.3);">
-                    <h3 style="color:#FACC15; font-weight:800; text-align:center;">INFO PEMESANAN</h3>
-                    <ul style="list-style:none; padding:0; font-size:24px; font-weight:500;">
-                        <li>Minimal keberangkatan <b>5 peserta</b>.</li>
-                        <li>Bisa join open trip jika kurang dari 5 orang.</li>
-                        <li>Konfirmasi peserta / reschedule maksimal <b>H-1</b>.</li>
-                        <li>Pembatalan hari-H → <b>DP hangus</b>.</li>
-                    </ul>
-                    <h4>Pembayaran DP</h4>
-                      <p>
-                        BCA – <b>6140846421</b><br>
-                        A.n. <b>Muhammad Fatichul Ichsan</b>
-                      </p>
+                <div class="poster-header">
+                    <div class="header-left">
+                        <h2>CANYONING PACET</h2>
+                        <h1>JADWAL TRIP</h1>
+                    </div>
+                    <div class="header-right">
+                        <div class="month-badge">${sheetName.toUpperCase()}</div>
+                    </div>
                 </div>
-                <div style="position:absolute; bottom:50px; width:100%; left:0; text-align:center; font-size:24px; font-weight:600;">canyoningpacet.com</div>
+                
+                <div class="poster-body">
+                    <div class="poster-grid">
+                        ${rows.map(renderCard).join("")}
+                    </div>
+                </div>
+
+                <div class="poster-footer">
+                    <div class="pf-left">
+                        <h3>INFO BOOKING</h3>
+                        <p>✅ Min 5 Pax Berangkat</p>
+                        <p>✅ DP Rp 50.000 / Pax</p>
+                    </div>
+                    <div class="pf-right">
+                        <div class="pf-wa">0895-4005-20827</div>
+                        <div class="pf-web">WWW.CANYONINGPACET.COM</div>
+                    </div>
+                </div>
             </div>`;
         }
 
@@ -845,21 +1188,75 @@
             document.body.classList.add("exporting");
             els.exportContainer.innerHTML = `<div class="export-area">${createPosterHTML(sheetName)}</div>`;
 
+            // Tunggu Font Loaded & Render Layout (FIX FONT STANDARD)
+            await document.fonts.ready;
+            await new Promise(r => setTimeout(r, 1200)); 
+
             try {
-                const canvas = await html2canvas(document.querySelector(".poster"), { scale: 2, useCORS: true, backgroundColor: null });
+                const canvas = await html2canvas(document.querySelector(".poster"), { 
+                    scale: 2, 
+                    useCORS: true, 
+                    backgroundColor: "#1b2621" 
+                });
                 const link = document.createElement("a");
-                link.download = `Jadwal-Trip-${sheetName}.png`;
-                link.href = canvas.toDataURL("image/png");
+                link.download = `Jadwal-Trip-${sheetName}.jpg`; 
+                link.href = canvas.toDataURL("image/jpeg", 0.9);
                 link.click();
-            } catch(e) { alert("Gagal export poster."); } 
+            } catch(e) { 
+                console.error(e);
+                alert("Gagal export poster."); 
+            } 
             finally {
                 document.body.classList.remove("exporting");
                 els.exportContainer.innerHTML = "";
-                els.btnExport.textContent = "📸 Download Poster Poster";
+                els.btnExport.textContent = "📸 Download Poster";
             }
         }
         els.btnExport.onclick = doExport;
         init();
+
+        /* === URGENCY NOTIFICATION LOGIC === */
+        const urgencyMessages = [
+            { icon: "🔥", text: "3 Orang sedang melihat jadwal ini!", sub: "Jangan sampai keduluan!" },
+            { icon: "⚡", text: "Slot minggu ini menipis!", sub: "Booking sekarang juga" },
+            { icon: "👤", text: "Budi baru saja booking 5 Pax.", sub: "Bergabunglah dengan mereka!" },
+            { icon: "⏳", text: "Reservasi akan segera ditutup", sub: "Jika kuota penuh" },
+            { icon: "📢", text: "Harga promo bisa berubah", sub: "Amankan harga terbaik sekarang" },
+            { icon: "✅", text: "15 Orang telah booking hari ini", sub: "Paling laris!" }
+        ];
+
+        let msgIndex = 0;
+        const toast = document.getElementById('urgencyToast');
+        const toastIcon = document.getElementById('toastIcon');
+        const toastText = document.getElementById('toastText');
+        const toastSub = document.querySelector('.urgency-sub');
+
+        function showUrgency() {
+            // Update Text
+            const item = urgencyMessages[msgIndex];
+            toastIcon.innerText = item.icon;
+            toastText.innerText = item.text;
+            toastSub.innerText = item.sub;
+            
+            // Show
+            toast.classList.add('active');
+
+            // Hide after 4.5 seconds
+            setTimeout(() => {
+                toast.classList.remove('active');
+            }, 4500);
+
+            // Increment index
+            msgIndex = (msgIndex + 1) % urgencyMessages.length;
+        }
+
+        // Start Loop (Show every 12 seconds)
+        // Delay first show by 3 seconds
+        setTimeout(() => {
+            showUrgency();
+            setInterval(showUrgency, 12000); 
+        }, 3000);
+
     </script>
 </body>
 </html>
