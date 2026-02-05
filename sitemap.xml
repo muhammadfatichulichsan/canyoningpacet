@@ -9,13 +9,23 @@
 
 <url>
   <loc>https://canyoningpacet.com/</loc>
-  <lastmod>2026-01-01T11:04:51+00:00</lastmod>
+  <lastmod>2026-02-05T09:37:11+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://canyoningpacet.com/schedule</loc>
-  <lastmod>2026-01-01T11:04:51+00:00</lastmod>
+  <loc>https://canyoningpacet.com/rafting-pacet.html</loc>
+  <lastmod>2026-02-05T09:37:11+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://canyoningpacet.com/schedule.html</loc>
+  <lastmod>2026-02-05T09:37:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://canyoningpacet.com/index.html</loc>
+  <lastmod>2026-02-05T09:37:11+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
