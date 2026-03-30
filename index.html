@@ -4,22 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Jadwal Open Trip & Slot 2026 | Canyoning & Rafting Pacet</title>
+    <title>Canyoning Pacet & Rafting Pacet: Paket Adventure Terbaik 2026</title>
     
-    <meta name="description" content="Cek jadwal Open Trip Canyoning Pacet dan slot Rafting Mojokerto terbaru 2026. Update ketersediaan slot harian secara real-time.">
+    <meta name="description" content="Pusat wisata adrenalin Mojokerto: Canyoning Pacet, Rafting Pacet (Arung Jeram), TOS Adventure, & Outbound Pacet Trawas. Aman untuk pemula & anak-anak.">
     
+    <meta name="keywords" content="rafting pacet, canyoning pacet, tos adventure pacet, tos rafting pacet, arung jeram pacet, outbound pacet trawas, outbound anak, wisata pacet mojokerto, paket wisata padusan, open trip canyoning">
+    
+    <meta name="author" content="Canyoning Pacet Official">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="language" content="Indonesian">
+    
+    <link rel="canonical" href="https://canyoningpacet.com/">
+
+    <meta name="geo.region" content="ID-JI">
+    <meta name="geo.placename" content="Pacet, Mojokerto">
+    <meta name="geo.position" content="-7.6713;112.5358">
+    <meta name="ICBM" content="-7.6713, 112.5358">
+
+
     <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png">
+    <meta property="og:image" content="https://canyoningpacet.com/assets/images/og-image-canyoning.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="content-language" content="id">
+
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://canyoningpacet.com/">
+    <meta property="og:site_name" content="TOS Adventure Pacet">
+    <meta property="og:title" content="Canyoning & Rafting Pacet | Outbound Pacet Trawas Mojokerto">
+    <meta property="og:description" content="Pusat kegiatan outdoor: Canyoning, Rafting Pacet, dan Outbound Anak di Pacet Trawas.">
+    <meta property="og:image" content="assets/logo/favicon-32.png">
+
     <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png">
     
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="canyoning-1.webp" fetchpriority="high">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* --- 1. DESIGN SYSTEM --- */
         :root {
             --brand-red: #B3261E;
             --brand-green: #2e5c40;
@@ -37,203 +68,67 @@
         h1, h2, h3, h4, h5, h6, .navbar-brand { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.5px; }
         p { line-height: 1.7; opacity: 0.9; }
 
+        /* ACCESSABILITY FIX: Darker muted text for contrast */
+        .text-muted { color: #595c5f !important; }
+
         /* Navbar */
         .navbar { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
         .navbar-brand { color: var(--brand-red) !important; font-weight: 700; font-size: 1.35rem; }
         .nav-link { font-weight: 600; font-size: 0.95rem; text-transform: uppercase; }
         .nav-link:hover { color: var(--brand-red) !important; }
 
-        /* Hero Modified */
-        .hero-section { position: relative; width: 100%; min-height: 60vh; display: flex; align-items: center; margin-top: -72px; padding-top: 72px; background-color: #0f0f0f; overflow: hidden; color: #fff; }
+        /* Hero */
+        .hero-section { position: relative; width: 100%; min-height: 100vh; display: flex; align-items: center; margin-top: -72px; padding-top: 72px; background-color: #0f0f0f; overflow: hidden; color: #fff; aspect-ratio: 16 / 9;}
         .hero-bg { 
             position: absolute; inset: 0; 
-            background: linear-gradient(rgba(15, 15, 15, 0.6), rgba(15, 15, 15, 0.9)),
+            background: linear-gradient(rgba(15, 15, 15, 0.4), rgba(15, 15, 15, 0.7)),
                         url('canyoning-1.webp') center/cover no-repeat; 
-            z-index: 0; filter: saturate(0.8);
+            z-index: 0; filter: saturate(0.9); transform: scale(1); transition: transform 20s; will-change: transform;
         }
+        .hero-section:hover .hero-bg { transform: scale(1.05); }
         .hero-overlay { position: absolute; inset: 0; z-index: 1; background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 60px 60px; }
         
         .hero-content { position: relative; z-index: 10; width: 100%; padding-left: 8vw; padding-right: 5vw; max-width: 1100px; }
         .tac-badge { display: inline-block; font-family: var(--font-tech); font-size: 0.8rem; background: var(--brand-red); color: #fff; padding: 4px 12px; margin-bottom: 20px; font-weight: 700; }
-        .hero-title { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1; margin-bottom: 20px; font-weight: 700; }
-        .hero-desc { font-family: var(--font-body); font-size: 1.1rem; max-width: 550px; margin-bottom: 40px; color: rgba(255,255,255,0.9); }
+        .hero-title { font-size: clamp(3rem, 7vw, 6.5rem); line-height: 0.9; margin-bottom: 20px; font-weight: 700; }
+        .outline-text { color: transparent; -webkit-text-stroke: 1px #fff; display: block; }
+        .hero-desc { font-family: var(--font-body); font-size: 1.1rem; max-width: 550px; margin-bottom: 40px; color: rgba(255,255,255,0.9); border-left: 3px solid var(--brand-red); padding-left: 20px; }
         
-        /* --- 2. FUNCTIONAL STYLES --- */
+        .tac-btn-group { display: flex; gap: 15px; }
+        .btn-tac { padding: 16px 32px; border: 1px solid rgba(255,255,255,0.3); background: rgba(0,0,0,0.4); color: #fff; backdrop-filter: blur(5px); text-decoration: none; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .btn-tac:hover { background: #fff; color: #000; }
+        .btn-tac.primary { background: var(--brand-red); border-color: var(--brand-red); }
+        .btn-tac.primary:hover { background: #d32f2f; color: #fff; }
+
+        /* General Sections */
         .section-padding { padding: 90px 0; }
+        .card { border: none; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
+        .card:hover { transform: translateY(-5px); }
+        .btn-primary { background: var(--brand-red); border: none; }
+        .btn-primary:hover { background: #8f1f18; }
+        .about-img { width: 100%; height: 400px; object-fit: cover; border-radius: 16px; box-shadow: 10px 10px 0px var(--brand-green-dark); }
         
-        /* Wrapper untuk Area Jadwal */
-        .schedule-wrapper-card { background: #fff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding: 30px; border: 1px solid rgba(0,0,0,0.05); }
+        .cta-section { background: linear-gradient(rgba(27, 51, 43, 0.95), rgba(27, 51, 43, 0.95)), url('canyoning.webp') center/cover; }
+        .btn-accent { background: var(--brand-accent); border: none; color: #111; font-weight: bold; }
+        .btn-accent:hover { background: #eab308; }
+
+        .accordion-item { border: none; margin-bottom: 10px; border-radius: 8px !important; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .accordion-button { font-weight: 600; color: var(--brand-green-dark); }
+        .accordion-button:not(.collapsed) { background-color: rgba(79, 143, 99, 0.1); color: var(--brand-green-dark); }
         
-        /* STYLE TAMBAHAN UNTUK SWITCHER TRIP */
-        .trip-switcher-container { display: flex; gap: 10px; margin-bottom: 25px; justify-content: center; }
-        .btn-trip-switch {
-            flex: 1;
-            padding: 12px;
-            border: 2px solid #eee;
-            background: #fff;
-            color: #999;
-            font-family: var(--font-heading);
-            font-weight: 700;
-            border-radius: 12px;
-            transition: all 0.3s;
-            text-transform: uppercase;
-        }
-        .btn-trip-switch:hover { border-color: var(--brand-green); color: var(--brand-green); }
-        .btn-trip-switch.active {
-            background: var(--brand-green-dark);
-            color: var(--brand-accent);
-            border-color: var(--brand-green-dark);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        /* Dropdown Select */
-        select#monthSelect { width: 100%; max-width: 350px; padding: 12px 20px; border: 2px solid var(--brand-green); border-radius: 50px; font-family: var(--font-body); font-weight: 700; color: var(--brand-green-dark); cursor: pointer; outline: none; transition: 0.3s; background-color: #fff; }
-        select#monthSelect:focus { box-shadow: 0 0 0 4px rgba(46, 92, 64, 0.2); }
+        /* Reviews */
+        .review-card { background: #fff; border: 1px solid rgba(0,0,0,0.05); border-radius: 16px; padding: 30px; height: 100%; box-shadow: 0 5px 20px rgba(0,0,0,0.03); transition: transform 0.3s ease; }
+        .review-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+        .star-rating { color: var(--brand-accent); font-size: 1.1rem; letter-spacing: 2px; }
+        .google-btn { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #ddd; color: #555; padding: 10px 20px; border-radius: 50px; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; }
+        .google-btn:hover { background: #f8f9fa; color: #000; border-color: #ccc; }
 
-        /* Tabel Custom */
-        .table-custom { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 20px; }
-        .table-custom thead th { background: var(--brand-green-dark); color: #fff; padding: 18px; font-family: var(--font-heading); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem; border: none; }
-        .table-custom th:first-child { border-top-left-radius: 12px; }
-        .table-custom th:last-child { border-top-right-radius: 12px; }
-        .table-custom td { padding: 18px; border-bottom: 1px solid #eee; vertical-align: middle; font-weight: 500; color: #444; }
-        
-        /* Badge & Button Logic */
-        .badge-slot { display: inline-block; padding: 6px 14px; border-radius: 4px; font-family: var(--font-tech); font-weight: 700; font-size: 0.8rem; color: #fff; min-width: 90px; text-align: center; }
-        .bg-available { background-color: var(--brand-green); }
-        .bg-full { background-color: var(--brand-red); }
-        .bg-warning-custom { background-color: var(--brand-accent); color: var(--brand-black) !important; }
+        /* Partner/External Links (ACCESSIBILITY FIX: Lighter Color) */
+        .partner-link-item { display: block; padding: 10px; color: #d1d5db; text-decoration: none; font-size: 0.85rem; transition: all 0.2s; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .partner-link-item:hover { color: var(--brand-accent); padding-left: 5px; }
 
-        .btn-daftar { background: var(--brand-green-dark); color: white; border: none; padding: 10px 24px; border-radius: 50px; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
-        .btn-daftar:hover { background: var(--brand-accent); color: var(--brand-black); transform: translateY(-2px); }
-        
-        .btn-export { background-color: var(--brand-red); color: white; font-family: var(--font-heading); font-weight: 500; letter-spacing: 1px; text-transform: uppercase; border: none; border-radius: 8px; padding: 14px 30px; margin-top: 25px; transition: 0.3s; }
-        .btn-export:hover { background-color: #d32f2f; transform: translateY(-2px); }
-
-        /* ITINERARY / TIMELINE STYLE */
-        .timeline-box { position: relative; border-left: 3px solid #e9ecef; margin-left: 10px; padding-left: 35px; padding-bottom: 10px; text-align: left; }
-        .timeline-item { position: relative; margin-bottom: 40px; }
-        .timeline-dot { position: absolute; left: -44px; top: 5px; width: 20px; height: 20px; border-radius: 50%; background: var(--brand-red); border: 4px solid #fff; box-shadow: 0 0 0 3px rgba(179, 38, 30, 0.15); }
-        .timeline-time { font-family: var(--font-heading); font-size: 1.3rem; color: var(--brand-green-dark); font-weight: bold; margin-bottom: 5px; display: block; }
-        .timeline-title { font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; color: var(--brand-black); text-transform: uppercase; letter-spacing: 0.5px; }
-        .itinerary-list { list-style: none; padding: 0; margin: 0; }
-        .itinerary-list li { position: relative; padding-left: 20px; margin-bottom: 6px; font-size: 0.95rem; color: #444; }
-        .itinerary-list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--brand-green); font-weight: bold; }
-
-        /* Modal & Urgency Toast */
-        .backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: none; justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(5px); }
-        .backdrop.show { display: flex; animation: fadeIn 0.3s; }
-        .modal-box { background: #fff; width: 90%; max-width: 480px; padding: 30px; border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); max-height: 90vh; overflow-y: auto; }
-        .payment-summary { background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 15px; margin-bottom: 15px; }
-        .summary-dp-row { border-top: 1px dashed #ccc; margin-top: 10px; padding-top: 10px; display: flex; justify-content: space-between; font-weight: 800; font-size: 1.1rem; color: var(--brand-red); background-color: #fff5f5; padding: 10px; border-radius: 6px; border: 1px solid #ffebeb; }
-
-        .urgency-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(100px); background: #fff; border-left: 5px solid var(--brand-red); box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 12px 24px; border-radius: 50px; display: flex; align-items: center; gap: 14px; z-index: 1040; opacity: 0; visibility: hidden; transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
-        .urgency-toast.active { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); bottom: 30px; }
-        .urgency-text { font-weight: bold; font-family: var(--font-heading); font-size: 1rem; }
-        .urgency-sub { font-size: 0.8rem; color: #666; display: block; }
-
-        /* POSTER HIDDEN */
-        #exportPoster { display: none; }
-        body.exporting #exportPoster { display: block; position: fixed; top: 0; left: 0; z-index: -1; opacity: 0; }
-        
-        /* === CUSTOM POSTER STYLE (COMPACT 5 COLUMNS) === */
-        .poster { 
-            width: 1080px; 
-            /* height: auto; min-height: 1350px; <-- Changed to fit long content */
-            min-height: 1350px; height: auto;
-            background: linear-gradient(180deg, #0e4d48 0%, #156961 40%, #08332e 100%); 
-            position: relative; 
-            font-family: 'Oswald', sans-serif; 
-            display: flex; flex-direction: column; 
-            overflow: hidden; 
-            color: white;
-        }
-
-        .poster::before {
-            content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
-            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
-            z-index: 0;
-        }
-
-        .poster-header { 
-            position: relative; z-index: 10;
-            text-align: center;
-            padding-top: 60px;
-            margin-bottom: 30px;
-        }
-        
-        .poster-header h2 { 
-            font-size: 70px; font-weight: 700; margin: 0; color: #fff; letter-spacing: 2px; text-transform: uppercase; line-height: 1; 
-            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-        
-        .poster-header .sub-header {
-            font-size: 35px; font-weight: 400; color: #a7f3d0; margin-top: 5px; letter-spacing: 5px; text-transform: uppercase;
-        }
-
-        .poster-body { 
-            flex: 1; position: relative; z-index: 10;
-            padding: 10px 50px; 
-        }
-
-        /* COMPACT GRID: 5 COLUMNS */
-        .poster-grid { 
-            display: grid; 
-            grid-template-columns: repeat(5, 1fr); /* 5 Columns to fit more */
-            gap: 20px; 
-        }
-
-        .poster-card { 
-            background: #ffffff; 
-            border-radius: 30px; 
-            padding: 10px; 
-            display: flex; flex-direction: column; align-items: center; justify-content: center; 
-            height: 120px; /* Reduced height */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            position: relative;
-            color: #1A1A1A;
-        }
-
-        .poster-card.is-full {
-             background: #fecaca; opacity: 0.9;
-        }
-
-        .date-num { 
-            font-size: 45px; /* Smaller font */
-            font-weight: 700; line-height: 1; 
-            color: #0f766e; 
-        }
-        
-        .date-day { 
-            font-size: 14px; /* Smaller font */
-            text-transform: uppercase; color: #555; 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            font-weight: 700; letter-spacing: 0.5px; margin-top: 0px; 
-        }
-        
-        .card-status { 
-            position: absolute; bottom: -8px;
-            background: #0f766e; color: #fff; 
-            padding: 3px 12px; border-radius: 20px; 
-            font-size: 11px; font-weight: bold; 
-            letter-spacing: 0.5px;
-            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-        }
-        .card-status.full { background: #B3261E; }
-        .card-status.limited { background: #FACC15; color: #000; }
-
-        .poster-footer { 
-            position: relative; z-index: 10;
-            text-align: center;
-            padding: 30px 60px 50px;
-            color: #fff; 
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        .pf-text { font-size: 16px; margin-bottom: 5px; opacity: 0.9; font-weight: 500; }
-        .pf-contact { font-size: 32px; font-weight: 700; color: #FACC15; margin-top: 5px; font-family: 'Oswald', sans-serif; letter-spacing: 2px; }
-
-        /* Footer (Sama dengan Index) */
-        footer { background-color: var(--brand-green-dark); color: #e0e0e0; padding-top: 80px; padding-bottom: 30px; font-family: var(--font-body); }
+        /* Footer */
+        footer { background-color: var(--brand-green-dark); color: #e0e0e0; padding-top: 80px; padding-bottom: 30px; font-family: var(--font-body); position: relative; overflow: hidden; content-visibility: auto; contain-intrinsic-size: 1000px;}
         .footer-title { color: #fff; font-size: 1.2rem; margin-bottom: 1.2rem; border-bottom: 2px solid var(--brand-accent); display: inline-block; padding-bottom: 5px; }
         .footer-menu { list-style: none; padding: 0; }
         .footer-menu li { margin-bottom: 10px; }
@@ -242,37 +137,100 @@
         .footer-social { display: inline-block; padding: 8px 16px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; color: #fff; text-decoration: none; margin-right: 5px; margin-bottom: 10px; }
         .footer-social:hover { background: var(--brand-accent); color: #000; border-color: var(--brand-accent); }
 
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @media (max-width: 768px) {
             body { padding-top: 64px; }
             .section-padding { padding: 60px 0; }
-            .hero-section { min-height: 50vh; align-items: center; }
+            .hero-section { align-items: flex-end; padding-bottom: 60px; }
             .hero-content { padding-left: 20px; padding-right: 20px; }
-            .schedule-wrapper-card { padding: 20px; }
+            .tac-btn-group { flex-direction: column; width: 100%; gap: 10px; }
+            .btn-tac { width: 100%; text-align: center; }
+            .about-img { height: 250px; margin-top: 30px; }
             .footer-scroll-wrapper { display: flex; gap: 30px; overflow-x: auto; padding-bottom: 20px; }
             .footer-col { min-width: 200px; }
         }
     </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Canyoning Pacet - TOS Adventure",
+  "image": "https://canyoningpacet.com/canyoning-1.webp",
+  "@id": "https://canyoningpacet.com/",
+  "url": "https://canyoningpacet.com/",
+  "sameAs": [
+  "https://www.tiktok.com/@canyoningpacet",
+  "https://www.instagram.com/canyoningpacet"
+],
+  "telephone": "+62895400520827",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Padusan",
+    "addressLocality": "Pacet",
+    "addressRegion": "East Java",
+    "postalCode": "61374",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -7.6713,
+    "longitude": 112.5358
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+    ],
+    "opens": "08:00",
+    "closes": "17:00"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Apakah Rafting & Canyoning aman untuk pemula?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sangat aman. Baik Canyoning maupun Rafting Pacet dirancang untuk pemula (Grade 2-3) dan didampingi guide profesional TOS Adventure."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Berapa harga paket wisata ini?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Harga Rafting Pacet mulai Rp 225.000/pax, sedangkan Canyoning mulai Rp 300.000/pax sudah termasuk tiket, makan, dan dokumentasi."
+    }
+  }]
+}
+</script>
+
 </head>
 
 <body>
 
 <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
       <img src="assets/logo/logo-canyoning-pacet.webp" alt="Logo Canyoning Pacet" class="navbar-logo" width="42" height="42">
       <span>CANYONING PACET</span>
     </a>
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div id="nav" class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav gap-lg-4 pt-3 pt-lg-0">
-        <li><a class="nav-link" href="index.html#tentang">Tentang</a></li>
-        <li><a class="nav-link" href="index.html#paket">Paket Trip</a></li>
-        <li><a class="nav-link" href="index.html#review">Review</a></li>
-        <li><a class="nav-link" href="index.html#lokasi">Lokasi</a></li>
-        <li><a class="nav-link" href="index.html#kontak">Kontak</a></li>
+        <li><a class="nav-link" href="#tentang">Tentang</a></li>
+        
+        <li><a class="nav-link" href="rafting-pacet.html">Rafting Pacet</a></li>
+        
+        <li><a class="nav-link" href="#paket">Paket</a></li>
+        <li><a class="nav-link" href="#review">Review</a></li>
+        <li><a class="nav-link" href="#lokasi">Lokasi</a></li>
       </ul>
     </div>
   </div>
@@ -281,129 +239,307 @@
 <section class="hero-section">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-content text-center mx-auto">
-    <div class="tac-badge">CALENDAR OF EVENTS 2026</div>
+  <div class="hero-content">
+    <div class="tac-badge">EXPLORE EAST JAVA ADVENTURE</div>
+
     <h1 class="hero-title">
-      JADWAL & SLOT<br>
-      <span style="color:var(--brand-red)">KETERSEDIAAN</span>
+      <span style="font-size: 0.3em; display: block; letter-spacing: 5px;">PAKET ADVENTURE</span>
+      CANYONING <span style="color:var(--brand-red)">PACET</span><br>
+      <span class="outline-text">& RAFTING MOJOKERTO</span>
     </h1>
-    <div class="hero-desc mx-auto text-center" style="border:none; padding:0; border-left:none;">
-        Cek tanggal Open Trip Canyoning & Rafting Pacet di bawah ini.<br>
-        Booking jauh hari untuk mengamankan slot weekend.
+    <div class="hero-desc">
+        <strong>Wisata Adrenalin Terbaik di Pacet Mojokerto.</strong><br>
+        Rasakan sensasi rappelling menuruni air terjun, <strong>rafting pacet</strong> (arung jeram), dan petualangan seru lainnya bersama TOS Adventure. Aman untuk pemula.
+    </div>
+    <div class="tac-btn-group">
+      <a href="https://wa.me/62895400520827" class="btn-tac primary">BOOKING SEKARANG</a>
+      <a href="schedule.html" class="btn-tac">LIHAT JADWAL</a>
     </div>
   </div>
 </section>
 
-<section class="section-padding bg-light">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                
-                <div class="alert alert-warning border-0 shadow-sm d-flex align-items-center gap-3 mb-5" role="alert">
-                    <div class="fs-4">💡</div>
-                    <div>
-                        <strong>Info Private Trip:</strong> Jadwal di bawah adalah untuk <strong>Open Trip (Gabungan)</strong>. 
-                        Untuk Private Group (Rombongan Kantor/Keluarga), Anda bebas menentukan tanggal sendiri. <a href="https://wa.me/62895400520827" class="fw-bold text-dark">Hubungi Admin.</a>
-                    </div>
-                </div>
+<section id="tentang" class="section-padding">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <span class="badge mb-3 rounded-pill px-3 py-2" style="background:var(--brand-accent);color:#111; font-weight:600;">
+          Powered by: TOS Adventure Pacet
+        </span>
 
-                <div class="schedule-wrapper-card">
-                    
-                    <div class="trip-switcher-container">
-                        <button class="btn-trip-switch active" onclick="switchTrip('cowang')" id="btnSwitchCowang">
-                            TRIP COWANG 35 M
-                        </button>
-                        <button class="btn-trip-switch" onclick="switchTrip('canggu')" id="btnSwitchCanggu">
-                            TRIP CANGGU 60 M
-                        </button>
-                    </div>
+        <h2 class="display-5 fw-bold mb-4">
+          Petualangan <span style="color:var(--brand-red)">Canyoning Pacet</span> yang Aman & Profesional
+        </h2>
 
-                    <div class="controls text-center mb-4" id="controlsBox">
-                        <label for="monthSelect" class="d-block mb-2 fw-bold text-muted small letter-spacing-1">PILIH BULAN KEBERANGKATAN</label>
-                        <select id="monthSelect"></select>
-                    </div>
-                    <div class="form-check mt-2 d-flex justify-content-center gap-2 align-items-center">
-                        <input class="form-check-input" type="checkbox" id="filterWeekend">
-                        <label class="form-check-label small fw-bold text-muted" for="filterWeekend">
-                            Tampilkan Weekend Saja
-                        </label>
-                    </div>
+        <p class="fs-5">
+          <strong>Canyoning Pacet Mojokerto</strong> (TOS Adventure) mengajak Anda keluar dari zona nyaman. Bukan sekadar wisata air, ini adalah ekspedisi menaklukkan tebing air terjun di kawasan hutan Padusan.
+        </p>
 
-                    <div id="loading" class="text-center py-5">
-                        <div class="spinner-border text-danger" role="status"></div>
-                        <p class="mt-3 fw-bold text-muted">MENGAMBIL DATA SLOT...</p>
-                    </div>
+        <p>
+          Selain canyoning, kami adalah operator resmi untuk <strong>Rafting Pacet</strong> dan <strong>Arung Jeram Pacet</strong> di Sungai Kromong dengan standar keamanan tinggi.
+        </p>
 
-                    <div id="msgComingSoon" class="text-center py-5" style="display:none;">
-                        <div class="display-3 mb-3">🚧</div>
-                        <h3 class="fw-bold" style="font-family: var(--font-heading);">COMING SOON</h3>
-                        <p class="text-muted">Jadwal Trip Canggu sedang dipersiapkan.<br>Pantau terus update terbaru dari kami.</p>
-                        <a href="https://wa.me/62895400520827" class="btn btn-sm btn-outline-secondary rounded-pill px-4 mt-2">Tanya Admin</a>
-                    </div>
-
-                    <div id="jadwal-wrapper" class="table-responsive" style="display:none;">
-                        <table class="table-custom" id="tripTable">
-                            <thead>
-                                <tr>
-                                    <th width="40%">Tanggal Trip</th>
-                                    <th width="30%" class="text-center">Sisa Slot</th>
-                                    <th width="30%" class="text-center hide-on-export">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tableBody"></tbody>
-                        </table>
-                    </div>
-
-                    <div class="text-center">
-                        <button id="btnExport" class="btn-export d-none">
-                            📸 Download Poster Jadwal
-                        </button>
-                    </div>
-
-                </div>
-            </div>
+        <ul class="list-unstyled mt-4" style="font-weight: 500;">
+          <li class="mb-2">✅ Basecamp strategis di Pemandian Air Panas Padusan</li>
+          <li class="mb-2">✅ Peralatan Safety Standard UIAA/CE</li>
+          <li class="mb-2">✅ Cocok untuk Pemula & Outbound Anak</li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <div class="about-img-wrapper ps-lg-5">
+            <img src="canyoning.webp" alt="Wisata Canyoning Pacet Mojokerto TOS Adventure" class="about-img" width="800" height="600" loading="lazy" decoding="async">
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<section class="section-padding bg-white">
+<section id="paket" class="section-padding bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold display-5">Pilihan Paket Adventure</h2>
+        <p class="text-muted fs-5">Pilih tantanganmu: Canyoning, Rafting Pacet, atau Outbound</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="card h-100">
+          <div class="card-header text-center fw-bold py-2" style="background:var(--brand-accent); border:none; font-size:0.85rem;">BEST SELLER</div>
+          <div class="card-body p-4">
+            <h3 class="h4 fw-bold text-center mb-3">Canyoning Cowang</h3>
+            <p class="text-center text-muted small mb-4">
+              Coban Cowang - Level Pemula<br><em>Durasi: 08.00 - 14.00</em>
+            </p>
+            <div class="text-center mb-4"><div class="fw-bold fs-3" style="color:var(--brand-red)">Rp 300K <span class="fs-6 text-muted">/pax</span></div></div>
+            <ul class="small mb-4 list-unstyled">
+              <li class="mb-2">✅ Tiket Masuk Kawasan</li>
+              <li class="mb-2">✅ Full Safety Equipment</li>
+              <li class="mb-2">✅ 2 Spot Rappelling</li>
+              <li class="mb-2">✅ Guide & Rescue Team</li>
+              <li class="mb-2">✅ Makan & Dokumentasi</li>
+            </ul>
+            <a href="#" class="btn btn-outline-dark w-100 fw-bold">PILIH PAKET</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="card h-100 border-2" style="border-color:var(--brand-accent)">
+          <div class="card-body p-4">
+            <h3 class="h4 fw-bold text-center mb-3">Canyoning Canggu</h3>
+            <p class="text-center text-muted small mb-4">
+              Coban Canggu 55 Meter<br><em>Durasi: 08.00 - 14.00 Jam</em>
+            </p>
+            <div class="text-center mb-4"><div class="fw-bold fs-3" style="color:var(--brand-red)">Rp 400K <span class="fs-6 text-muted">/pax</span></div></div>
+            <ul class="small mb-4 list-unstyled">
+              <li class="mb-2">✅ <strong>Fasilitas Explorer +</strong></li>
+              <li class="mb-2">✅ Track Lebih Panjang</li>
+              <li class="mb-2">✅ 3 Spot Rappelling</li>
+              <li class="mb-2">✅ Makan & Dokumentasi</li>
+              <li class="mb-2">✅ Asuransi</li>
+            </ul>
+            <a href="#" class="btn btn-primary w-100 fw-bold">PILIH PAKET</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="card h-100 position-relative overflow-hidden">
+          <div style="position:absolute; top:15px; right:-25px; background:var(--brand-green); color:#fff; padding:2px 25px; transform:rotate(45deg); font-size:0.7rem; font-weight:bold;">POPULER</div>
+          <div class="card-body p-4">
+            <h3 class="h4 fw-bold text-center mb-3">Rafting Pacet</h3>
+            <p class="text-center text-muted small mb-4">
+              <strong>TOS Rafting Pacet</strong> (Kromong)<br>
+              <em>Durasi: 2 Jam (Arung Jeram Grade 2-3)</em>
+            </p>
+            <div class="text-center mb-4"><div class="fw-bold fs-3" style="color:var(--brand-red)">Rp 225K <span class="fs-6 text-muted">/pax</span></div></div>
+            <ul class="small mb-4 list-unstyled">
+              <li class="mb-2">✅ Tiket Masuk Kawasan</li>
+              <li class="mb-2">✅ Skipper Profesional</li>
+              <li class="mb-2">✅ Safety Gear Standard</li>
+              <li class="mb-2">✅ Shuttle Transport</li>
+              <li class="mb-2">✅ Makan & Snack</li>
+            </ul>
+            <a href="rafting-pacet.html" class="btn btn-outline-dark w-100 fw-bold">DETAIL RAFTING</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="card h-100 bg-light">
+          <div class="card-body p-4">
+            <h3 class="h4 fw-bold text-center mb-3">Outbound & Gathering</h3>
+            <p class="text-center text-muted small mb-4">
+              Layanan <strong>Outbound Pacet Trawas</strong><br>
+              <em>Cocok untuk Corporate & <strong>Outbound Anak</strong></em>
+            </p>
+            <div class="text-center mb-4"><div class="fw-bold fs-3" style="color:var(--brand-red)">Call Us</div></div>
+            <ul class="small mb-4 list-unstyled">
+              <li class="mb-2">✅ Program Fun Games/Team Building</li>
+              <li class="mb-2">✅ Lokasi: Pacet / Trawas</li>
+              <li class="mb-2">✅ Request Menu Makan</li>
+              <li class="mb-2">✅ Fasilitator Certified</li>
+              <li class="mb-2">✅ Dokumentasi Premium</li>
+            </ul>
+            <a href="#" class="btn btn-outline-dark w-100 fw-bold">KONSULTASI</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TikTok Official Section -->
+<section id="tiktok" class="section-padding bg-white">
+  <div class="container text-center">
+    
+    <span class="badge mb-3 px-3 py-2 rounded-pill" 
+          style="background:rgba(79, 143, 99, 0.1); color:var(--brand-green-dark); font-weight:600;">
+      OFFICIAL TIKTOK CHANNEL
+    </span>
+
+    <h2 class="fw-bold display-6 mb-3">
+      Video Canyoning & Rafting Pacet di TikTok Resmi
+    </h2>
+
+    <p class="text-muted mb-4 mx-auto" style="max-width:700px">
+      Saksikan dokumentasi aktivitas <strong>Canyoning Pacet</strong>, 
+      <strong>Rafting Pacet Mojokerto</strong>, serta program 
+      <strong>Outbound Pacet Trawas</strong> melalui akun resmi kami.
+      Update jadwal open trip, promo, dan behind the scene tersedia di TikTok.
+    </p>
+
+    <p class="mb-4">
+      <a href="https://www.tiktok.com/@canyoningpacet"
+         target="_blank"
+         rel="noopener nofollow"
+         class="btn btn-dark px-4 py-2 fw-bold">
+         Kunjungi TikTok @canyoningpacet
+      </a>
+    </p>
+
+    <div class="d-flex justify-content-center">
+      <blockquote 
+        class="tiktok-embed" 
+        cite="https://www.tiktok.com/@canyoningpacet"
+        data-unique-id="canyoningpacet"
+        data-embed-type="creator"
+        style="max-width:780px; min-width:288px;">
+        <section>
+          <a target="_blank" href="https://www.tiktok.com/@canyoningpacet">
+            @canyoningpacet
+          </a>
+        </section>
+      </blockquote>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="review" class="section-padding" style="background-color: #fcfcfc;">
+  <div class="container">
+    <div class="text-center mb-5">
+        <span class="badge mb-2 px-3 py-2 rounded-pill" style="background:rgba(79, 143, 99, 0.1); color:var(--brand-green-dark); font-weight:600;">
+            KATA MEREKA
+        </span>
+        <h2 class="fw-bold display-6">Pengalaman Sobat Petualang</h2>
+        <p class="text-muted">Bergabunglah dengan 1000+ peserta yang puas menjelajah Pacet</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="review-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="d-flex align-items-center gap-3">
+                    <img src="https://ui-avatars.com/api/?name=Andi+P&background=B3261E&color=fff" alt="User" class="rounded-circle" width="45" height="45" loading="lazy">
+                    <div>
+                        <h3 class="mb-0 fw-bold h6" style="font-family: var(--font-heading)">Andi Prasetyo</h3>
+                        <small class="text-muted" style="font-size:0.75rem">Trip Explorer</small>
+                    </div>
+                </div>
+                <div class="star-rating">★★★★★</div>
+            </div>
+            <p class="small text-muted mb-0">"Gokil sih ini! Awalnya takut, tapi guide TOS Adventure sabar banget. Canyoning & Rafting Pacet seru parah!"</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="review-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="d-flex align-items-center gap-3">
+                    <img src="https://ui-avatars.com/api/?name=Sarah+L&background=4F8F63&color=fff" alt="User" class="rounded-circle" width="45" height="45" loading="lazy">
+                    <div>
+                        <h3 class="mb-0 fw-bold h6" style="font-family: var(--font-heading)">Sarah Larasati</h3>
+                        <small class="text-muted" style="font-size:0.75rem">Trip Rafting</small>
+                    </div>
+                </div>
+                <div class="star-rating">★★★★★</div>
+            </div>
+            <p class="small text-muted mb-0">"Liburan anti mainstream. Rafting Pacet airnya jernih dingin. Worth every penny! Videonya cinematic banget."</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="review-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="d-flex align-items-center gap-3">
+                    <img src="https://ui-avatars.com/api/?name=Corp+T&background=FACC15&color=000" alt="User" class="rounded-circle" width="45" height="45" loading="lazy">
+                    <div>
+                        <h3 class="mb-0 fw-bold h6" style="font-family: var(--font-heading)">PT. Maju Jaya</h3>
+                        <small class="text-muted" style="font-size:0.75rem">Outbound Pacet</small>
+                    </div>
+                </div>
+                <div class="star-rating">★★★★★</div>
+            </div>
+            <p class="small text-muted mb-0">"Outbound Pacet Trawas bersama tim ini sangat memuaskan. Games seru, fasilitator oke, dan arung jeramnya aman."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section position-relative text-white section-padding">
+  <div class="container text-center">
+    <h2 class="display-4 fw-bold mb-3">SIAP BERPETUALANG?</h2>
+    <p class="fs-5 mb-5 mx-auto" style="max-width:700px">Booking slot TOS Adventure Pacet sekarang sebelum kehabisan.</p>
+    <div class="d-flex justify-content-center gap-3 flex-column flex-sm-row">
+        <a href="https://wa.me/62895400520827" class="btn btn-accent btn-lg px-5">BOOKING VIA WHATSAPP</a>
+        <a href="schedule.html" class="btn btn-outline-light btn-lg px-5">CEK JADWAL</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section-padding bg-light">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="text-center mb-5">
-                    <h2 class="display-6 fw-bold">RUNDOWN KEGIATAN</h2>
-                    <p class="text-muted">Estimasi waktu kegiatan Canyoning Trip</p>
+                    <h2 class="fw-bold">Pertanyaan Umum (FAQ)</h2>
+                    <p class="text-muted">Informasi seputar Canyoning & Rafting Pacet</p>
                 </div>
-
-                <div class="timeline-box">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <span class="timeline-time">08.00 WIB</span>
-                        <div class="timeline-title">Registrasi & Briefing</div>
-                        <ul class="itinerary-list">
-                            <li>Kumpul di Basecamp TOS Adventure.</li>
-                            <li>Pelunasan pembayaran & ganti pakaian.</li>
-                            <li>Pemakaian alat safety (Helmet, Harness).</li>
-                            <li>Penjelasan teknik rappelling oleh instruktur.</li>
-                        </ul>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Apakah Rafting & Canyoning aman untuk pemula?</button>
+                        </h3>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">Sangat aman. Baik Canyoning maupun Rafting Pacet (Arung Jeram) kami rancang untuk pemula (Grade 2-3). Anda akan didampingi guide profesional TOS Adventure.</div>
+                        </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <span class="timeline-time">09.00 WIB</span>
-                        <div class="timeline-title">Adventure Time!</div>
-                        <ul class="itinerary-list">
-                            <li>Menuju lokasi start via shuttle.</li>
-                            <li>Eksplorasi air terjun & rappelling.</li>
-                        </ul>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Berapa harga paket wisata ini?</button>
+                        </h3>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">Harga Rafting Pacet mulai Rp 225.000/pax, sedangkan Canyoning mulai Rp 300.000/pax. Sudah termasuk tiket masuk, makan, dan dokumentasi.</div>
+                        </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <span class="timeline-time">14.30 WIB</span>
-                        <div class="timeline-title">Finish & Makan Siang</div>
-                        <ul class="itinerary-list">
-                            <li>Kembali ke basecamp, mandi, dan makan.</li>
-                            <li>Selesai.</li>
-                        </ul>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Lokasi Meeting Point dimana?</button>
+                        </h3>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">Basecamp kami di area parkir Wahana Air Panas Padusan, Pacet. Mudah diakses mobil/motor. Kami juga melayani Outbound Pacet Trawas di lokasi lain sesuai request.</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -411,46 +547,74 @@
     </div>
 </section>
 
-<section class="section-padding bg-light">
+<section id="lokasi" class="section-padding">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <h2 class="fw-bold mb-3">Lokasi Basecamp</h2>
+        <p class="mb-4">Basecamp TOS Adventure terletak strategis di kawasan wisata utama Padusan.</p>
+        <div class="d-flex align-items-start gap-3 mb-3">
+            <div class="fs-4 text-danger">📍</div>
+            <div><strong>Padusan, Pacet - Mojokerto</strong><br><small class="text-muted">Area Parkir Wisata Pemandian Air Panas</small></div>
+        </div>
+        <a href="#" class="btn btn-dark mt-2">Buka Google Maps</a>
+      </div>
+      <div class="col-lg-7">
+        <div class="ratio ratio-21x9 rounded-4 overflow-hidden shadow-sm">
+         <iframe title="Peta Lokasi Google Maps Canyoning Pacet" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7907.979279458096!2d112.54553777552891!3d-7.684259317728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7879de363b0e0d%3A0xa50a003cd4b82a33!2sTOS%20Rafting%20Pacet!5e0!3m2!1sid!2sid!4v1770076952760!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="external-resources" class="py-5 bg-dark text-white">
     <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">Cara Booking</h2>
-            <p class="text-muted">Langkah mudah mengamankan petualanganmu</p>
-        </div>
-        <div class="row g-4 text-center">
+        <div class="row g-4">
             <div class="col-md-3">
-                <div class="display-4 mb-3 text-secondary">01</div>
-                <h4 class="h5 fw-bold">Pilih Tanggal</h4>
-                <p class="small text-muted">Cek ketersediaan slot di tabel jadwal di atas.</p>
+                <h3 class="fw-bold mb-3 text-white h6 opacity-75">PARTNER WISATA</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="partner-link-item">Wonderful Indonesia</a></li>
+                    <li><a href="#" class="partner-link-item">Disbudpar Jawa Timur</a></li>
+                    <li><a href="#" class="partner-link-item">Pemkab Mojokerto</a></li>
+                </ul>
             </div>
             <div class="col-md-3">
-                <div class="display-4 mb-3 text-secondary">02</div>
-                <h4 class="h5 fw-bold">Klik Booking</h4>
-                <p class="small text-muted">Pilih tanggal yang tersedia pada tabel, lalu isi formulir pop-up.</p>
+                <h3 class="fw-bold mb-3 text-white h6 opacity-75">INFORMASI ALAM</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="partner-link-item">Info Cuaca BMKG</a></li>
+                    <li><a href="#" class="partner-link-item">Tahura R. Soerjo</a></li>
+                    <li><a href="#" class="partner-link-item">Gunung Welirang (Wiki)</a></li>
+                </ul>
             </div>
             <div class="col-md-3">
-                <div class="display-4 mb-3 text-secondary">03</div>
-                <h4 class="h5 fw-bold">Kirim WA</h4>
-                <p class="small text-muted">Data otomatis terkirim ke WhatsApp Admin. Lakukan pembayaran DP.</p>
+                <h3 class="fw-bold mb-3 text-white h6 opacity-75">SAFETY & PROSEDUR</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="partner-link-item">Standar Operasional (SOP)</a></li>
+                    <li><a href="#" class="partner-link-item">Safety Equipment List</a></li>
+                    <li><a href="#" class="partner-link-item">Asuransi Perjalanan</a></li>
+                </ul>
             </div>
             <div class="col-md-3">
-                <div class="display-4 mb-3 text-secondary">04</div>
-                <h4 class="h5 fw-bold">Siap Berangkat!</h4>
-                <p class="small text-muted">Anda akan dimasukkan ke grup koordinasi trip.</p>
+                <h3 class="fw-bold mb-3 text-white h6 opacity-75">KOMUNITAS</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="partner-link-item">Backpacker Indonesia</a></li>
+                    <li><a href="#" class="partner-link-item">Komunitas Canyoning ID</a></li>
+                    <li><a href="#" class="partner-link-item">Jelajah Jawa Timur</a></li>
+                </ul>
             </div>
-        </div>
-        <div class="text-center mt-5">
-            <a href="https://wa.me/62895400520827" class="btn btn-primary btn-lg px-5 shadow rounded-pill">HUBUNGI KAMI SEKARANG</a>
         </div>
     </div>
 </section>
+
+<script async src="https://www.tiktok.com/embed.js"></script>
 
 <footer id="kontak">
     <div class="container">
         <div class="row g-4 footer-scroll-wrapper">
             <div class="col-lg-4 col-md-6 footer-col">
                 <div class="h5 fw-bold text-white mb-3" style="font-family: var(--font-heading); font-size: 1.5rem;">CANYONING PACET</div>
-                <p class="small opacity-75 mb-4">
+                <p class="small opacity-90 mb-4">
                     Bagian dari <strong>TOS Adventure Pacet</strong>. Kami melayani wisata minat khusus mulai dari Canyoning, <strong>Rafting Pacet</strong>, hingga program <strong>Outbound Pacet Trawas</strong> untuk perusahaan dan sekolah (Outbound Anak).
                 </p>
                 <div>
@@ -468,12 +632,12 @@
             </div>
             <div class="col-lg-2 col-md-6 footer-col">
                 <h4 class="footer-title h6">Layanan</h4>
-                <ul class="footer-menu small">
-                    <li><a href="index.html#paket">Canyoning Pacet</a></li>
-                    <li><a href="index.html#paket">Rafting Pacet</a></li>
-                    <li><a href="index.html#paket">Arung Jeram Pacet</a></li>
-                    <li><a href="index.html#paket">Outbound Trawas</a></li>
-                </ul>
+               <ul class="footer-menu small">
+                  <li><a href="#">Canyoning Pacet</a></li>
+                  <li><a href="rafting-pacet.html">Rafting Pacet</a></li>
+                  <li><a href="rafting-pacet.html">Arung Jeram Pacet</a></li>
+                  <li><a href="#">Outbound Trawas</a></li>
+              </ul> 
             </div>
             <div class="col-lg-3 col-md-6 footer-col">
                 <h4 class="footer-title h6">Tag Populer</h4>
@@ -487,613 +651,10 @@
             </div>
         </div>
         <hr style="border-color: rgba(255,255,255,0.1); margin: 40px 0;">
-        <div class="text-center small opacity-50">© 2026 Canyoning Pacet & TOS Adventure. All Rights Reserved.</div>
+        <div class="text-center small opacity-75">©️ 2026 Canyoning Pacet & TOS Adventure. All Rights Reserved.</div>
     </div>
 </footer>
 
-<div id="modalBackdrop" class="backdrop">
-    <div class="modal-box">
-        <div id="stepForm">
-            <h3 class="fw-bold mb-3">FORMULIR BOOKING</h3>
-            <div class="mb-2"><span id="modalTripLabel" class="badge bg-secondary text-white">TRIP COWANG</span></div>
-            <div id="selectedDateText" class="text-muted small mb-3 pb-2 border-bottom fw-bold text-success"></div>
-            
-            <label class="small fw-bold text-muted">Nama Lengkap</label>
-            <input type="text" id="inputName" class="form-control mb-2" placeholder="Nama Pemesan">
-            
-            <div class="row g-2">
-                <div class="col-6">
-                    <label class="small fw-bold text-muted">Jumlah Peserta</label>
-                    <input type="number" id="inputQty" class="form-control" value="1" min="1">
-                </div>
-                <div class="col-6">
-                    <label class="small fw-bold text-muted">WhatsApp</label>
-                    <input type="text" id="inputPhone" class="form-control" placeholder="08xx...">
-                </div>
-            </div>
-            
-            <div class="mt-3 p-3 bg-light rounded border">
-                <label class="small fw-bold d-block mb-1">Tambahan: Sewa Sepatu (15rb/psg)</label>
-                <input type="number" id="inputShoeQty" class="form-control" value="0" min="0" placeholder="Jumlah pasang">
-                <small class="text-muted" style="font-size:0.75rem">*Abaikan jika bawa sepatu sendiri</small>
-            </div>
-            
-            <textarea id="inputNote" rows="2" class="form-control mt-3" placeholder="Catatan Tambahan..."></textarea>
-            
-            <div class="d-flex justify-content-end gap-2 mt-4">
-                <button id="btnCancel" class="btn btn-light fw-bold">Batal</button>
-                <button id="btnGoToPayment" class="btn btn-danger fw-bold" style="background:var(--brand-red)">Lanjut</button>
-            </div>
-        </div>
-
-        <div id="stepPayment" style="display:none;">
-            <h3 class="fw-bold mb-3">RINCIAN BAYAR</h3>
-            <div class="payment-summary">
-                <div id="summaryDate" class="fw-bold mb-1"></div>
-                <div id="summaryPax" class="text-muted" style="display:none;"></div>
-                
-                <div id="summaryPriceRow" class="text-muted" style="display:flex; justify-content:space-between;">
-                    <span>Harga Paket:</span> <span id="summaryPriceValue"></span>
-                </div>
-                
-                <div id="summaryShoeRow" class="text-muted" style="display:none; justify-content:space-between;">
-                    <span>Sewa Sepatu:</span> <span id="summaryShoeValue"></span>
-                </div>
-                <hr>
-                <div class="d-flex justify-content-between fw-bold mb-1">
-                    <span>Total Tagihan:</span> <span id="summaryTotalFull"></span>
-                </div>
-                <div class="summary-dp-row">
-                    <span>DP WAJIB TRANSFER:</span> <span id="summaryTotalDP"></span>
-                </div>
-            </div>
-            <div class="small p-2 bg-success bg-opacity-10 mb-3 rounded border border-success">
-                <strong>Rekening BCA:</strong><br>
-                6140846421 (Muhammad Fatichul Ichsan)
-            </div>
-            <button id="btnConfirmWA" class="btn btn-success w-100 fw-bold py-2">Kirim Booking via WA</button>
-            <button id="btnBackToForm" class="btn btn-link w-100 text-muted small mt-2">Edit Data</button>
-        </div>
-    </div>
-</div>
-
-<div id="urgencyToast" class="urgency-toast">
-    <div id="toastIcon" style="font-size: 1.5rem;">🔥</div>
-    <div class="urgency-content">
-        <span id="toastText" class="urgency-text">Melihat jadwal...</span>
-        <span class="urgency-sub">Amankan slotmu sekarang</span>
-    </div>
-</div>
-
-<div id="exportPoster"></div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    /* --- KONFIGURASI DATABASE & SETTING TRIP --- */
-    const CONFIG = {
-        api: {
-            cowang: {
-                read: "https://script.google.com/macros/s/AKfycbwoQKn-H3UjntAj1onCpgsOFN1PPM3b71xAB1iS9ROfDmwKyL9gVg89MX8S8uTj_N3x/exec", // Spreadsheet Cowang
-                save: "https://script.google.com/macros/s/AKfycbwpeFEr2WdHegonNQa8T-zTVPspqdJWKphpQ_nVUZ7L_-iPWr3BD7iL1jSGU24W8SYy/exec" // Spreadsheet Simpan Data Cowang
-            },
-            canggu: {
-                read: "https://script.google.com/macros/s/AKfycbyXoFo40JePpkOAaoYz-XF4ZYjvMas9vgYKo5XazgDJlidCz-BEOYe24FjkkNr27ea9/exec", // Spreadsheet Canggu
-                save: "https://script.google.com/macros/s/AKfycbzYt9Liu3KdAvBsVT-Sevs4Up6yzuHGpySRyI5f2n8Gl2M2xmbCdfwS0JUG6S1DvDaVKg/exec" // Spreadsheet Simpan Data Canggu
-            }
-        },
-        waNumber: "62895400520827",
-        shoePrice: 15000,
-        
-        // PENGATURAN HARGA & SLOT PER TRIP
-        settings: {
-            cowang: {
-                price: 300000,
-                dp: 50000,
-                maxSlot: 20
-            },
-            canggu: {
-                price: 400000,
-                dp: 50000,
-                maxSlot: 10
-            }
-        }
-    };
-
-    // State Variables
-    let currentTrip = 'cowang'; // Default trip
-    let sheetsData = [];
-    let currentSelectedDateISO = null;
-    let currentSelectedDateText = "";
-    
-    const els = {
-        monthSelect: document.getElementById("monthSelect"),
-        controlsBox: document.getElementById("controlsBox"), // ADDED
-        loading: document.getElementById("loading"),
-        wrapper: document.getElementById("jadwal-wrapper"),
-        msgComingSoon: document.getElementById("msgComingSoon"), // ADDED
-        tableBody: document.getElementById("tableBody"),
-        
-        // Buttons Switcher
-        btnSwitchCowang: document.getElementById("btnSwitchCowang"),
-        btnSwitchCanggu: document.getElementById("btnSwitchCanggu"),
-
-        modal: document.getElementById("modalBackdrop"),
-        modalDate: document.getElementById("selectedDateText"),
-        modalTripLabel: document.getElementById("modalTripLabel"),
-
-        inputName: document.getElementById("inputName"),
-        inputQty: document.getElementById("inputQty"),
-        inputPhone: document.getElementById("inputPhone"),
-        inputNote: document.getElementById("inputNote"),
-        inputShoeQty: document.getElementById("inputShoeQty"),
-
-        stepForm: document.getElementById("stepForm"),
-        stepPayment: document.getElementById("stepPayment"),
-        btnGoToPayment: document.getElementById("btnGoToPayment"),
-        btnConfirmWA: document.getElementById("btnConfirmWA"),
-        btnBackToForm: document.getElementById("btnBackToForm"),
-        
-        summaryDate: document.getElementById("summaryDate"),
-        summaryPax: document.getElementById("summaryPax"),
-        
-        // DETAIL HARGA ELEMENT
-        summaryPriceRow: document.getElementById("summaryPriceRow"),
-        summaryPriceValue: document.getElementById("summaryPriceValue"),
-        
-        summaryShoeRow: document.getElementById("summaryShoeRow"),
-        summaryShoeValue: document.getElementById("summaryShoeValue"),
-        summaryTotalFull: document.getElementById("summaryTotalFull"),
-        summaryTotalDP: document.getElementById("summaryTotalDP"),
-        
-        btnCancel: document.getElementById("btnCancel"),
-        btnExport: document.getElementById("btnExport"),
-        exportContainer: document.getElementById("exportPoster")
-    };
-
-    // --- 1. SWITCHER LOGIC (MODIFIED FOR COMING SOON) ---
-    function switchTrip(tripName) {
-        if(currentTrip === tripName) return; // Prevent double click
-        currentTrip = tripName;
-
-        // UI Update Buttons
-        if(tripName === 'cowang') {
-            els.btnSwitchCowang.classList.add('active');
-            els.btnSwitchCanggu.classList.remove('active');
-
-            // HIDE COMING SOON, SHOW NORMAL UI
-            els.msgComingSoon.style.display = "none";
-            els.controlsBox.style.display = "block";
-            els.wrapper.style.display = "none";
-            els.loading.style.display = "block";
-            els.monthSelect.innerHTML = "";
-            els.btnExport.classList.add("d-none");
-            
-            init(); // Load Cowang Data
-
-        } else {
-            // CANGGU MODE (COMING SOON)
-            els.btnSwitchCanggu.classList.add('active');
-            els.btnSwitchCowang.classList.remove('active');
-
-            // HIDE NORMAL UI, SHOW COMING SOON
-            els.wrapper.style.display = "none";
-            els.controlsBox.style.display = "none";
-            els.loading.style.display = "none";
-            els.btnExport.classList.add("d-none");
-            
-            els.msgComingSoon.style.display = "block";
-            
-            // DO NOT CALL INIT (No data fetch)
-        }
-    }
-
-    // --- 1. SWITCHER LOGIC (VERSI READY / LIVE) ---
-    // function switchTrip(tripName) {
-    //     // Cek jika trip yang diklik sudah aktif, tidak perlu reload
-    //     if(currentTrip === tripName && els.wrapper.style.display === "block") return;
-        
-    //     currentTrip = tripName;
-
-    //     // A. Update Tampilan Tombol
-    //     if(tripName === 'cowang') {
-    //         els.btnSwitchCowang.classList.add('active');
-    //         els.btnSwitchCanggu.classList.remove('active');
-    //     } else {
-    //         els.btnSwitchCanggu.classList.add('active');
-    //         els.btnSwitchCowang.classList.remove('active');
-    //     }
-
-    //     // B. Reset UI (Pastikan Area Jadwal Muncul, Coming Soon Sembunyi)
-    //     els.msgComingSoon.style.display = "none"; // Sembunyikan Coming Soon
-    //     els.controlsBox.style.display = "block";  // Munculkan Dropdown Bulan
-    //     els.wrapper.style.display = "none";       // Sembunyikan tabel dulu (efek loading)
-    //     els.loading.style.display = "block";      // Munculkan Loading
-    //     els.monthSelect.innerHTML = "";           // Kosongkan bulan lama
-    //     els.btnExport.classList.add("d-none");    // Sembunyikan tombol export
-
-    //     // C. Panggil Data Baru
-    //     init(); 
-    // }
-
-    // --- 2. LOAD DATA (READ) ---
-    async function init() {
-        try {
-            const activeReadURL = CONFIG.api[currentTrip].read;
-            const cacheKey = "tripData_" + currentTrip;
-            
-            const cached = localStorage.getItem(cacheKey);
-            if(cached) {
-                const parsed = JSON.parse(cached);
-                if(Date.now() - parsed.ts < 10000) { 
-                    sheetsData = parsed.data;
-                    renderMonths();
-                    return;
-                }
-            }
-            const res = await fetch(activeReadURL + "?t=" + new Date().getTime());
-            const json = await res.json();
-            sheetsData = json;
-            localStorage.setItem(cacheKey, JSON.stringify({ ts: Date.now(), data: json }));
-            renderMonths();
-        } catch (err) {
-            els.loading.innerHTML = `
-                <div class="text-danger mb-3">Gagal memuat jadwal ${currentTrip.toUpperCase()}.</div>
-                <button class="btn btn-outline-danger btn-sm" onclick="init()">🔄 Coba Lagi</button>
-            `;
-            console.error(err);
-        }
-    }
-
-    function renderMonths() {
-        els.monthSelect.innerHTML = "";
-        sheetsData.forEach(sheet => {
-            const opt = document.createElement("option");
-            opt.value = sheet.sheetName;
-            opt.textContent = sheet.sheetName;
-            els.monthSelect.appendChild(opt);
-        });
-
-        if(els.monthSelect.options.length > 0) {
-            renderTable(els.monthSelect.value);
-            els.btnExport.classList.remove("d-none");
-        } else {
-             els.loading.innerHTML = `<div class="text-muted">Belum ada jadwal tersedia.</div>`;
-        }
-        
-        els.loading.style.display = "none";
-        els.wrapper.style.display = "block";
-        
-        const newSelect = els.monthSelect.cloneNode(true);
-        els.monthSelect.parentNode.replaceChild(newSelect, els.monthSelect);
-        els.monthSelect = newSelect;
-        els.monthSelect.addEventListener("change", (e) => renderTable(e.target.value));
-        document.getElementById("filterWeekend").addEventListener("change", () => {
-    renderTable(els.monthSelect.value);
-});
-    }
-
-    // --- 3. RENDER TABLE ---
-    function renderTable(sheetName) {
-        els.tableBody.innerHTML = "";
-        const sheet = sheetsData.find(s => s.sheetName === sheetName);
-        if(!sheet) return;
-
-        // AMBIL SETTING SLOT SESUAI TRIP
-        const currentSettings = CONFIG.settings[currentTrip];
-
-        const today = new Date();
-        today.setHours(0,0,0,0);
-
-        sheet.data.forEach(row => {
-            if(row.length === 2 && row[0] && typeof row[1] === "number") {
-                const d = new Date(row[0]);
-               const isWeekendOnly = document.getElementById("filterWeekend")?.checked;
-
-// skip tanggal lewat & hari Jumat
-if(d < today || d.getDay() === 5) return;
-
-// filter weekend (Sabtu = 6, Minggu = 0)
-if(isWeekendOnly && ![0,6].includes(d.getDay())) return;
-
-                const booked = row[1];
-                // HITUNG SISA SLOT BERDASARKAN MAX SLOT TRIP TERSEBUT
-                const sisa = Math.max(0, currentSettings.maxSlot - booked);
-                const dateStr = d.toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
-
-                const tr = document.createElement("tr");
-                tr.innerHTML = `<td>${dateStr}</td>`;
-                
-                const tdSlot = document.createElement("td");
-                tdSlot.className = "text-center";
-                
-                let badgeClass = 'bg-available';
-                let slotText = sisa + ' SLOT';
-                
-                if (sisa === 0) {
-                    badgeClass = 'bg-full';
-                    slotText = 'FULL';
-                } else if (sisa <= 5) {
-                    badgeClass = 'bg-warning-custom';
-                    slotText = `SISA ${sisa}!`;
-                }
-
-                tdSlot.innerHTML = `<span class="badge-slot ${badgeClass}">${slotText}</span>`;
-                tr.appendChild(tdSlot);
-
-                const tdAction = document.createElement("td");
-                tdAction.className = "text-center hide-on-export";
-                
-                
-                if(sisa > 0) {
-                    const btn = document.createElement("button");
-                    btn.className = "btn-daftar";
-                    btn.innerHTML = `<span>BOOKING</span> <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/></svg>`;
-                    btn.onclick = () => openModal(row[0], dateStr);
-                    tdAction.appendChild(btn);
-                } else {
-                    tdAction.innerHTML = "<span class='text-muted small'> - </span>";
-                }
-                tr.appendChild(tdAction);
-                els.tableBody.appendChild(tr);
-            }
-        });
-        if(els.tableBody.children.length === 0) {
-            els.tableBody.innerHTML = `<tr><td colspan="3" class="text-center py-4 text-muted">Tidak ada jadwal tersedia.</td></tr>`;
-        }
-    }
-
-    // --- 4. MODAL & PAYMENT (SEND DATA) ---
-    function openModal(isoDate, textDate) {
-        currentSelectedDateISO = isoDate;
-        currentSelectedDateText = textDate;
-        els.modalDate.textContent = "📅 " + textDate;
-        els.modalTripLabel.textContent = currentTrip === 'cowang' ? "TRIP COWANG" : "TRIP CANGGU";
-        
-        els.inputName.value = ""; els.inputQty.value = 1; els.inputPhone.value = ""; els.inputNote.value = ""; els.inputShoeQty.value = 0;
-        els.inputName.classList.remove('is-invalid'); els.inputPhone.classList.remove('is-invalid'); els.inputQty.classList.remove('is-invalid');
-
-        els.stepForm.style.display = "block";
-        els.stepPayment.style.display = "none";
-        els.modal.classList.add("show");
-    }
-    
-    function closeModal() { els.modal.classList.remove("show"); }
-
-    function showPaymentSummary() {
-        const name = els.inputName.value.trim();
-        const qty = parseInt(els.inputQty.value) || 0;
-        const phone = els.inputPhone.value.trim();
-        const shoeQty = parseInt(els.inputShoeQty.value) || 0;
-        
-        let isValid = true;
-        els.inputName.classList.remove('is-invalid'); els.inputPhone.classList.remove('is-invalid'); els.inputQty.classList.remove('is-invalid');
-        if(!name) { els.inputName.classList.add('is-invalid'); isValid = false; }
-        if(!phone) { els.inputPhone.classList.add('is-invalid'); isValid = false; }
-        if(qty < 1) { els.inputQty.classList.add('is-invalid'); isValid = false; }
-        if(!isValid) return;
-
-        // AMBIL HARGA SESUAI TRIP
-        const currentSettings = CONFIG.settings[currentTrip];
-
-        const tripTotal = qty * currentSettings.price;
-        const shoeTotal = shoeQty * CONFIG.shoePrice;
-        const totalFull = tripTotal + shoeTotal;
-        const totalDP = qty * currentSettings.dp;
-        const formatRupiah = (num) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
-
-        els.summaryDate.textContent = currentSelectedDateText;
-        
-        // TAMPILKAN DETAIL HARGA (Baru)
-        els.summaryPriceRow.style.display = "flex";
-        els.summaryPriceValue.textContent = `${formatRupiah(currentSettings.price)} x ${qty} Pax`;
-        
-        els.summaryShoeRow.style.display = shoeQty > 0 ? "flex" : "none";
-        if(shoeQty > 0) els.summaryShoeValue.textContent = `${shoeQty} x Rp 15.000`;
-
-        els.summaryTotalFull.textContent = formatRupiah(totalFull);
-        els.summaryTotalDP.textContent = formatRupiah(totalDP);
-
-        els.stepForm.style.display = "none";
-        els.stepPayment.style.display = "block";
-    }
-
-    function backToForm() { els.stepPayment.style.display = "none"; els.stepForm.style.display = "block"; }
-
-    async function confirmAndSendWA() {
-        // [UPDATE] Mengambil URL 'save' sesuai trip yang aktif
-        const activeSaveURL = CONFIG.api[currentTrip].save;
-        const currentSettings = CONFIG.settings[currentTrip];
-
-        const name = els.inputName.value.trim();
-        const qty = parseInt(els.inputQty.value) || 1;
-        const phone = els.inputPhone.value.trim();
-        const note = els.inputNote.value.trim();
-        const shoeQty = parseInt(els.inputShoeQty.value) || 0;
-        
-        const tripTotal = qty * currentSettings.price;
-        const shoeTotal = shoeQty * CONFIG.shoePrice;
-        const totalFull = tripTotal + shoeTotal;
-        const totalDP = qty * currentSettings.dp;
-        const formatRupiah = (num) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
-        const d = new Date(currentSelectedDateISO);
-        const dateShort = d.toLocaleDateString("id-ID", { day:"numeric", month:"long", year:"numeric" });
-        const tripName = currentTrip === 'cowang' ? "TRIP COWANG" : "TRIP CANGGU";
-
-        let msg = `Halo Admin Canyoning Pacet, saya ingin konfirmasi booking.\n\n`;
-        msg += ` 📦 *PAKET: ${tripName}*\n`;
-        msg += ` Nama: ${name}\n`;
-        msg += ` Tanggal: ${dateShort}\n`;
-        msg += ` Jumlah: ${qty} Pax\n`;
-        if(phone) msg += ` No HP: ${phone}\n`;
-        if(shoeQty > 0) msg += ` Sewa Sepatu: ${shoeQty} psg (Rp ${formatRupiah(shoeTotal)})\n`;
-        if(note) msg += ` Catatan: ${note}\n\n`;
-        msg += ` *Total Paket: ${formatRupiah(totalFull)}*\n`;
-        msg += ` *DP Transfer: ${formatRupiah(totalDP)}*\n\n`;
-        msg += ` *Rekening Transfer:*\nBCA 6140846421\na.n Muhammad Fatichul Ichsan\n\nMohon dicek, saya akan kirim bukti transfer sebentar lagi. Terima kasih.`;
-
-        let finalNote = note;
-        if(shoeQty > 0) finalNote += ` [Sewa Sepatu: ${shoeQty} psg]`;
-
-        const btn = els.btnConfirmWA;
-        const originalText = btn.innerHTML;
-        btn.disabled = true;
-        btn.innerHTML = `<span class="spinner-border spinner-border-sm"></span> Menyimpan Data...`;
-
-        try {
-            // Mengirim data ke URL Spesifik Trip tersebut
-            await fetch(activeSaveURL, {
-                method: "POST",
-                mode: "no-cors",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ 
-                    nama: name, 
-                    nohp: phone, 
-                    jumlah: qty, 
-                    tanggal: dateShort, 
-                    catatan: finalNote, 
-                    total_bayar: totalFull 
-                })
-            });
-            window.location.href = `https://wa.me/${CONFIG.waNumber}?text=${encodeURIComponent(msg)}`;
-        } catch (e) {
-            console.error("Gagal simpan", e);
-            alert("Ada gangguan koneksi, tapi akan tetap diarahkan ke WhatsApp.");
-            window.location.href = `https://wa.me/${CONFIG.waNumber}?text=${encodeURIComponent(msg)}`;
-        } finally {
-            btn.disabled = false;
-            btn.innerHTML = originalText;
-        }
-    }
-
-    els.btnCancel.onclick = closeModal;
-    els.btnGoToPayment.onclick = showPaymentSummary; 
-    els.btnBackToForm.onclick = backToForm;         
-    els.btnConfirmWA.onclick = confirmAndSendWA;    
-    els.modal.onclick = (e) => { if(e.target === els.modal) closeModal(); };
-
-    /* === POSTER GENERATOR (DESIGN UPDATED: NATURE TEAL THEME) === */
-    function createPosterHTML(sheetName) {
-        const sheet = sheetsData.find(s => s.sheetName === sheetName);
-        if(!sheet) return "";
-        const currentSettings = CONFIG.settings[currentTrip];
-        const today = new Date(); today.setHours(0,0,0,0);
-        
-        const rows = sheet.data
-            .filter(r => r.length === 2 && typeof r[1] === "number")
-            .map(r => ({ d: new Date(r[0]), sold: r[1] }))
-            .filter(item => item.d >= today && item.d.getDay() !== 5)
-            .sort((a,b) => a.d - b.d);
-        
-        const renderCard = (item) => {
-            const dateNum = item.d.getDate();
-            const dayName = item.d.toLocaleDateString("id-ID", { weekday: "long" });
-            const sisa = Math.max(0, currentSettings.maxSlot - item.sold);
-            
-            // Logic status class
-            let statusClass = 'available';
-            let statusText = `${sisa} SLOT`;
-            let cardClass = 'poster-card';
-
-            if (sisa === 0) {
-                statusClass = 'full';
-                statusText = 'FULL';
-                cardClass += ' is-full';
-            } else if (sisa <= 5) {
-                statusClass = 'limited';
-                statusText = `SISA ${sisa}!`;
-            }
-            
-            return `
-            <div class="${cardClass}">
-                <div class="date-num">${dateNum}</div>
-                <div class="date-day">${dayName}</div>
-                <div class="card-status ${statusClass}">${statusText}</div>
-            </div>`;
-        };
-
-        const posterTitle = currentTrip === 'cowang' ? "JADWAL TRIP COWANG" : "JADWAL TRIP CANGGU";
-        const dpText = currentSettings.dp.toLocaleString('id-ID');
-
-        return `
-        <div class="poster">
-            <div class="poster-header">
-                <h2>${posterTitle}</h2>
-                <div class="sub-header">${sheetName.toUpperCase()}</div>
-            </div>
-            
-            <div class="poster-body">
-                <div class="poster-grid">
-                    ${rows.map(renderCard).join("")}
-                </div>
-            </div>
-            
-            <div class="poster-footer">
-                <div class="pf-text">📍 MEETING POINT: BASECAMP TOS ADVENTURE PACET</div>
-                <div class="pf-text">⏰ START: 08.00 WIB (PAGI)</div>
-                <div class="pf-contact">INFO: 0895-4005-20827</div>
-            </div>
-        </div>`;
-    }
-
-    async function doExport() {
-        const sheetName = els.monthSelect.value;
-        if(!sheetName) return;
-        if(typeof html2canvas === "undefined") {
-            await new Promise(resolve => {
-                const s = document.createElement("script");
-                s.src = "https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js";
-                s.onload = resolve;
-                document.head.appendChild(s);
-            });
-        }
-        els.btnExport.textContent = "Sedang Membuat Poster...";
-        document.body.classList.add("exporting");
-        els.exportContainer.innerHTML = `<div class="export-area">${createPosterHTML(sheetName)}</div>`;
-
-        await document.fonts.ready;
-        await new Promise(r => setTimeout(r, 1200)); 
-
-        try {
-            // Ubah backgroundColor menjadi null atau warna gelap sesuai CSS
-            const canvas = await html2canvas(document.querySelector(".poster"), { scale: 2, useCORS: true, backgroundColor: "#08332e" });
-            const link = document.createElement("a");
-            link.download = `Jadwal-${currentTrip.toUpperCase()}-${sheetName}.jpg`; 
-            link.href = canvas.toDataURL("image/jpeg", 0.9);
-            link.click();
-        } catch(e) { console.error(e); alert("Gagal export poster."); } 
-        finally {
-            document.body.classList.remove("exporting");
-            els.exportContainer.innerHTML = "";
-            els.btnExport.textContent = "📸 Download Poster Jadwal";
-        }
-    }
-    els.btnExport.onclick = doExport;
-    
-    // Init pertama kali
-    init();
-
-    /* === URGENCY NOTIFICATION === */
-    const urgencyMessages = [
-        { icon: "🔥", text: "3 Orang sedang melihat jadwal ini!", sub: "Jangan sampai keduluan!" },
-        { icon: "⚡", text: "Slot minggu ini menipis!", sub: "Booking sekarang juga" },
-        { icon: "👤", text: "Budi baru saja booking 5 Pax.", sub: "Bergabunglah dengan mereka!" },
-        { icon: "⏳", text: "Reservasi akan segera ditutup", sub: "Jika kuota penuh" }
-    ];
-    let msgIndex = 0;
-    const toast = document.getElementById('urgencyToast');
-    const toastIcon = document.getElementById('toastIcon');
-    const toastText = document.getElementById('toastText');
-    const toastSub = document.querySelector('.urgency-sub');
-    function showUrgency() {
-        const item = urgencyMessages[msgIndex];
-        toastIcon.innerText = item.icon; toastText.innerText = item.text; toastSub.innerText = item.sub;
-        toast.classList.add('active');
-        setTimeout(() => { toast.classList.remove('active'); }, 4500);
-        msgIndex = (msgIndex + 1) % urgencyMessages.length;
-    }
-    setTimeout(() => { showUrgency(); setInterval(showUrgency, 12000); }, 3000);
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
