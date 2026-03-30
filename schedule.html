@@ -322,6 +322,12 @@
                         <label for="monthSelect" class="d-block mb-2 fw-bold text-muted small letter-spacing-1">PILIH BULAN KEBERANGKATAN</label>
                         <select id="monthSelect"></select>
                     </div>
+                    <div class="form-check mt-2 d-flex justify-content-center gap-2 align-items-center">
+                        <input class="form-check-input" type="checkbox" id="filterWeekend">
+                        <label class="form-check-label small fw-bold text-muted" for="filterWeekend">
+                            Tampilkan Weekend Saja
+                        </label>
+                    </div>
 
                     <div id="loading" class="text-center py-5">
                         <div class="spinner-border text-danger" role="status"></div>
@@ -718,13 +724,13 @@
             const cached = localStorage.getItem(cacheKey);
             if(cached) {
                 const parsed = JSON.parse(cached);
-                if(Date.now() - parsed.ts < 1800000) { 
+                if(Date.now() - parsed.ts < 10000) { 
                     sheetsData = parsed.data;
                     renderMonths();
                     return;
                 }
             }
-            const res = await fetch(activeReadURL);
+            const res = await fetch(activeReadURL + "?t=" + new Date().getTime());
             const json = await res.json();
             sheetsData = json;
             localStorage.setItem(cacheKey, JSON.stringify({ ts: Date.now(), data: json }));
@@ -761,6 +767,9 @@
         els.monthSelect.parentNode.replaceChild(newSelect, els.monthSelect);
         els.monthSelect = newSelect;
         els.monthSelect.addEventListener("change", (e) => renderTable(e.target.value));
+        document.getElementById("filterWeekend").addEventListener("change", () => {
+    renderTable(els.monthSelect.value);
+});
     }
 
     // --- 3. RENDER TABLE ---
@@ -778,7 +787,13 @@
         sheet.data.forEach(row => {
             if(row.length === 2 && row[0] && typeof row[1] === "number") {
                 const d = new Date(row[0]);
-                if(d < today || d.getDay() === 5) return;
+               const isWeekendOnly = document.getElementById("filterWeekend")?.checked;
+
+// skip tanggal lewat & hari Jumat
+if(d < today || d.getDay() === 5) return;
+
+// filter weekend (Sabtu = 6, Minggu = 0)
+if(isWeekendOnly && ![0,6].includes(d.getDay())) return;
 
                 const booked = row[1];
                 // HITUNG SISA SLOT BERDASARKAN MAX SLOT TRIP TERSEBUT
@@ -807,6 +822,7 @@
 
                 const tdAction = document.createElement("td");
                 tdAction.className = "text-center hide-on-export";
+                
                 
                 if(sisa > 0) {
                     const btn = document.createElement("button");
