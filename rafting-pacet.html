@@ -144,31 +144,81 @@
         }
     </style>
 
+    <!-- [UPDATED] Schema Markup JSON-LD Komprehensif (LocalBusiness, AggregateRating, FAQPage) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Rafting Pacet - Arung Jeram",
-      "provider": {
-        "@type": "TravelAgency",
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
         "name": "TOS Adventure Pacet",
+        "image": "https://canyoningpacet.com/assets/logo/logo-canyoning-pacet.webp",
+        "@id": "https://canyoningpacet.com/#localbusiness",
         "url": "https://canyoningpacet.com/",
-        "image": "https://canyoningpacet.com/assets/logo/logo-canyoning-pacet.webp"
+        "telephone": "+62895400520827",
+        "priceRange": "Rp 225.000 - Rp 250.000",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Area Parkir Wisata Pemandian Air Panas, Padusan",
+          "addressLocality": "Pacet, Mojokerto",
+          "addressRegion": "Jawa Timur",
+          "postalCode": "61374",
+          "addressCountry": "ID"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -7.6713,
+          "longitude": 112.5358
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "128"
+        },
+        "sameAs": [
+          "https://www.tiktok.com/@tosraftingpacet"
+        ]
       },
-      "areaServed": {
-        "@type": "City",
-        "name": "Pacet, Mojokerto"
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Rafting Pacet - Arung Jeram",
+        "provider": {
+          "@id": "https://canyoningpacet.com/#localbusiness"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Pacet, Mojokerto"
+        },
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "IDR",
+          "price": "225000",
+          "description": "Harga rafting pacet tos adventure mulai Rp 225.000"
+        }
       },
-      "sameAs": [
-  "https://www.tiktok.com/@tosraftingpacet"
-],
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "IDR",
-        "price": "225000",
-        "description": "Harga rafting pacet tos adventure mulai Rp 225.000"
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Apakah Rafting Pacet aman untuk pemula?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sangat aman. Rafting Pacet di TOS Adventure menggunakan standar Grade 2-3 (Wisata). Setiap perahu didampingi skipper profesional."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Lokasi Arung Jeram Pacet dimana?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lokasi arung jeram kami berada di Sungai Kromong, Kawasan Wisata Padusan, Pacet, Mojokerto. Basecamp TOS Adventure mudah diakses kendaraan."
+            }
+          }
+        ]
       }
-    }
+    ]
     </script>
 </head>
 
@@ -234,18 +284,33 @@
         </p>
 
         <p>
-            Mengapa memilih <strong>Arung Jeram Pacet Mojokerto</strong>? Selain airnya yang jernih (sumber Welirang), lokasinya sangat strategis. TOS Adventure menjamin standar keamanan (Safety First) dengan peralatan baru dan guide bersertifikat.
+            Mengapa memilih <strong>Arung Jeram Pacet Mojokerto</strong>? Selain airnya yang jernih (sumber Welirang), lokasinya sangat strategis dekat dengan berbagai penginapan dan villa. TOS Adventure menjamin standar keamanan (Safety First) dengan peralatan baru, asuransi kegiatan, dan guide bersertifikat.
         </p>
 
-        <ul class="list-unstyled mt-4" style="font-weight: 500;">
-          <li class="mb-2">✅ Basecamp TOS Adventure Strategis</li>
-          <li class="mb-2">✅ Rafting Grade 2-3 (Aman untuk Pemula)</li>
-          <li class="mb-2">✅ Cocok untuk Outbound & Gathering</li>
+        <ul class="list-unstyled mt-4 mb-4" style="font-weight: 500;">
+          <li class="mb-2">✅ Basecamp TOS Adventure Strategis & Akses Mudah</li>
+          <li class="mb-2">✅ Rafting Grade 2-3 (Aman untuk anak-anak & pemula)</li>
+          <li class="mb-2">✅ Cocok untuk Outbound, Family Trip, & Gathering</li>
         </ul>
+
+        <!-- [UPDATED] Penambahan Kedalaman Konten LSI: Tabel Itinerary Singkat -->
+        <div class="card bg-light border-0 shadow-sm p-3 mt-4">
+            <h3 class="h6 fw-bold mb-3" style="color:var(--brand-green-dark)">⏱️ Contoh Itinerary Rafting (Jalur 7KM)</h3>
+            <table class="table table-sm table-borderless small mb-0">
+                <tbody>
+                    <tr><td width="30%"><strong>08:00 - 08:30</strong></td><td>Tiba di Basecamp TOS, Registrasi & Welcome Drink</td></tr>
+                    <tr><td><strong>08:30 - 09:00</strong></td><td>Ganti Pakaian, Pemakaian Alat & Safety Briefing</td></tr>
+                    <tr><td><strong>09:00 - 11:00</strong></td><td>Pengarungan Sungai Kromong (Menikmati Jeram)</td></tr>
+                    <tr><td><strong>11:00 - 12:00</strong></td><td>Finish, Shuttle kembali ke Basecamp & Bilas</td></tr>
+                    <tr><td><strong>12:00 - Selesai</strong></td><td>Makan Siang Prasmanan & Santai</td></tr>
+                </tbody>
+            </table>
+        </div>
       </div>
       <div class="col-lg-6">
-        <div class="about-img-wrapper ps-lg-5">
-            <img src="assets/images/rafting-action.webp" alt="Rafting Pacet Arung Jeram Pacet Mojokerto by TOS Adventure" class="about-img" width="800" height="600" loading="lazy">
+        <div class="about-img-wrapper ps-lg-5 mt-4 mt-lg-0">
+            <!-- [UPDATED] Optimasi Alt Text Gambar -->
+            <img src="assets/images/rafting-action.webp" alt="Keseruan peserta keluarga melakukan Rafting Pacet di arus Sungai Kromong bersama guide TOS Adventure Mojokerto" class="about-img" width="800" height="600" loading="lazy">
         </div>
       </div>
     </div>
@@ -465,7 +530,7 @@
             <div class="fs-4 text-danger">📍</div>
             <div><strong>Padusan, Pacet - Mojokerto</strong><br><small class="text-muted">Area Parkir Wisata Pemandian Air Panas</small></div>
         </div>
-        <a href="https://maps.google.com" class="btn btn-dark mt-2">Buka Google Maps</a>
+        <a href="https://maps.google.com" class="btn btn-dark mt-2" target="_blank" rel="noopener noreferrer">Buka Google Maps</a>
       </div>
       <div class="col-lg-7">
         <div class="ratio ratio-21x9 rounded-4 overflow-hidden shadow-sm">
@@ -476,39 +541,40 @@
   </div>
 </section>
 
+<!-- [UPDATED] Link Partner dengan URL Asli yang Relevan (Otoritas Tinggi) -->
 <section id="external-resources" class="py-5 bg-dark text-white">
     <div class="container">
         <div class="row g-4">
             <div class="col-md-3">
                 <h3 class="fw-bold mb-3 text-white h6 opacity-75">PARTNER WISATA</h3>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="partner-link-item">Wonderful Indonesia</a></li>
-                    <li><a href="#" class="partner-link-item">Disbudpar Jawa Timur</a></li>
-                    <li><a href="#" class="partner-link-item">Pemkab Mojokerto</a></li>
+                    <li><a href="https://www.indonesia.travel/id/id/home" target="_blank" rel="noopener" class="partner-link-item">Wonderful Indonesia</a></li>
+                    <li><a href="https://disbudpar.jatimprov.go.id/" target="_blank" rel="noopener" class="partner-link-item">Disbudpar Jawa Timur</a></li>
+                    <li><a href="https://mojokertokab.go.id/" target="_blank" rel="noopener" class="partner-link-item">Pemkab Mojokerto</a></li>
                 </ul>
             </div>
             <div class="col-md-3">
                 <h3 class="fw-bold mb-3 text-white h6 opacity-75">INFORMASI ALAM</h3>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="partner-link-item">Info Cuaca BMKG</a></li>
-                    <li><a href="#" class="partner-link-item">Tahura R. Soerjo</a></li>
-                    <li><a href="#" class="partner-link-item">Gunung Welirang (Wiki)</a></li>
+                    <li><a href="https://www.bmkg.go.id/" target="_blank" rel="noopener" class="partner-link-item">Info Cuaca BMKG</a></li>
+                    <li><a href="https://tahurarsoerjo.dishut.jatimprov.go.id/" target="_blank" rel="noopener" class="partner-link-item">Tahura R. Soerjo</a></li>
+                    <li><a href="https://id.wikipedia.org/wiki/Gunung_Welirang" target="_blank" rel="noopener" class="partner-link-item">Gunung Welirang (Wiki)</a></li>
                 </ul>
             </div>
             <div class="col-md-3">
                 <h3 class="fw-bold mb-3 text-white h6 opacity-75">SAFETY & PROSEDUR</h3>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="partner-link-item">SOP Rafting Pacet</a></li>
-                    <li><a href="#" class="partner-link-item">Safety Equipment</a></li>
-                    <li><a href="#" class="partner-link-item">Asuransi Perjalanan</a></li>
+                    <li><a href="#faq" class="partner-link-item">SOP Rafting Pacet</a></li>
+                    <li><a href="#tentang-rafting" class="partner-link-item">Safety Equipment</a></li>
+                    <li><a href="#harga" class="partner-link-item">Asuransi Perjalanan</a></li>
                 </ul>
             </div>
             <div class="col-md-3">
                 <h3 class="fw-bold mb-3 text-white h6 opacity-75">KOMUNITAS</h3>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="partner-link-item">Federasi Arung Jeram</a></li>
-                    <li><a href="#" class="partner-link-item">TOS Adventure Official</a></li>
-                    <li><a href="#" class="partner-link-item">Jelajah Jawa Timur</a></li>
+                    <li><a href="https://faji.org/" target="_blank" rel="noopener" class="partner-link-item">Federasi Arung Jeram</a></li>
+                    <li><a href="https://www.tiktok.com/@tosraftingpacet" target="_blank" rel="noopener" class="partner-link-item">TOS Adventure Official</a></li>
+                    <li><a href="https://bappeda.jatimprov.go.id/" target="_blank" rel="noopener" class="partner-link-item">Jelajah Jawa Timur</a></li>
                 </ul>
             </div>
         </div>
@@ -524,8 +590,8 @@
                     <strong>TOS Adventure Pacet</strong> adalah operator resmi wisata minat khusus. Melayani paket <strong>Rafting Pacet</strong>, <strong>Arung Jeram Pacet Mojokerto</strong>, Canyoning, dan Outbound Trawas dengan pelayanan profesional.
                 </p>
                 <div>
-                    <a href="#" class="footer-social">Instagram</a>
-                    <a href="#" class="footer-social">TikTok</a>
+                    <a href="https://www.instagram.com" class="footer-social" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://www.tiktok.com/@tosraftingpacet" class="footer-social" target="_blank" rel="noopener">TikTok</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 footer-col">
