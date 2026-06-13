@@ -124,7 +124,7 @@
         .backdrop.show { display: flex; animation: fadeIn 0.3s; }
         .modal-box { background: #fff; width: 90%; max-width: 480px; padding: 30px; border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); max-height: 90vh; overflow-y: auto; }
         .payment-summary { background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 15px; margin-bottom: 15px; }
-        .summary-dp-row { border-top: 1px dashed #ccc; margin-top: 10px; padding-top: 10px; display: flex; justify-content: space-between; font-weight: 800; font-size: 1.1rem; color: var(--brand-red); background-color: #fff5f5; padding: 10px; border-radius: 6px; border: 1px solid #ffebeb; }
+        .summary-dp-row { border-top: 1px dashed #ccc; margin-top: 10px; padding-top: 10px; display: flex; flex-direction: column; font-weight: 800; font-size: 1.1rem; color: var(--brand-red); background-color: #fff5f5; padding: 10px; border-radius: 6px; border: 1px solid #ffebeb; }
 
         .urgency-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(100px); background: #fff; border-left: 5px solid var(--brand-red); box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 12px 24px; border-radius: 50px; display: flex; align-items: center; gap: 14px; z-index: 1040; opacity: 0; visibility: hidden; transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
         .urgency-toast.active { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); bottom: 30px; }
@@ -138,7 +138,6 @@
         /* === CUSTOM POSTER STYLE (COMPACT 5 COLUMNS) === */
         .poster { 
             width: 1080px; 
-            /* height: auto; min-height: 1350px; <-- Changed to fit long content */
             min-height: 1350px; height: auto;
             background: linear-gradient(180deg, #0e4d48 0%, #156961 40%, #08332e 100%); 
             position: relative; 
@@ -178,7 +177,7 @@
         /* COMPACT GRID: 5 COLUMNS */
         .poster-grid { 
             display: grid; 
-            grid-template-columns: repeat(5, 1fr); /* 5 Columns to fit more */
+            grid-template-columns: repeat(5, 1fr); 
             gap: 20px; 
         }
 
@@ -187,7 +186,7 @@
             border-radius: 30px; 
             padding: 10px; 
             display: flex; flex-direction: column; align-items: center; justify-content: center; 
-            height: 120px; /* Reduced height */
+            height: 120px; 
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             position: relative;
             color: #1A1A1A;
@@ -198,13 +197,13 @@
         }
 
         .date-num { 
-            font-size: 45px; /* Smaller font */
+            font-size: 45px; 
             font-weight: 700; line-height: 1; 
             color: #0f766e; 
         }
         
         .date-day { 
-            font-size: 14px; /* Smaller font */
+            font-size: 14px; 
             text-transform: uppercase; color: #555; 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             font-weight: 700; letter-spacing: 0.5px; margin-top: 0px; 
@@ -232,7 +231,7 @@
         .pf-text { font-size: 16px; margin-bottom: 5px; opacity: 0.9; font-weight: 500; }
         .pf-contact { font-size: 32px; font-weight: 700; color: #FACC15; margin-top: 5px; font-family: 'Oswald', sans-serif; letter-spacing: 2px; }
 
-        /* Footer (Sama dengan Index) */
+        /* Footer */
         footer { background-color: var(--brand-green-dark); color: #e0e0e0; padding-top: 80px; padding-bottom: 30px; font-family: var(--font-body); }
         .footer-title { color: #fff; font-size: 1.2rem; margin-bottom: 1.2rem; border-bottom: 2px solid var(--brand-accent); display: inline-block; padding-bottom: 5px; }
         .footer-menu { list-style: none; padding: 0; }
@@ -423,7 +422,7 @@
 <section class="section-padding bg-light">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="fw-bold">Cara Booking</h2>
+            <h2 class="grid-heading fw-bold" style="font-family: var(--font-heading); font-size: 2rem;">CARA BOOKING</h2>
             <p class="text-muted">Langkah mudah mengamankan petualanganmu</p>
         </div>
         <div class="row g-4 text-center">
@@ -509,6 +508,10 @@
             
             <label class="small fw-bold text-muted">Nama Lengkap</label>
             <input type="text" id="inputName" class="form-control mb-2" placeholder="Nama Pemesan">
+
+            <!-- TAMBAHAN FORM DOMISILI -->
+            <label class="small fw-bold text-muted">Kota Domisili</label>
+            <input type="text" id="inputDomisili" class="form-control mb-2" placeholder="Asal Kota / Daerah">
             
             <div class="row g-2">
                 <div class="col-6">
@@ -526,8 +529,15 @@
                 <input type="number" id="inputShoeQty" class="form-control" value="0" min="0" placeholder="Jumlah pasang">
                 <small class="text-muted" style="font-size:0.75rem">*Abaikan jika bawa sepatu sendiri</small>
             </div>
+
+            <!-- LAYANAN PENJEMPUTAN MOJOKERTO -->
+            <div class="mt-3 p-3 bg-light rounded border">
+                <label class="small fw-bold d-block mb-1">Penjemputan Stasiun / Terminal Mojokerto (PP)</label>
+                <input type="number" id="inputTransportQty" class="form-control" value="0" min="0" placeholder="Jumlah mobil">
+                <small class="text-muted" style="font-size:0.75rem">*Rp 400.000 / mobil (Pulang-Pergi, Kapasitas maks 6 orang)</small>
+            </div>
             
-            <textarea id="inputNote" rows="2" class="form-control mt-3" placeholder="Catatan Tambahan..."></textarea>
+            <textarea id="inputNote" rows="2" class="form-control mt-3" placeholder="Catatan Tambahan / ukuran sepatu ..."></textarea>
             
             <div class="d-flex justify-content-end gap-2 mt-4">
                 <button id="btnCancel" class="btn btn-light fw-bold">Batal</button>
@@ -548,12 +558,19 @@
                 <div id="summaryShoeRow" class="text-muted" style="display:none; justify-content:space-between;">
                     <span>Sewa Sepatu:</span> <span id="summaryShoeValue"></span>
                 </div>
+
+                <!-- RINCIAN HARGA PENJEMPUTAN -->
+                <div id="summaryTransportRow" class="text-muted" style="display:none; justify-content:space-between;">
+                    <span>Penjemputan Mojokerto:</span> <span id="summaryTransportValue"></span>
+                </div>
                 <hr>
                 <div class="d-flex justify-content-between fw-bold mb-1">
                     <span>Total Tagihan:</span> <span id="summaryTotalFull"></span>
                 </div>
                 <div class="summary-dp-row">
-                    <span>DP WAJIB TRANSFER:</span> <span id="summaryTotalDP"></span>
+                    <div style="display:flex; justify-content:space-between; width:100%;">
+                        <span>DP WAJIB TRANSFER:</span> <span id="summaryTotalDP"></span>
+                    </div>
                 </div>
             </div>
             <div class="small p-2 bg-success bg-opacity-10 mb-3 rounded border border-success">
@@ -582,16 +599,18 @@
     const CONFIG = {
         api: {
             cowang: {
-                read: "https://script.google.com/macros/s/AKfycbwoQKn-H3UjntAj1onCpgsOFN1PPM3b71xAB1iS9ROfDmwKyL9gVg89MX8S8uTj_N3x/exec", // Spreadsheet Cowang
-                save: "https://script.google.com/macros/s/AKfycbwpeFEr2WdHegonNQa8T-zTVPspqdJWKphpQ_nVUZ7L_-iPWr3BD7iL1jSGU24W8SYy/exec" // Spreadsheet Simpan Data Cowang
+                read: "https://script.google.com/macros/s/AKfycbwoQKn-H3UjntAj1onCpgsOFN1PPM3b71xAB1iS9ROfDmwKyL9gVg89MX8S8uTj_N3x/exec", 
+                save: "https://script.google.com/macros/s/AKfycbwpeFEr2WdHegonNQa8T-zTVPspqdJWKphpQ_nVUZ7L_-iPWr3BD7iL1jSGU24W8SYy/exec" 
             },
             canggu: {
-                read: "https://script.google.com/macros/s/AKfycbyXoFo40JePpkOAaoYz-XF4ZYjvMas9vgYKo5XazgDJlidCz-BEOYe24FjkkNr27ea9/exec", // Spreadsheet Canggu
-                save: "https://script.google.com/macros/s/AKfycbzYt9Liu3KdAvBsVT-Sevs4Up6yzuHGpySRyI5f2n8Gl2M2xmbCdfwS0JUG6S1DvDaVKg/exec" // Spreadsheet Simpan Data Canggu
+                read: "https://script.google.com/macros/s/AKfycbyXoFo40JePpkOAaoYz-XF4ZYjvMas9vgYKo5XazgDJlidCz-BEOYe24FjkkNr27ea9/exec", 
+                save: "https://script.google.com/macros/s/AKfycbzYt9Liu3KdAvBsVT-Sevs4Up6yzuHGpySRyI5f2n8Gl2M2xmbCdfwS0JUG6S1DvDaVKg/exec" 
             }
         },
         waNumber: "62895400520827",
         shoePrice: 15000,
+        transportPrice: 400000, // Harga penjemputan Mojokerto PP per mobil
+        transportDP: 100000, // DP Tambahan per mobil untuk penjemputan
         
         // PENGATURAN HARGA & SLOT PER TRIP
         settings: {
@@ -609,20 +628,19 @@
     };
 
     // State Variables
-    let currentTrip = 'cowang'; // Default trip
+    let currentTrip = 'cowang'; 
     let sheetsData = [];
     let currentSelectedDateISO = null;
     let currentSelectedDateText = "";
     
     const els = {
         monthSelect: document.getElementById("monthSelect"),
-        controlsBox: document.getElementById("controlsBox"), // ADDED
+        controlsBox: document.getElementById("controlsBox"), 
         loading: document.getElementById("loading"),
         wrapper: document.getElementById("jadwal-wrapper"),
-        msgComingSoon: document.getElementById("msgComingSoon"), // ADDED
+        msgComingSoon: document.getElementById("msgComingSoon"), 
         tableBody: document.getElementById("tableBody"),
         
-        // Buttons Switcher
         btnSwitchCowang: document.getElementById("btnSwitchCowang"),
         btnSwitchCanggu: document.getElementById("btnSwitchCanggu"),
 
@@ -631,10 +649,12 @@
         modalTripLabel: document.getElementById("modalTripLabel"),
 
         inputName: document.getElementById("inputName"),
+        inputDomisili: document.getElementById("inputDomisili"), // Element baru domisili
         inputQty: document.getElementById("inputQty"),
         inputPhone: document.getElementById("inputPhone"),
         inputNote: document.getElementById("inputNote"),
         inputShoeQty: document.getElementById("inputShoeQty"),
+        inputTransportQty: document.getElementById("inputTransportQty"), // Input Penjemputan
 
         stepForm: document.getElementById("stepForm"),
         stepPayment: document.getElementById("stepPayment"),
@@ -645,12 +665,15 @@
         summaryDate: document.getElementById("summaryDate"),
         summaryPax: document.getElementById("summaryPax"),
         
-        // DETAIL HARGA ELEMENT
         summaryPriceRow: document.getElementById("summaryPriceRow"),
         summaryPriceValue: document.getElementById("summaryPriceValue"),
         
         summaryShoeRow: document.getElementById("summaryShoeRow"),
         summaryShoeValue: document.getElementById("summaryShoeValue"),
+        
+        summaryTransportRow: document.getElementById("summaryTransportRow"),
+        summaryTransportValue: document.getElementById("summaryTransportValue"),
+        
         summaryTotalFull: document.getElementById("summaryTotalFull"),
         summaryTotalDP: document.getElementById("summaryTotalDP"),
         
@@ -659,17 +682,14 @@
         exportContainer: document.getElementById("exportPoster")
     };
 
-    // --- 1. SWITCHER LOGIC (MODIFIED FOR COMING SOON) ---
     function switchTrip(tripName) {
-        if(currentTrip === tripName) return; // Prevent double click
+        if(currentTrip === tripName) return; 
         currentTrip = tripName;
 
-        // UI Update Buttons
         if(tripName === 'cowang') {
             els.btnSwitchCowang.classList.add('active');
             els.btnSwitchCanggu.classList.remove('active');
 
-            // HIDE COMING SOON, SHOW NORMAL UI
             els.msgComingSoon.style.display = "none";
             els.controlsBox.style.display = "block";
             els.wrapper.style.display = "none";
@@ -677,54 +697,20 @@
             els.monthSelect.innerHTML = "";
             els.btnExport.classList.add("d-none");
             
-            init(); // Load Cowang Data
-
+            init(); 
         } else {
-            // CANGGU MODE (COMING SOON)
             els.btnSwitchCanggu.classList.add('active');
             els.btnSwitchCowang.classList.remove('active');
 
-            // HIDE NORMAL UI, SHOW COMING SOON
             els.wrapper.style.display = "none";
             els.controlsBox.style.display = "none";
             els.loading.style.display = "none";
             els.btnExport.classList.add("d-none");
             
             els.msgComingSoon.style.display = "block";
-            
-            // DO NOT CALL INIT (No data fetch)
         }
     }
 
-    // --- 1. SWITCHER LOGIC (VERSI READY / LIVE) ---
-    // function switchTrip(tripName) {
-    //     // Cek jika trip yang diklik sudah aktif, tidak perlu reload
-    //     if(currentTrip === tripName && els.wrapper.style.display === "block") return;
-        
-    //     currentTrip = tripName;
-
-    //     // A. Update Tampilan Tombol
-    //     if(tripName === 'cowang') {
-    //         els.btnSwitchCowang.classList.add('active');
-    //         els.btnSwitchCanggu.classList.remove('active');
-    //     } else {
-    //         els.btnSwitchCanggu.classList.add('active');
-    //         els.btnSwitchCowang.classList.remove('active');
-    //     }
-
-    //     // B. Reset UI (Pastikan Area Jadwal Muncul, Coming Soon Sembunyi)
-    //     els.msgComingSoon.style.display = "none"; // Sembunyikan Coming Soon
-    //     els.controlsBox.style.display = "block";  // Munculkan Dropdown Bulan
-    //     els.wrapper.style.display = "none";       // Sembunyikan tabel dulu (efek loading)
-    //     els.loading.style.display = "block";      // Munculkan Loading
-    //     els.monthSelect.innerHTML = "";           // Kosongkan bulan lama
-    //     els.btnExport.classList.add("d-none");    // Sembunyikan tombol export
-
-    //     // C. Panggil Data Baru
-    //     init(); 
-    // }
-
-    // --- 2. LOAD DATA (READ) ---
     async function init() {
         try {
             const activeReadURL = CONFIG.api[currentTrip].read;
@@ -777,35 +763,28 @@
         els.monthSelect = newSelect;
         els.monthSelect.addEventListener("change", (e) => renderTable(e.target.value));
         document.getElementById("filterWeekend").addEventListener("change", () => {
-    renderTable(els.monthSelect.value);
-});
+            renderTable(els.monthSelect.value);
+        });
     }
 
-    // --- 3. RENDER TABLE ---
     function renderTable(sheetName) {
         els.tableBody.innerHTML = "";
         const sheet = sheetsData.find(s => s.sheetName === sheetName);
         if(!sheet) return;
 
-        // AMBIL SETTING SLOT SESUAI TRIP
         const currentSettings = CONFIG.settings[currentTrip];
-
         const today = new Date();
         today.setHours(0,0,0,0);
 
         sheet.data.forEach(row => {
             if(row.length === 2 && row[0] && typeof row[1] === "number") {
                 const d = new Date(row[0]);
-               const isWeekendOnly = document.getElementById("filterWeekend")?.checked;
+                const isWeekendOnly = document.getElementById("filterWeekend")?.checked;
 
-// skip tanggal lewat & hari Jumat
-if(d < today || d.getDay() === 5) return;
-
-// filter weekend (Sabtu = 6, Minggu = 0)
-if(isWeekendOnly && ![0,6].includes(d.getDay())) return;
+                if(d < today || d.getDay() === 5) return;
+                if(isWeekendOnly && ![0,6].includes(d.getDay())) return;
 
                 const booked = row[1];
-                // HITUNG SISA SLOT BERDASARKAN MAX SLOT TRIP TERSEBUT
                 const sisa = Math.max(0, currentSettings.maxSlot - booked);
                 const dateStr = d.toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
 
@@ -832,7 +811,6 @@ if(isWeekendOnly && ![0,6].includes(d.getDay())) return;
                 const tdAction = document.createElement("td");
                 tdAction.className = "text-center hide-on-export";
                 
-                
                 if(sisa > 0) {
                     const btn = document.createElement("button");
                     btn.className = "btn-daftar";
@@ -851,15 +829,24 @@ if(isWeekendOnly && ![0,6].includes(d.getDay())) return;
         }
     }
 
-    // --- 4. MODAL & PAYMENT (SEND DATA) ---
     function openModal(isoDate, textDate) {
         currentSelectedDateISO = isoDate;
         currentSelectedDateText = textDate;
         els.modalDate.textContent = "📅 " + textDate;
         els.modalTripLabel.textContent = currentTrip === 'cowang' ? "TRIP COWANG" : "TRIP CANGGU";
         
-        els.inputName.value = ""; els.inputQty.value = 1; els.inputPhone.value = ""; els.inputNote.value = ""; els.inputShoeQty.value = 0;
-        els.inputName.classList.remove('is-invalid'); els.inputPhone.classList.remove('is-invalid'); els.inputQty.classList.remove('is-invalid');
+        els.inputName.value = ""; 
+        els.inputDomisili.value = ""; // Reset Domisili
+        els.inputQty.value = 1; 
+        els.inputPhone.value = ""; 
+        els.inputNote.value = ""; 
+        els.inputShoeQty.value = 0; 
+        els.inputTransportQty.value = 0;
+        
+        els.inputName.classList.remove('is-invalid'); 
+        els.inputDomisili.classList.remove('is-invalid'); 
+        els.inputPhone.classList.remove('is-invalid'); 
+        els.inputQty.classList.remove('is-invalid');
 
         els.stepForm.style.display = "block";
         els.stepPayment.style.display = "none";
@@ -870,37 +857,58 @@ if(isWeekendOnly && ![0,6].includes(d.getDay())) return;
 
     function showPaymentSummary() {
         const name = els.inputName.value.trim();
+        const domisili = els.inputDomisili.value.trim(); // Ambil input domisili
         const qty = parseInt(els.inputQty.value) || 0;
         const phone = els.inputPhone.value.trim();
         const shoeQty = parseInt(els.inputShoeQty.value) || 0;
+        const transportQty = parseInt(els.inputTransportQty.value) || 0;
         
         let isValid = true;
-        els.inputName.classList.remove('is-invalid'); els.inputPhone.classList.remove('is-invalid'); els.inputQty.classList.remove('is-invalid');
+        els.inputName.classList.remove('is-invalid'); 
+        els.inputDomisili.classList.remove('is-invalid'); 
+        els.inputPhone.classList.remove('is-invalid'); 
+        els.inputQty.classList.remove('is-invalid');
+        
         if(!name) { els.inputName.classList.add('is-invalid'); isValid = false; }
+        if(!domisili) { els.inputDomisili.classList.add('is-invalid'); isValid = false; }
         if(!phone) { els.inputPhone.classList.add('is-invalid'); isValid = false; }
         if(qty < 1) { els.inputQty.classList.add('is-invalid'); isValid = false; }
+        
         if(!isValid) return;
 
-        // AMBIL HARGA SESUAI TRIP
         const currentSettings = CONFIG.settings[currentTrip];
 
         const tripTotal = qty * currentSettings.price;
         const shoeTotal = shoeQty * CONFIG.shoePrice;
-        const totalFull = tripTotal + shoeTotal;
-        const totalDP = qty * currentSettings.dp;
+        const transportTotal = transportQty * CONFIG.transportPrice;
+        
+        const totalFull = tripTotal + shoeTotal + transportTotal;
+        
+        // Perhitungan DP: (Qty Trip * DP Trip) + (Qty Transport * DP Transport)
+        const dpTransportTotal = transportQty * CONFIG.transportDP;
+        const totalDP = (qty * currentSettings.dp) + dpTransportTotal;
+        
         const formatRupiah = (num) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
 
         els.summaryDate.textContent = currentSelectedDateText;
         
-        // TAMPILKAN DETAIL HARGA (Baru)
         els.summaryPriceRow.style.display = "flex";
         els.summaryPriceValue.textContent = `${formatRupiah(currentSettings.price)} x ${qty} Pax`;
         
         els.summaryShoeRow.style.display = shoeQty > 0 ? "flex" : "none";
-        if(shoeQty > 0) els.summaryShoeValue.textContent = `${shoeQty} x Rp 15.000`;
+        if(shoeQty > 0) els.summaryShoeValue.textContent = `${shoeQty} x ${formatRupiah(CONFIG.shoePrice)}`;
+
+        // Tampilkan Summary Penjemputan
+        els.summaryTransportRow.style.display = transportQty > 0 ? "flex" : "none";
+        if(transportQty > 0) els.summaryTransportValue.textContent = `${transportQty} Mobil x ${formatRupiah(CONFIG.transportPrice)}`;
 
         els.summaryTotalFull.textContent = formatRupiah(totalFull);
-        els.summaryTotalDP.textContent = formatRupiah(totalDP);
+        
+        // Tampilkan detail DP + Catatan jika ada penjemputan
+        els.summaryTotalDP.innerHTML = formatRupiah(totalDP);
+        if(transportQty > 0) {
+            els.summaryTotalDP.innerHTML += `<div class="text-muted fw-normal" style="font-size:0.8rem; margin-top:4px;">*Termasuk DP Penjemputan ${formatRupiah(dpTransportTotal)}</div>`;
+        }
 
         els.stepForm.style.display = "none";
         els.stepPayment.style.display = "block";
@@ -909,20 +917,25 @@ if(isWeekendOnly && ![0,6].includes(d.getDay())) return;
     function backToForm() { els.stepPayment.style.display = "none"; els.stepForm.style.display = "block"; }
 
     async function confirmAndSendWA() {
-        // [UPDATE] Mengambil URL 'save' sesuai trip yang aktif
         const activeSaveURL = CONFIG.api[currentTrip].save;
         const currentSettings = CONFIG.settings[currentTrip];
 
         const name = els.inputName.value.trim();
+        const domisili = els.inputDomisili.value.trim();
         const qty = parseInt(els.inputQty.value) || 1;
         const phone = els.inputPhone.value.trim();
         const note = els.inputNote.value.trim();
         const shoeQty = parseInt(els.inputShoeQty.value) || 0;
+        const transportQty = parseInt(els.inputTransportQty.value) || 0;
         
         const tripTotal = qty * currentSettings.price;
         const shoeTotal = shoeQty * CONFIG.shoePrice;
-        const totalFull = tripTotal + shoeTotal;
-        const totalDP = qty * currentSettings.dp;
+        const transportTotal = transportQty * CONFIG.transportPrice;
+        
+        const totalFull = tripTotal + shoeTotal + transportTotal;
+        const dpTransportTotal = transportQty * CONFIG.transportDP;
+        const totalDP = (qty * currentSettings.dp) + dpTransportTotal;
+        
         const formatRupiah = (num) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
         const d = new Date(currentSelectedDateISO);
         const dateShort = d.toLocaleDateString("id-ID", { day:"numeric", month:"long", year:"numeric" });
@@ -931,17 +944,23 @@ if(isWeekendOnly && ![0,6].includes(d.getDay())) return;
         let msg = `Halo Admin Canyoning Pacet, saya ingin konfirmasi booking.\n\n`;
         msg += ` 📦 *PAKET: ${tripName}*\n`;
         msg += ` Nama: ${name}\n`;
+        msg += ` Domisili: ${domisili}\n`;
         msg += ` Tanggal: ${dateShort}\n`;
         msg += ` Jumlah: ${qty} Pax\n`;
         if(phone) msg += ` No HP: ${phone}\n`;
         if(shoeQty > 0) msg += ` Sewa Sepatu: ${shoeQty} psg (Rp ${formatRupiah(shoeTotal)})\n`;
+        if(transportQty > 0) msg += ` Penjemputan Mojokerto: ${transportQty} Mobil (Rp ${formatRupiah(transportTotal)} PP)\n`;
         if(note) msg += ` Catatan: ${note}\n\n`;
-        msg += ` *Total Paket: ${formatRupiah(totalFull)}*\n`;
+        msg += ` *Total Tagihan: ${formatRupiah(totalFull)}*\n`;
         msg += ` *DP Transfer: ${formatRupiah(totalDP)}*\n\n`;
-        msg += ` *Rekening Transfer:*\nBCA 6140846421\na.n Muhammad Fatichul Ichsan\n\nMohon dicek, saya akan kirim bukti transfer sebentar lagi. Terima kasih.`;
+        
+        // Memasukkan logika bisnis sesuai preferensi user: hanya admin yang mengirim rekening
+        msg += `Mohon dicek ketersediaan akhirnya, saya tunggu informasi nomor rekening untuk transfer DP. Terima kasih.`;
 
         let finalNote = note;
         if(shoeQty > 0) finalNote += ` [Sewa Sepatu: ${shoeQty} psg]`;
+        if(transportQty > 0) finalNote += ` [Penjemputan Mojokerto: ${transportQty} Mobil]`;
+        finalNote += ` [Domisili: ${domisili}]`;
 
         const btn = els.btnConfirmWA;
         const originalText = btn.innerHTML;
@@ -949,7 +968,6 @@ if(isWeekendOnly && ![0,6].includes(d.getDay())) return;
         btn.innerHTML = `<span class="spinner-border spinner-border-sm"></span> Menyimpan Data...`;
 
         try {
-            // Mengirim data ke URL Spesifik Trip tersebut
             await fetch(activeSaveURL, {
                 method: "POST",
                 mode: "no-cors",
@@ -982,7 +1000,7 @@ if(isWeekendOnly && ![0,6].includes(d.getDay())) return;
     els.btnConfirmWA.onclick = confirmAndSendWA;    
     els.modal.onclick = (e) => { if(e.target === els.modal) closeModal(); };
 
-    /* === POSTER GENERATOR (DESIGN UPDATED: NATURE TEAL THEME) === */
+    /* === POSTER GENERATOR === */
     function createPosterHTML(sheetName) {
         const sheet = sheetsData.find(s => s.sheetName === sheetName);
         if(!sheet) return "";
@@ -1000,7 +1018,6 @@ if(isWeekendOnly && ![0,6].includes(d.getDay())) return;
             const dayName = item.d.toLocaleDateString("id-ID", { weekday: "long" });
             const sisa = Math.max(0, currentSettings.maxSlot - item.sold);
             
-            // Logic status class
             let statusClass = 'available';
             let statusText = `${sisa} SLOT`;
             let cardClass = 'poster-card';
@@ -1023,7 +1040,6 @@ if(isWeekendOnly && ![0,6].includes(d.getDay())) return;
         };
 
         const posterTitle = currentTrip === 'cowang' ? "JADWAL TRIP COWANG" : "JADWAL TRIP CANGGU";
-        const dpText = currentSettings.dp.toLocaleString('id-ID');
 
         return `
         <div class="poster">
@@ -1065,7 +1081,6 @@ if(isWeekendOnly && ![0,6].includes(d.getDay())) return;
         await new Promise(r => setTimeout(r, 1200)); 
 
         try {
-            // Ubah backgroundColor menjadi null atau warna gelap sesuai CSS
             const canvas = await html2canvas(document.querySelector(".poster"), { scale: 2, useCORS: true, backgroundColor: "#08332e" });
             const link = document.createElement("a");
             link.download = `Jadwal-${currentTrip.toUpperCase()}-${sheetName}.jpg`; 
@@ -1080,7 +1095,6 @@ if(isWeekendOnly && ![0,6].includes(d.getDay())) return;
     }
     els.btnExport.onclick = doExport;
     
-    // Init pertama kali
     init();
 
     /* === URGENCY NOTIFICATION === */
