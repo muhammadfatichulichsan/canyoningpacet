@@ -537,7 +537,7 @@
                 <small class="text-muted" style="font-size:0.75rem">*Rp 400.000 / mobil (Pulang-Pergi, Kapasitas maks 6 orang)</small>
             </div>
             
-            <textarea id="inputNote" rows="2" class="form-control mt-3" placeholder="Catatan Tambahan / ukuran sepatu ..."></textarea>
+            <textarea id="inputNote" rows="2" class="form-control mt-3" placeholder="Catatan Tambahan..."></textarea>
             
             <div class="d-flex justify-content-end gap-2 mt-4">
                 <button id="btnCancel" class="btn btn-light fw-bold">Batal</button>
@@ -836,7 +836,7 @@
         els.modalTripLabel.textContent = currentTrip === 'cowang' ? "TRIP COWANG" : "TRIP CANGGU";
         
         els.inputName.value = ""; 
-        els.inputDomisili.value = ""; // Reset Domisili
+        els.inputDomisili.value = ""; 
         els.inputQty.value = 1; 
         els.inputPhone.value = ""; 
         els.inputNote.value = ""; 
@@ -857,7 +857,7 @@
 
     function showPaymentSummary() {
         const name = els.inputName.value.trim();
-        const domisili = els.inputDomisili.value.trim(); // Ambil input domisili
+        const domisili = els.inputDomisili.value.trim(); 
         const qty = parseInt(els.inputQty.value) || 0;
         const phone = els.inputPhone.value.trim();
         const shoeQty = parseInt(els.inputShoeQty.value) || 0;
@@ -884,7 +884,6 @@
         
         const totalFull = tripTotal + shoeTotal + transportTotal;
         
-        // Perhitungan DP: (Qty Trip * DP Trip) + (Qty Transport * DP Transport)
         const dpTransportTotal = transportQty * CONFIG.transportDP;
         const totalDP = (qty * currentSettings.dp) + dpTransportTotal;
         
@@ -898,13 +897,11 @@
         els.summaryShoeRow.style.display = shoeQty > 0 ? "flex" : "none";
         if(shoeQty > 0) els.summaryShoeValue.textContent = `${shoeQty} x ${formatRupiah(CONFIG.shoePrice)}`;
 
-        // Tampilkan Summary Penjemputan
         els.summaryTransportRow.style.display = transportQty > 0 ? "flex" : "none";
         if(transportQty > 0) els.summaryTransportValue.textContent = `${transportQty} Mobil x ${formatRupiah(CONFIG.transportPrice)}`;
 
         els.summaryTotalFull.textContent = formatRupiah(totalFull);
         
-        // Tampilkan detail DP + Catatan jika ada penjemputan
         els.summaryTotalDP.innerHTML = formatRupiah(totalDP);
         if(transportQty > 0) {
             els.summaryTotalDP.innerHTML += `<div class="text-muted fw-normal" style="font-size:0.8rem; margin-top:4px;">*Termasuk DP Penjemputan ${formatRupiah(dpTransportTotal)}</div>`;
@@ -953,9 +950,7 @@
         if(note) msg += ` Catatan: ${note}\n\n`;
         msg += ` *Total Tagihan: ${formatRupiah(totalFull)}*\n`;
         msg += ` *DP Transfer: ${formatRupiah(totalDP)}*\n\n`;
-        
-        // Memasukkan logika bisnis sesuai preferensi user: hanya admin yang mengirim rekening
-        msg += `Mohon dicek ketersediaan akhirnya, saya tunggu informasi nomor rekening untuk transfer DP. Terima kasih.`;
+        msg += ` *Rekening Transfer:*\nBCA 6140846421\na.n Muhammad Fatichul Ichsan\n\nMohon dicek, saya akan kirim bukti transfer sebentar lagi. Terima kasih.`;
 
         let finalNote = note;
         if(shoeQty > 0) finalNote += ` [Sewa Sepatu: ${shoeQty} psg]`;
