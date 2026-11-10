@@ -616,12 +616,12 @@
         settings: {
             cowang: {
                 price: 300000,
-                dp: 50000,
+                dp: 100000,
                 maxSlot: 25
             },
             canggu: {
                 price: 400000,
-                dp: 50000,
+                dp: 100000,
                 maxSlot: 10
             }
         }
@@ -686,29 +686,22 @@
         if(currentTrip === tripName) return; 
         currentTrip = tripName;
 
+        els.msgComingSoon.style.display = "none";
+        els.controlsBox.style.display = "block";
+        els.wrapper.style.display = "none";
+        els.loading.style.display = "block";
+        els.monthSelect.innerHTML = "";
+        els.btnExport.classList.add("d-none");
+
         if(tripName === 'cowang') {
             els.btnSwitchCowang.classList.add('active');
             els.btnSwitchCanggu.classList.remove('active');
-
-            els.msgComingSoon.style.display = "none";
-            els.controlsBox.style.display = "block";
-            els.wrapper.style.display = "none";
-            els.loading.style.display = "block";
-            els.monthSelect.innerHTML = "";
-            els.btnExport.classList.add("d-none");
-            
-            init(); 
         } else {
             els.btnSwitchCanggu.classList.add('active');
             els.btnSwitchCowang.classList.remove('active');
-
-            els.wrapper.style.display = "none";
-            els.controlsBox.style.display = "none";
-            els.loading.style.display = "none";
-            els.btnExport.classList.add("d-none");
-            
-            els.msgComingSoon.style.display = "block";
         }
+        
+        init(); 
     }
 
     async function init() {
